@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBX Agency — Western Faces. Cleared for Asian Markets.</title>
+<meta name="description" content="CBX Agency connects western UGC creators with Chinese and Asian brands that want a Western face for their advertising. Sourcing, brand outreach, and RED/Xiaohongshu market entry.">
+<meta name="keywords" content="CBX Agency, UGC creator agency, 西方网红代理, 小红书 西方达人, cross-border marketing, Asian brand marketing">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Stardos+Stencil:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --paper: #d9c8a0;
+    --paper-2: #cab687;
+    --paper-light: #f2e8cd;
+    --ink: #251d13;
+    --ink-soft: #55492f;
+    --stamp: #a23528;
+    --stamp-dark: #7c281e;
+    --line: #8a7952;
+    --line-soft: rgba(37,29,19,0.18);
+    --shadow: rgba(37,29,19,0.35);
+    --max-w: 1120px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', -apple-system, Segoe UI, sans-serif;
+    line-height:1.5;
+    position:relative;
+  }
+
+  /* paper grain overlay, self-contained SVG noise, no external assets */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    opacity:0.35;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.15  0 0 0 0 0.12  0 0 0 0 0.08  0 0 0 0.35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap{max-width:var(--max-w); margin:0 auto; padding:0 28px; position:relative; z-index:1;}
+
+  h1,h2,h3{font-family:'Archivo Black', 'IBM Plex Sans', sans-serif; margin:0; letter-spacing:-0.01em;}
+
+  .mono{font-family:'IBM Plex Mono', monospace;}
+
+  a{color:inherit;}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:20;
+    background:var(--paper);
+    border-bottom:2px dashed var(--line);
+  }
+  .header-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px;
+    max-width:var(--max-w); margin:0 auto;
+  }
+  .logo{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Stardos Stencil', cursive;
+    font-size:1.4rem; font-weight:700;
+    text-decoration:none;
+    color:var(--ink);
+  }
+  .logo .mark{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:34px; height:34px;
+    border:2px solid var(--ink);
+    border-radius:50%;
+    font-size:0.85rem;
+  }
+  nav a{
+    text-decoration:none;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:8px 16px;
+    border:1px solid var(--ink);
+    border-radius:2px;
+    transition:background .15s ease, color .15s ease;
+  }
+  nav a:hover, nav a:focus-visible{background:var(--ink); color:var(--paper-light);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding:96px 0 84px;
+    overflow:hidden;
+  }
+  .hero-inner{position:relative;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.8rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:26px; height:2px; background:var(--stamp); display:inline-block;}
+
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.6rem);
+    line-height:1.02;
+    max-width:14ch;
+  }
+  .hero h1 .accent{color:var(--stamp);}
+
+  .hero p.sub{
+    max-width:46ch;
+    font-size:1.05rem;
+    color:var(--ink-soft);
+    margin-top:22px;
+  }
+
+  .manifest-row{
+    display:flex; flex-wrap:wrap; gap:28px;
+    margin-top:40px;
+    padding-top:24px;
+    border-top:1px dashed var(--line);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.8rem;
+  }
+  .manifest-row div span{display:block; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.08em; font-size:0.7rem; margin-bottom:4px;}
+  .manifest-row div strong{font-size:0.95rem;}
+
+  .stamp{
+    position:absolute;
+    top:10px; right:0;
+    width:150px; height:150px;
+    border:3px solid var(--stamp);
+    border-radius:50%;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    transform:rotate(-10deg) scale(1);
+    color:var(--stamp);
+    opacity:0.9;
+    text-align:center;
+    font-family:'Stardos Stencil', cursive;
+    mix-blend-mode:multiply;
+  }
+  .stamp::before{
+    content:"";
+    position:absolute; inset:8px;
+    border:1px solid var(--stamp);
+    border-radius:50%;
+  }
+  .stamp .s-main{font-size:1.05rem; font-weight:700; letter-spacing:0.03em;}
+  .stamp .s-sub{font-family:'IBM Plex Mono', monospace; font-size:0.55rem; letter-spacing:0.12em; margin-top:4px;}
+  .stamp.press{animation:stampPress .5s cubic-bezier(.2,1.4,.4,1) .3s both;}
+  @keyframes stampPress{
+    0%{transform:rotate(-10deg) scale(2.4); opacity:0;}
+    70%{opacity:0.95;}
+    100%{transform:rotate(-10deg) scale(1); opacity:0.9;}
+  }
+
+  /* ---------- perforated divider ---------- */
+  .tear{
+    height:18px;
+    background-image:radial-gradient(circle, var(--paper) 3px, transparent 3.5px);
+    background-size:16px 16px;
+    background-position:center;
+    border-top:1px dashed var(--line);
+  }
+
+  /* ---------- section shell ---------- */
+  section{padding:80px 0;}
+  .section-head{margin-bottom:44px; max-width:60ch;}
+  .section-head .eyebrow{margin-bottom:12px;}
+  .section-head h2{font-size:clamp(1.7rem, 3.4vw, 2.4rem);}
+
+  /* ---------- about ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:56px;
+    align-items:start;
+  }
+  .about-text p{font-size:1rem; color:var(--ink-soft); max-width:52ch;}
+  .about-text p + p{margin-top:14px;}
+
+  .roles{
+    background:var(--paper-light);
+    border:1px solid var(--line-soft);
+    border-radius:4px;
+    padding:6px 0;
+  }
+  .role{
+    display:grid;
+    grid-template-columns:110px 1fr;
+    gap:14px;
+    padding:16px 20px;
+    border-bottom:1px dashed var(--line-soft);
+  }
+  .role:last-child{border-bottom:none;}
+  .role .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--stamp);
+    padding-top:2px;
+  }
+  .role .who{font-weight:600; margin-bottom:2px;}
+  .role .desc{font-size:0.88rem; color:var(--ink-soft);}
+
+  /* ---------- roster ---------- */
+  .roster-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .card{
+    position:relative;
+    background:var(--paper-light);
+    border:1px solid var(--ink);
+    border-radius:6px;
+    padding:26px 22px 22px;
+    overflow:hidden;
+    box-shadow:4px 4px 0 var(--line-soft);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .card:hover{transform:translateY(-4px); box-shadow:6px 8px 0 var(--line-soft);}
+
+  .card .stamp{
+    width:100px; height:100px;
+    top:14px; right:-6px;
+    font-size:0.7rem;
+  }
+  .card .stamp .s-main{font-size:0.78rem;}
+  .card:nth-child(1) .stamp{transform:rotate(-8deg);}
+  .card:nth-child(2) .stamp{transform:rotate(6deg);}
+  .card:nth-child(3) .stamp{transform:rotate(-4deg);}
+
+  .avatar{
+    width:76px; height:76px;
+    border-radius:50%;
+    border:2px dashed var(--line);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Archivo Black', sans-serif;
+    font-size:1.3rem;
+    color:var(--ink-soft);
+    background:var(--paper);
+    margin-bottom:16px;
+  }
+
+  .card h3{font-size:1.25rem; margin-bottom:2px;}
+  .card .role-tag{font-size:0.82rem; color:var(--ink-soft); margin-bottom:16px;}
+
+  .stat-row{
+    display:flex; gap:18px;
+    padding:14px 0;
+    border-top:1px dashed var(--line-soft);
+    border-bottom:1px dashed var(--line-soft);
+    margin-bottom:18px;
+  }
+  .stat-row div span{display:block; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft); margin-bottom:3px;}
+  .stat-row div strong{font-family:'IBM Plex Mono', monospace; font-size:0.95rem;}
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    gap:8px;
+    width:100%;
+    padding:11px 18px;
+    background:var(--ink);
+    color:var(--paper-light);
+    text-decoration:none;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    border-radius:3px;
+    border:1px solid var(--ink);
+    transition:background .15s ease, color .15s ease, transform .1s ease;
+  }
+  .btn:hover, .btn:focus-visible{background:var(--stamp); border-color:var(--stamp);}
+  .btn:active{transform:scale(0.98);}
+  .btn.ghost{background:transparent; color:var(--ink); border-color:var(--ink);}
+  .btn.ghost:hover, .btn.ghost:focus-visible{background:var(--ink); color:var(--paper-light);}
+
+  /* ---------- cta ---------- */
+  .cta{
+    background:var(--ink);
+    color:var(--paper-light);
+    border-radius:8px;
+    padding:56px 48px;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:32px;
+    flex-wrap:wrap;
+  }
+  .cta h2{color:var(--paper-light); font-size:clamp(1.5rem, 3vw, 2.1rem); max-width:16ch;}
+  .cta p{color:var(--paper); opacity:0.75; margin-top:8px; max-width:40ch; font-size:0.95rem;}
+  .cta .btn{width:auto; padding:14px 28px; background:var(--stamp); border-color:var(--stamp); color:var(--paper-light);}
+  .cta .btn:hover{background:var(--paper-light); color:var(--ink); border-color:var(--paper-light);}
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:2px dashed var(--line);
+    padding:32px 0 40px;
+  }
+  .footer-inner{
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:12px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:var(--ink-soft);
+  }
+  .footer-inner a{text-decoration:none; border-bottom:1px solid var(--line);}
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .5s ease, transform .5s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1; transform:none; transition:none;}
+    .stamp.press{animation:none;}
+    *{transition:none !important;}
+  }
+
+  :focus-visible{outline:2px solid var(--stamp); outline-offset:2px;}
+
+  @media (max-width: 860px){
+    .about-grid{grid-template-columns:1fr;}
+    .roster-grid{grid-template-columns:1fr;}
+    .stamp{width:110px; height:110px; top:0; right:0;}
+    .cta{padding:40px 28px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#top">
+      <span class="mark">CBX</span>
+      Agency
+    </a>
+    <nav>
+      <a href="#roster">Roster</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="eyebrow">Cross-Border Creator Agency</div>
+      <h1>Western Faces. <span class="accent">Cleared</span> for Asian Markets.</h1>
+      <p class="sub">CBX Agency connects Western UGC creators with Chinese and Asian brands that want a Western face fronting their advertising — vetted talent, briefed on the market, ready to ship.</p>
+
+      <div class="manifest-row">
+        <div><span>Origin</span><strong>Germany / EU / US</strong></div>
+        <div><span>Destination</span><strong>China · Asia-Pacific</strong></div>
+        <div><span>Roster Status</span><strong>3 Creators Cleared</strong></div>
+        <div><span>Contact</span><strong>cbx.germany@gmail.com</strong></div>
+      </div>
+
+      <div class="stamp press">
+        <div class="s-main">CLEARED</div>
+        <div class="s-sub mono">WEST → ASIA</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tear"></div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">About</div>
+        <h2>One roster, two markets, no language barrier.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>Chinese and Asian brands increasingly want a Western face for their campaigns — but sourcing, vetting, and briefing that talent from overseas is slow and full of dead ends. CBX Agency closes that gap.</p>
+          <p>We run a curated portfolio of Western UGC creators, brief them for the Asian market, and manage the brand relationship end to end — including a direct line into China through our Xiaohongshu (RED) contact.</p>
+        </div>
+        <div class="roles reveal">
+          <div class="role">
+            <div class="label">Creators</div>
+            <div><div class="who">Claudio</div><div class="desc">Sources and vets Western UGC creators for the roster.</div></div>
+          </div>
+          <div class="role">
+            <div class="label">Brands</div>
+            <div><div class="who">Aleksander</div><div class="desc">Handles brand outreach and deal-making with Asian clients.</div></div>
+          </div>
+          <div class="role">
+            <div class="label">China</div>
+            <div><div class="who">Jun</div><div class="desc">Advises on the Chinese market and RED/Xiaohongshu account setup.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tear"></div>
+
+  <section id="roster">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">The Roster</div>
+        <h2>Three creators, cleared and ready to brief.</h2>
+      </div>
+      <div class="roster-grid">
+
+        <div class="card reveal">
+          <div class="stamp"><div class="s-main">CLEARED</div><div class="s-sub mono">CBX·01</div></div>
+          <div class="avatar">C1</div>
+          <h3>Creator Name Pending</h3>
+          <div class="role-tag">Niche pending · Market pending</div>
+          <div class="stat-row">
+            <div><span>Platform</span><strong>TBD</strong></div>
+            <div><span>Followers</span><strong>TBD</strong></div>
+          </div>
+          <a class="btn" href="mailto:cbx.germany@gmail.com?subject=Inquiry%3A%20Creator%2001">Inquire</a>
+        </div>
+
+        <div class="card reveal">
+          <div class="stamp"><div class="s-main">CLEARED</div><div class="s-sub mono">CBX·02</div></div>
+          <div class="avatar">C2</div>
+          <h3>Creator Name Pending</h3>
+          <div class="role-tag">Niche pending · Market pending</div>
+          <div class="stat-row">
+            <div><span>Platform</span><strong>TBD</strong></div>
+            <div><span>Followers</span><strong>TBD</strong></div>
+          </div>
+          <a class="btn" href="mailto:cbx.germany@gmail.com?subject=Inquiry%3A%20Creator%2002">Inquire</a>
+        </div>
+
+        <div class="card reveal">
+          <div class="stamp"><div class="s-main">CLEARED</div><div class="s-sub mono">CBX·03</div></div>
+          <div class="avatar">C3</div>
+          <h3>Creator Name Pending</h3>
+          <div class="role-tag">Niche pending · Market pending</div>
+          <div class="stat-row">
+            <div><span>Platform</span><strong>TBD</strong></div>
+            <div><span>Followers</span><strong>TBD</strong></div>
+          </div>
+          <a class="btn" href="mailto:cbx.germany@gmail.com?subject=Inquiry%3A%20Creator%2003">Inquire</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta reveal">
+        <div>
+          <h2>Ready to clear your next campaign?</h2>
+          <p>Tell us the market, the niche, and the timeline — we'll match a creator and handle the brief.</p>
+        </div>
+        <a class="btn" href="mailto:cbx.germany@gmail.com?subject=Campaign%20Inquiry">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>CBX Agency — Germany</div>
+    <div><a href="mailto:cbx.germany@gmail.com">cbx.germany@gmail.com</a></div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var items = document.querySelectorAll('.reveal');
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      items.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    items.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>
