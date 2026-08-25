@@ -8,20 +8,19 @@
 <meta name="keywords" content="CBX Agency, UGC creator agency, 西方网红代理, 小红书 西方达人, cross-border marketing, Asian brand marketing">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Stardos+Stencil:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 
   :root{
-    --paper: #d9c8a0;
-    --paper-2: #cab687;
-    --paper-light: #f2e8cd;
-    --ink: #251d13;
-    --ink-soft: #55492f;
-    --stamp: #a23528;
-    --stamp-dark: #7c281e;
-    --line: #8a7952;
-    --line-soft: rgba(37,29,19,0.18);
-    --shadow: rgba(37,29,19,0.35);
+    --bg: #ffffff;
+    --bg-soft: #f6f6f8;
+    --ink: #111114;
+    --ink-soft: #6b6b74;
+    --accent: #e0362b;
+    --accent-soft: #fdeceb;
+    --line: #e7e7ea;
+    --shadow: 0 1px 2px rgba(16,16,20,0.04), 0 12px 28px rgba(16,16,20,0.07);
+    --radius: 14px;
     --max-w: 1120px;
   }
 
@@ -30,28 +29,15 @@
 
   body{
     margin:0;
-    background:var(--paper);
+    background:var(--bg);
     color:var(--ink);
-    font-family:'IBM Plex Sans', -apple-system, Segoe UI, sans-serif;
-    line-height:1.5;
-    position:relative;
+    font-family:'Inter', -apple-system, Segoe UI, sans-serif;
+    line-height:1.55;
   }
 
-  /* paper grain overlay, self-contained SVG noise, no external assets */
-  body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:0;
-    pointer-events:none;
-    opacity:0.35;
-    mix-blend-mode:multiply;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.15  0 0 0 0 0.12  0 0 0 0 0.08  0 0 0 0.35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
+  .wrap{max-width:var(--max-w); margin:0 auto; padding:0 28px;}
 
-  .wrap{max-width:var(--max-w); margin:0 auto; padding:0 28px; position:relative; z-index:1;}
-
-  h1,h2,h3{font-family:'Archivo Black', 'IBM Plex Sans', sans-serif; margin:0; letter-spacing:-0.01em;}
+  h1,h2,h3{font-family:'Space Grotesk', 'Inter', sans-serif; margin:0; letter-spacing:-0.02em; font-weight:600;}
 
   .mono{font-family:'IBM Plex Mono', monospace;}
 
@@ -60,8 +46,10 @@
   /* ---------- header ---------- */
   header{
     position:sticky; top:0; z-index:20;
-    background:var(--paper);
-    border-bottom:2px dashed var(--line);
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
   }
   .header-inner{
     display:flex; align-items:center; justify-content:space-between;
@@ -70,252 +58,250 @@
   }
   .logo{
     display:flex; align-items:center; gap:10px;
-    font-family:'Stardos Stencil', cursive;
-    font-size:1.4rem; font-weight:700;
+    font-family:'Space Grotesk', sans-serif;
+    font-size:1.15rem; font-weight:700;
     text-decoration:none;
     color:var(--ink);
   }
   .logo .mark{
     display:inline-flex; align-items:center; justify-content:center;
-    width:34px; height:34px;
-    border:2px solid var(--ink);
-    border-radius:50%;
-    font-size:0.85rem;
+    width:30px; height:30px;
+    background:var(--ink);
+    color:#fff;
+    border-radius:7px;
+    font-size:0.68rem;
+    font-weight:700;
+    letter-spacing:0.02em;
   }
   nav a{
     text-decoration:none;
+    font-size:0.92rem;
+    font-weight:500;
+    color:var(--ink);
+    padding:9px 18px;
+    border-radius:999px;
+    background:var(--ink);
+    color:#fff;
+    transition:background .15s ease, transform .1s ease;
+  }
+  nav a:hover, nav a:focus-visible{background:var(--accent);}
+  nav a:active{transform:scale(0.97);}
+
+  /* ---------- badge ---------- */
+  .badge{
+    display:inline-flex; align-items:center; gap:6px;
     font-family:'IBM Plex Mono', monospace;
-    font-size:0.85rem;
+    font-size:0.7rem;
+    font-weight:600;
     letter-spacing:0.06em;
     text-transform:uppercase;
-    padding:8px 16px;
-    border:1px solid var(--ink);
-    border-radius:2px;
-    transition:background .15s ease, color .15s ease;
+    color:var(--accent);
+    background:var(--accent-soft);
+    padding:5px 11px;
+    border-radius:999px;
   }
-  nav a:hover, nav a:focus-visible{background:var(--ink); color:var(--paper-light);}
+  .badge::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--accent); display:inline-block;}
 
   /* ---------- hero ---------- */
-  .hero{
-    position:relative;
-    padding:96px 0 84px;
-    overflow:hidden;
-  }
-  .hero-inner{position:relative;}
+  .hero{padding:110px 0 70px;}
   .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.8rem;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
+    font-size:0.85rem;
+    font-weight:600;
+    letter-spacing:0.04em;
     color:var(--ink-soft);
-    margin-bottom:18px;
-    display:flex; align-items:center; gap:10px;
+    margin-bottom:20px;
   }
-  .eyebrow::before{content:""; width:26px; height:2px; background:var(--stamp); display:inline-block;}
 
   .hero h1{
-    font-size:clamp(2.4rem, 6vw, 4.6rem);
+    font-size:clamp(2.6rem, 6vw, 4.8rem);
     line-height:1.02;
-    max-width:14ch;
+    max-width:15ch;
   }
-  .hero h1 .accent{color:var(--stamp);}
+  .hero h1 .accent{color:var(--accent);}
 
   .hero p.sub{
     max-width:46ch;
-    font-size:1.05rem;
+    font-size:1.1rem;
     color:var(--ink-soft);
-    margin-top:22px;
+    margin-top:24px;
   }
 
-  .manifest-row{
-    display:flex; flex-wrap:wrap; gap:28px;
-    margin-top:40px;
-    padding-top:24px;
-    border-top:1px dashed var(--line);
+  .stat-strip{
+    display:flex; flex-wrap:wrap;
+    margin-top:52px;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .stat-strip div{
+    flex:1 1 200px;
+    padding:20px 28px 20px 0;
+    border-right:1px solid var(--line);
+  }
+  .stat-strip div:last-child{border-right:none;}
+  .stat-strip div span{display:block; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-soft); margin-bottom:6px;}
+  .stat-strip div strong{font-family:'IBM Plex Mono', monospace; font-size:1rem; font-weight:500;}
+
+  /* ---------- route line ---------- */
+  .route{
+    display:flex; align-items:center; gap:16px;
+    margin-top:52px;
     font-family:'IBM Plex Mono', monospace;
-    font-size:0.8rem;
+    font-size:0.78rem;
+    font-weight:500;
+    color:var(--ink-soft);
   }
-  .manifest-row div span{display:block; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.08em; font-size:0.7rem; margin-bottom:4px;}
-  .manifest-row div strong{font-size:0.95rem;}
-
-  .stamp{
-    position:absolute;
-    top:10px; right:0;
-    width:150px; height:150px;
-    border:3px solid var(--stamp);
+  .route .line{
+    position:relative;
+    flex:1;
+    height:1px;
+    background:repeating-linear-gradient(to right, var(--line) 0 6px, transparent 6px 12px);
+  }
+  .route .dot{
+    position:absolute; top:50%; left:0;
+    width:7px; height:7px;
+    background:var(--accent);
     border-radius:50%;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    transform:rotate(-10deg) scale(1);
-    color:var(--stamp);
-    opacity:0.9;
-    text-align:center;
-    font-family:'Stardos Stencil', cursive;
-    mix-blend-mode:multiply;
+    transform:translate(-50%,-50%);
+    offset-path: path("M0,0 L1000,0");
+    offset-distance:0%;
+    animation:travel 4s linear infinite;
   }
-  .stamp::before{
-    content:"";
-    position:absolute; inset:8px;
-    border:1px solid var(--stamp);
-    border-radius:50%;
-  }
-  .stamp .s-main{font-size:1.05rem; font-weight:700; letter-spacing:0.03em;}
-  .stamp .s-sub{font-family:'IBM Plex Mono', monospace; font-size:0.55rem; letter-spacing:0.12em; margin-top:4px;}
-  .stamp.press{animation:stampPress .5s cubic-bezier(.2,1.4,.4,1) .3s both;}
-  @keyframes stampPress{
-    0%{transform:rotate(-10deg) scale(2.4); opacity:0;}
-    70%{opacity:0.95;}
-    100%{transform:rotate(-10deg) scale(1); opacity:0.9;}
-  }
-
-  /* ---------- perforated divider ---------- */
-  .tear{
-    height:18px;
-    background-image:radial-gradient(circle, var(--paper) 3px, transparent 3.5px);
-    background-size:16px 16px;
-    background-position:center;
-    border-top:1px dashed var(--line);
+  @keyframes travel{
+    0%{offset-distance:0%;}
+    100%{offset-distance:100%;}
   }
 
   /* ---------- section shell ---------- */
-  section{padding:80px 0;}
-  .section-head{margin-bottom:44px; max-width:60ch;}
-  .section-head .eyebrow{margin-bottom:12px;}
-  .section-head h2{font-size:clamp(1.7rem, 3.4vw, 2.4rem);}
+  section{padding:88px 0;}
+  .section-head{margin-bottom:48px; max-width:60ch;}
+  .section-head .eyebrow{margin-bottom:14px;}
+  .section-head h2{font-size:clamp(1.8rem, 3.4vw, 2.5rem);}
+
+  .section-alt{background:var(--bg-soft);}
 
   /* ---------- about ---------- */
   .about-grid{
     display:grid;
     grid-template-columns:1.1fr 0.9fr;
-    gap:56px;
+    gap:64px;
     align-items:start;
   }
-  .about-text p{font-size:1rem; color:var(--ink-soft); max-width:52ch;}
-  .about-text p + p{margin-top:14px;}
+  .about-text p{font-size:1.02rem; color:var(--ink-soft); max-width:52ch;}
+  .about-text p + p{margin-top:16px;}
 
   .roles{
-    background:var(--paper-light);
-    border:1px solid var(--line-soft);
-    border-radius:4px;
-    padding:6px 0;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    overflow:hidden;
   }
   .role{
     display:grid;
-    grid-template-columns:110px 1fr;
-    gap:14px;
-    padding:16px 20px;
-    border-bottom:1px dashed var(--line-soft);
+    grid-template-columns:100px 1fr;
+    gap:16px;
+    padding:20px 24px;
+    border-bottom:1px solid var(--line);
   }
   .role:last-child{border-bottom:none;}
   .role .label{
     font-family:'IBM Plex Mono', monospace;
-    font-size:0.72rem;
-    letter-spacing:0.08em;
+    font-size:0.68rem;
+    font-weight:600;
+    letter-spacing:0.06em;
     text-transform:uppercase;
-    color:var(--stamp);
+    color:var(--accent);
     padding-top:2px;
   }
-  .role .who{font-weight:600; margin-bottom:2px;}
-  .role .desc{font-size:0.88rem; color:var(--ink-soft);}
+  .role .who{font-weight:600; margin-bottom:3px;}
+  .role .desc{font-size:0.9rem; color:var(--ink-soft);}
 
   /* ---------- roster ---------- */
   .roster-grid{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
-    gap:28px;
+    gap:24px;
   }
   .card{
     position:relative;
-    background:var(--paper-light);
-    border:1px solid var(--ink);
-    border-radius:6px;
-    padding:26px 22px 22px;
-    overflow:hidden;
-    box-shadow:4px 4px 0 var(--line-soft);
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px 24px 24px;
+    box-shadow:var(--shadow);
     transition:transform .18s ease, box-shadow .18s ease;
   }
-  .card:hover{transform:translateY(-4px); box-shadow:6px 8px 0 var(--line-soft);}
+  .card:hover{transform:translateY(-4px); box-shadow:0 1px 2px rgba(16,16,20,0.04), 0 20px 36px rgba(16,16,20,0.11);}
 
-  .card .stamp{
-    width:100px; height:100px;
-    top:14px; right:-6px;
-    font-size:0.7rem;
-  }
-  .card .stamp .s-main{font-size:0.78rem;}
-  .card:nth-child(1) .stamp{transform:rotate(-8deg);}
-  .card:nth-child(2) .stamp{transform:rotate(6deg);}
-  .card:nth-child(3) .stamp{transform:rotate(-4deg);}
+  .card-top{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:18px;}
 
   .avatar{
-    width:76px; height:76px;
-    border-radius:50%;
-    border:2px dashed var(--line);
+    width:64px; height:64px;
+    border-radius:16px;
     display:flex; align-items:center; justify-content:center;
-    font-family:'Archivo Black', sans-serif;
-    font-size:1.3rem;
+    font-family:'Space Grotesk', sans-serif;
+    font-size:1.15rem;
+    font-weight:700;
     color:var(--ink-soft);
-    background:var(--paper);
-    margin-bottom:16px;
+    background:var(--bg-soft);
+    border:1px solid var(--line);
   }
 
-  .card h3{font-size:1.25rem; margin-bottom:2px;}
-  .card .role-tag{font-size:0.82rem; color:var(--ink-soft); margin-bottom:16px;}
+  .card h3{font-size:1.2rem; margin-bottom:3px;}
+  .card .role-tag{font-size:0.86rem; color:var(--ink-soft); margin-bottom:20px;}
 
   .stat-row{
-    display:flex; gap:18px;
-    padding:14px 0;
-    border-top:1px dashed var(--line-soft);
-    border-bottom:1px dashed var(--line-soft);
-    margin-bottom:18px;
+    display:flex;
+    padding:16px 0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    margin-bottom:20px;
   }
-  .stat-row div span{display:block; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft); margin-bottom:3px;}
-  .stat-row div strong{font-family:'IBM Plex Mono', monospace; font-size:0.95rem;}
+  .stat-row div{flex:1;}
+  .stat-row div span{display:block; font-size:0.66rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-soft); margin-bottom:4px;}
+  .stat-row div strong{font-family:'IBM Plex Mono', monospace; font-size:0.95rem; font-weight:500;}
 
   .btn{
     display:inline-flex; align-items:center; justify-content:center;
     gap:8px;
     width:100%;
-    padding:11px 18px;
+    padding:12px 18px;
     background:var(--ink);
-    color:var(--paper-light);
+    color:#fff;
     text-decoration:none;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.82rem;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    border-radius:3px;
+    font-size:0.9rem;
+    font-weight:600;
+    border-radius:10px;
     border:1px solid var(--ink);
-    transition:background .15s ease, color .15s ease, transform .1s ease;
+    transition:background .15s ease, border-color .15s ease, transform .1s ease;
   }
-  .btn:hover, .btn:focus-visible{background:var(--stamp); border-color:var(--stamp);}
+  .btn:hover, .btn:focus-visible{background:var(--accent); border-color:var(--accent);}
   .btn:active{transform:scale(0.98);}
-  .btn.ghost{background:transparent; color:var(--ink); border-color:var(--ink);}
-  .btn.ghost:hover, .btn.ghost:focus-visible{background:var(--ink); color:var(--paper-light);}
 
   /* ---------- cta ---------- */
   .cta{
     background:var(--ink);
-    color:var(--paper-light);
-    border-radius:8px;
-    padding:56px 48px;
+    color:#fff;
+    border-radius:20px;
+    padding:60px 52px;
     display:flex; align-items:center; justify-content:space-between;
     gap:32px;
     flex-wrap:wrap;
   }
-  .cta h2{color:var(--paper-light); font-size:clamp(1.5rem, 3vw, 2.1rem); max-width:16ch;}
-  .cta p{color:var(--paper); opacity:0.75; margin-top:8px; max-width:40ch; font-size:0.95rem;}
-  .cta .btn{width:auto; padding:14px 28px; background:var(--stamp); border-color:var(--stamp); color:var(--paper-light);}
-  .cta .btn:hover{background:var(--paper-light); color:var(--ink); border-color:var(--paper-light);}
+  .cta h2{color:#fff; font-size:clamp(1.6rem, 3vw, 2.2rem); max-width:16ch;}
+  .cta p{color:#c9c9cf; margin-top:10px; max-width:40ch; font-size:0.98rem;}
+  .cta .btn{width:auto; padding:15px 30px; background:var(--accent); border-color:var(--accent);}
+  .cta .btn:hover{background:#fff; color:var(--ink); border-color:#fff;}
 
   /* ---------- footer ---------- */
   footer{
-    border-top:2px dashed var(--line);
+    border-top:1px solid var(--line);
     padding:32px 0 40px;
   }
   .footer-inner{
     display:flex; justify-content:space-between; align-items:center;
     flex-wrap:wrap; gap:12px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.78rem;
+    font-size:0.85rem;
     color:var(--ink-soft);
   }
   .footer-inner a{text-decoration:none; border-bottom:1px solid var(--line);}
@@ -327,17 +313,20 @@
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     .reveal{opacity:1; transform:none; transition:none;}
-    .stamp.press{animation:none;}
+    .route .dot{animation:none; left:0;}
     *{transition:none !important;}
   }
 
-  :focus-visible{outline:2px solid var(--stamp); outline-offset:2px;}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
 
   @media (max-width: 860px){
     .about-grid{grid-template-columns:1fr;}
     .roster-grid{grid-template-columns:1fr;}
-    .stamp{width:110px; height:110px; top:0; right:0;}
-    .cta{padding:40px 28px;}
+    .stat-strip{flex-direction:column;}
+    .stat-strip div{border-right:none; border-bottom:1px solid var(--line); padding:16px 0;}
+    .stat-strip div:last-child{border-bottom:none;}
+    .cta{padding:44px 28px;}
+    .route{display:none;}
   }
 </style>
 </head>
@@ -358,28 +347,27 @@
 <main id="top">
 
   <section class="hero">
-    <div class="wrap hero-inner">
-      <div class="eyebrow">Cross-Border Creator Agency</div>
-      <h1>Western Faces. <span class="accent">Cleared</span> for Asian Markets.</h1>
+    <div class="wrap">
+      <div class="badge">Cross-Border Creator Agency</div>
+      <h1 style="margin-top:22px;">Western Faces. <span class="accent">Cleared</span> for Asian Markets.</h1>
       <p class="sub">CBX Agency connects Western UGC creators with Chinese and Asian brands that want a Western face fronting their advertising — vetted talent, briefed on the market, ready to ship.</p>
 
-      <div class="manifest-row">
+      <div class="stat-strip">
         <div><span>Origin</span><strong>Germany / EU / US</strong></div>
         <div><span>Destination</span><strong>China · Asia-Pacific</strong></div>
         <div><span>Roster Status</span><strong>3 Creators Cleared</strong></div>
         <div><span>Contact</span><strong>cbx.germany@gmail.com</strong></div>
       </div>
 
-      <div class="stamp press">
-        <div class="s-main">CLEARED</div>
-        <div class="s-sub mono">WEST → ASIA</div>
+      <div class="route">
+        <span>BERLIN</span>
+        <span class="line"><span class="dot"></span></span>
+        <span>SHANGHAI</span>
       </div>
     </div>
   </section>
 
-  <div class="tear"></div>
-
-  <section id="about">
+  <section id="about" class="section-alt">
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">About</div>
@@ -408,8 +396,6 @@
     </div>
   </section>
 
-  <div class="tear"></div>
-
   <section id="roster">
     <div class="wrap">
       <div class="section-head reveal">
@@ -419,8 +405,10 @@
       <div class="roster-grid">
 
         <div class="card reveal">
-          <div class="stamp"><div class="s-main">CLEARED</div><div class="s-sub mono">CBX·01</div></div>
-          <div class="avatar">C1</div>
+          <div class="card-top">
+            <div class="avatar">C1</div>
+            <div class="badge">CBX-01</div>
+          </div>
           <h3>Creator Name Pending</h3>
           <div class="role-tag">Niche pending · Market pending</div>
           <div class="stat-row">
@@ -431,8 +419,10 @@
         </div>
 
         <div class="card reveal">
-          <div class="stamp"><div class="s-main">CLEARED</div><div class="s-sub mono">CBX·02</div></div>
-          <div class="avatar">C2</div>
+          <div class="card-top">
+            <div class="avatar">C2</div>
+            <div class="badge">CBX-02</div>
+          </div>
           <h3>Creator Name Pending</h3>
           <div class="role-tag">Niche pending · Market pending</div>
           <div class="stat-row">
@@ -443,8 +433,10 @@
         </div>
 
         <div class="card reveal">
-          <div class="stamp"><div class="s-main">CLEARED</div><div class="s-sub mono">CBX·03</div></div>
-          <div class="avatar">C3</div>
+          <div class="card-top">
+            <div class="avatar">C3</div>
+            <div class="badge">CBX-03</div>
+          </div>
           <h3>Creator Name Pending</h3>
           <div class="role-tag">Niche pending · Market pending</div>
           <div class="stat-row">
