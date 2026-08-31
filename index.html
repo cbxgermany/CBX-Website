@@ -6,7 +6,7 @@
   (function(){
     try{
       var saved = localStorage.getItem('cbx-theme');
-      var theme = saved || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light');
+      var theme = saved || 'light';
       document.documentElement.setAttribute('data-theme', theme);
     }catch(e){}
   })();
