@@ -9,10 +9,14 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  const { model, message } = req.body || {};
+  const { model, email, message } = req.body || {};
 
   if (typeof model !== 'string' || !model.trim() || model.length > 200) {
     res.status(400).json({ error: 'Missing or invalid creator selection.' });
+    return;
+  }
+  if (typeof email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim()) || email.length > 200) {
+    res.status(400).json({ error: 'Please enter a valid email address.' });
     return;
   }
   if (typeof message !== 'string' || !message.trim() || message.length > MAX_LEN) {
@@ -35,9 +39,9 @@ module.exports = async function handler(req, res) {
     await transporter.sendMail({
       from: SMTP_USER,
       to: SMTP_USER,
-      replyTo: SMTP_USER,
+      replyTo: email.trim(),
       subject: 'Inquiry: ' + model,
-      text: message,
+      text: 'From: ' + email.trim() + '\n\n' + message,
     });
 
     res.status(200).json({ ok: true });

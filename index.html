@@ -325,7 +325,6 @@
   .creator-meta .idcol .index{font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; letter-spacing:.06em; color:var(--muted);}
   .creator-meta .idcol h3{font-size:clamp(30px,3.4vw,46px); font-weight:700; letter-spacing:-.015em; line-height:1.03;}
   .creator-meta .idcol .role{font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:500; color:var(--muted); letter-spacing:.05em; text-transform:none;}
-  .creator-meta .idcol .instagram{font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:500; color:var(--muted); letter-spacing:.04em; text-transform:none; margin-top:-6px;}
   .tag-row{display:flex; flex-wrap:wrap; gap:8px;}
   .tag-row .tag{
     font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600; letter-spacing:.05em;
@@ -381,7 +380,7 @@
   .contact-form-body{max-width:560px; margin:0 auto; display:flex; flex-direction:column; gap:24px;}
   .field{display:flex; flex-direction:column; gap:10px;}
   .field-label{font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; color:var(--muted); letter-spacing:.06em;}
-  .contact-form select, .contact-form textarea{
+  .contact-form select, .contact-form textarea, .contact-form input{
     font-family:'IBM Plex Mono',monospace; text-transform:none; font-weight:500; font-size:14px;
     background:var(--bg); color:var(--ink);
     border:1px solid var(--line-strong);
@@ -391,7 +390,7 @@
   }
   .contact-form select{cursor:pointer;}
   .contact-form textarea{resize:vertical; min-height:120px; line-height:1.6;}
-  .contact-form select:focus, .contact-form textarea:focus{border-color:var(--accent);}
+  .contact-form select:focus, .contact-form textarea:focus, .contact-form input:focus{border-color:var(--accent);}
   .contact-form .field-note{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted); text-transform:none; letter-spacing:.02em;}
   .contact-form button.inquire-btn{align-self:flex-start; border:1px solid var(--ink); cursor:pointer;}
 
@@ -540,7 +539,7 @@
   </section>
 
   <section class="overview wrap">
-    <h2 data-i18n="overview.heading">Our Models</h2>
+    <h2 data-i18n="overview.heading">Roster</h2>
     <p class="lead" data-i18n="overview.lead">Chinese and Asian brands increasingly want a Western face for their campaigns — sourcing, vetting, and briefing that talent from overseas is usually slow. CBX Agency closes that gap: a curated roster of Western UGC creators, briefed for the market, managed end to end.</p>
     <div class="contact-row">
       <a href="mailto:info@cbxgermany.de">info@cbxgermany.de</a>
@@ -563,7 +562,6 @@
       <div class="idcol">
         <h3>Laura Jaeschke</h3>
         <div class="role mono" data-i18n="role.ugcFaceModel">UGC Creator · Face Model</div>
-        <div class="instagram mono">Instagram: @addlaura</div>
         <div class="tag-row">
           <span class="tag" data-i18n="tag.beauty">Beauty</span>
           <span class="tag" data-i18n="tag.skincare">Skincare</span>
@@ -594,7 +592,6 @@
       <div class="idcol">
         <h3>Anna Tatarnikova</h3>
         <div class="role mono" data-i18n="role.ugcFaceModel">UGC Creator · Face Model</div>
-        <div class="instagram mono">Instagram: @addanna</div>
         <div class="tag-row">
           <span class="tag" data-i18n="tag.beautySkincare">Beauty &amp; Skincare</span>
           <span class="tag" data-i18n="tag.fashion">Fashion</span>
@@ -668,6 +665,10 @@
         </select>
       </label>
       <label class="field">
+        <span class="field-label mono" data-i18n="contact.fieldEmail">Your Email</span>
+        <input type="email" id="cfEmail" placeholder="you@brand.com" data-i18n-placeholder="contact.placeholderEmail">
+      </label>
+      <label class="field">
         <span class="field-label mono" data-i18n="contact.fieldMessage">What do you need this creator for?</span>
         <textarea id="cfMessage" placeholder="Your brand, the campaign, and the timeline..." data-i18n-placeholder="contact.placeholder"></textarea>
       </label>
@@ -735,13 +736,14 @@
 
   (function(){
     var select = document.getElementById('cfModel');
+    var email = document.getElementById('cfEmail');
     var message = document.getElementById('cfMessage');
     var sendBtn = document.getElementById('cfSend');
     var sendLabel = document.getElementById('cfSendLabel');
     var note = document.getElementById('cfNote');
     var strings = {
-      en: { sent: '✓ Sent — we’ll get back to you soon.', error: 'Something went wrong — please try again.' },
-      zh: { sent: '✓ 已发送 —— 我们会尽快与你联系。', error: '出了点问题 —— 请稍后重试。' }
+      en: { sent: '✓ Sent — we’ll get back to you soon.', error: 'Something went wrong — please try again.', badEmail: 'Please enter a valid email address.' },
+      zh: { sent: '✓ 已发送 —— 我们会尽快与你联系。', error: '出了点问题 —— 请稍后重试。', badEmail: '请输入有效的邮箱地址。' }
     };
     function t(key){
       var lang = document.documentElement.lang.indexOf('zh') === 0 ? 'zh' : 'en';
@@ -749,6 +751,11 @@
     }
 
     sendBtn.addEventListener('click', function(){
+      if (!email.value.trim() || !email.checkValidity()){
+        email.focus();
+        note.textContent = t('badEmail');
+        return;
+      }
       if (!message.value.trim()){
         message.focus();
         return;
@@ -763,6 +770,7 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           model: select.options[select.selectedIndex].value,
+          email: email.value,
           message: message.value
         })
       })
@@ -770,6 +778,7 @@
         .then(function(result){
           if (result.ok){
             note.textContent = t('sent');
+            email.value = '';
             message.value = '';
           } else {
             note.textContent = (result.data && result.data.error) || t('error');
@@ -796,7 +805,7 @@
         'cover.aria03':'CBX-03, portfolio in progress','cover.aria04':'CBX-04, portfolio in progress','cover.aria05':'CBX-05, portfolio in progress',
         'cover.viewPortfolio':'View Portfolio ↓','cover.comingSoon':'Coming Soon','cover.sourcing':'Sourcing',
         'cover.creator03':'Creator 03','cover.creator04':'Creator 04','cover.creator05':'Creator 05',
-        'overview.heading':'Our Models',
+        'overview.heading':'Roster',
         'overview.lead':'Chinese and Asian brands increasingly want a Western face for their campaigns — sourcing, vetting, and briefing that talent from overseas is usually slow. CBX Agency closes that gap: a curated roster of Western UGC creators, briefed for the market, managed end to end.',
         'overview.contactLine':'Germany · EU ⇄ China',
         'role.ugcFaceModel':'UGC Creator · Face Model',
@@ -807,7 +816,7 @@
         'pipeline.eyebrow':'In the Pipeline','pipeline.heading':'Three more creators, clearing soon.','pipeline.inProgress':'Portfolio in progress',
         'process.eyebrow':'How It Works','process.heading':'From inquiry to campaign-ready content.',
         'process.step1.num':'01 / Inquire','process.step1.title':'Tell us the brief','process.step1.body':'Reach out with your brand, the niche, and the campaign timeline — no account needed, just an email.',
-        'contact.eyebrow':'Start Here','contact.heading':'Tell us who you need.','contact.fieldCreator':'Creator','contact.fieldMessage':'What do you need this creator for?',
+        'contact.eyebrow':'Start Here','contact.heading':'Tell us who you need.','contact.fieldCreator':'Creator','contact.fieldEmail':'Your Email','contact.placeholderEmail':'you@brand.com','contact.fieldMessage':'What do you need this creator for?',
         'contact.optGeneral':'General Inquiry','contact.opt03':'CBX03 (Coming Soon)','contact.opt04':'CBX04 (Coming Soon)','contact.opt05':'CBX05 (Coming Soon)',
         'contact.placeholder':'Your brand, the campaign, and the timeline...','contact.send':'Send Inquiry →','contact.note':'We usually reply within 1–2 business days.',
         'process.step2.num':'02 / Match & Brief','process.step2.title':'We handle the creator','process.step2.body':'CBX matches a creator from the roster and briefs them for your market — all contact, including social media, runs through us, not directly to the creator.',
@@ -835,7 +844,7 @@
         'pipeline.eyebrow':'储备达人','pipeline.heading':'三位新达人,即将上线。','pipeline.inProgress':'作品集筹备中',
         'process.eyebrow':'合作流程','process.heading':'从咨询到交付,内容即刻可用。',
         'process.step1.num':'01 / 咨询','process.step1.title':'告诉我们你的需求','process.step1.body':'发一封邮件告诉我们你的品牌、赛道和活动时间线 —— 无需注册账号。',
-        'contact.eyebrow':'立即开始','contact.heading':'告诉我们你需要哪位达人。','contact.fieldCreator':'达人','contact.fieldMessage':'这次合作是为了哪位达人?',
+        'contact.eyebrow':'立即开始','contact.heading':'告诉我们你需要哪位达人。','contact.fieldCreator':'达人','contact.fieldEmail':'你的邮箱','contact.placeholderEmail':'you@brand.com','contact.fieldMessage':'这次合作是为了哪位达人?',
         'contact.optGeneral':'一般咨询','contact.opt03':'CBX03(即将上线)','contact.opt04':'CBX04(即将上线)','contact.opt05':'CBX05(即将上线)',
         'contact.placeholder':'你的品牌、活动内容和时间线……','contact.send':'发送咨询 →','contact.note':'我们通常会在 1-2 个工作日内回复。',
         'process.step2.num':'02 / 匹配与对接','process.step2.title':'我们负责对接达人','process.step2.body':'CBX从达人库中匹配合适人选,并针对你的市场进行对接说明 —— 包括社交媒体在内的所有沟通均由我们负责,不会直接联系达人本人。',
