@@ -68,7 +68,7 @@
     font-weight:700;
     text-transform:uppercase;
     letter-spacing:.02em;
-    overflow-x:hidden;
+    overflow-x:clip;
     transition:background-color .3s var(--cubic), color .3s var(--cubic);
   }
 
@@ -158,6 +158,9 @@
   }
   .about-toggle .glyph{font-size:44px; font-weight:300; line-height:1; transition:transform .3s var(--cubic);}
   .about-toggle:hover .glyph, .about-toggle:focus-visible .glyph{transform:rotate(90deg);}
+  .about-toggle.contact-inline{width:26px; height:26px;}
+  .about-toggle.contact-inline .glyph{font-size:22px;}
+  .mobile-only{display:none;}
 
   /* ---------- cover blocks ---------- */
   .cover-wrap{
@@ -185,18 +188,6 @@
   .cover-name{font-size:13px; font-weight:700; letter-spacing:.01em;}
   .cover-cta{font-size:9.5px; color:var(--muted); transition:color .2s var(--cubic);}
   .cover-block:hover .cover-cta, .cover-block:focus-visible .cover-cta{color:var(--accent);}
-
-  .cover-pending{
-    aspect-ratio:3/4; margin-bottom:8px;
-    background:
-      linear-gradient(160deg, rgba(12,12,12,.86), rgba(12,12,12,.94)),
-      repeating-linear-gradient(45deg, rgba(245,243,240,.05) 0 2px, transparent 2px 6px);
-    color:var(--light);
-    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px;
-    text-align:center;
-  }
-  .cover-pending .idx{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.06em; color:var(--accent);}
-  .cover-pending .lbl{font-size:11px; font-weight:600; letter-spacing:.03em;}
 
   @media (max-width:1100px){ .cover-wrap{grid-template-columns:repeat(3,1fr);} }
   @media (max-width:700px){ .cover-wrap{grid-template-columns:repeat(2,1fr); gap:12px; padding:0 16px 8px;} }
@@ -231,23 +222,22 @@
   }
   .tile:hover .tag{opacity:1; transform:translateY(0);}
 
-  .tile-pending{
-    aspect-ratio:3/4;
-    background:
-      linear-gradient(160deg, rgba(12,12,12,.86), rgba(12,12,12,.94)),
-      repeating-linear-gradient(45deg, rgba(245,243,240,.05) 0 2px, transparent 2px 6px);
-    color:var(--light);
-    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
-    text-align:center;
-    padding:16px;
-  }
-  .tile-pending .idx{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; color:var(--accent);}
-  .tile-pending .lbl{font-size:15px; font-weight:600; letter-spacing:.04em;}
 
   @media (max-width:1024px){ .masonry{column-count:3;} }
-  @media (max-width:700px){ .masonry{column-count:2; column-gap:10px; padding:0 16px 10px;} .hero-intro{padding:36px 16px 28px;} }
+  @media (max-width:700px){
+    .masonry{column-count:2; column-gap:10px; padding:0 16px 10px;}
+    .hero{display:none;}
+    .desktop-only{display:none;}
+    .mobile-only{display:inline-flex;}
+    .overview{display:flex; flex-direction:column;}
+    .overview .lead{order:1; margin-top:0;}
+    .overview .contact-row{order:2; margin-top:36px;}
+    .overview h2{order:3; margin-top:36px;}
+    .about-toggle.contact-inline{width:64px; height:64px;}
+    .about-toggle.contact-inline .glyph{font-size:44px;}
+  }
   @media (max-width:600px){
-    .topbar{flex-direction:column; align-items:flex-start; gap:12px; padding:18px 20px;}
+    .topbar{position:static; flex-direction:column; align-items:flex-start; gap:12px; padding:18px 20px;}
     .topbar-right{width:100%; justify-content:space-between;}
     .topbar nav{gap:14px; flex-wrap:wrap; row-gap:6px;}
   }
@@ -292,7 +282,7 @@
 
   /* ---------- overview / contact strip ---------- */
   .overview{
-    padding:96px 0 84px;
+    padding-top:96px; padding-bottom:84px;
     border-top:1px solid var(--line);
     border-bottom:1px solid var(--line);
     text-align:center;
@@ -366,18 +356,8 @@
     .creator-bigname, .creator.flip .creator-bigname{padding:0 20px 14px; text-align:left; font-size:clamp(40px,13vw,64px);}
   }
 
-  /* ---------- pending ---------- */
-  .pending-section{padding:104px 0 100px; border-top:1px solid var(--line);}
-  .pending-head{text-align:center; margin-bottom:48px;}
-  .pending-head .eyebrow{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--accent); letter-spacing:.08em; margin-bottom:14px; display:block;}
-  .pending-head h2{font-size:clamp(28px,4.4vw,54px); letter-spacing:-.01em; font-weight:800;}
-  .pending-grid{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:14px;
-  }
-  @media (max-width:800px){ .pending-grid{grid-template-columns:1fr; max-width:340px; margin:0 auto;} }
-
   /* ---------- process ---------- */
-  .process{padding:104px 0 100px; border-top:1px solid var(--line);}
+  .process{padding-top:104px; padding-bottom:100px; border-top:1px solid var(--line);}
   .process-head{text-align:center; margin-bottom:56px;}
   .process-head .eyebrow{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--accent); letter-spacing:.08em; margin-bottom:14px; display:block;}
   .process-head h2{font-size:clamp(28px,4.4vw,54px); letter-spacing:-.01em; font-weight:800;}
@@ -389,7 +369,7 @@
   @media (max-width:800px){ .process-steps{grid-template-columns:1fr; gap:32px;} }
 
   /* ---------- contact form ---------- */
-  .contact-form{padding:104px 0 100px; border-top:1px solid var(--line);}
+  .contact-form{padding-top:104px; padding-bottom:100px; border-top:1px solid var(--line);}
   .contact-form-head{text-align:center; margin-bottom:48px;}
   .contact-form-head .eyebrow{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--accent); letter-spacing:.08em; margin-bottom:14px; display:block;}
   .contact-form-head h2{font-size:clamp(28px,4.4vw,54px); letter-spacing:-.01em; font-weight:800;}
@@ -480,9 +460,11 @@
   </a>
   <div class="topbar-right">
     <nav>
-      <a href="#laura">Laura</a>
+      <a href="#laura">Laura J.</a>
       <a href="#anna">Anna</a>
-      <a href="#pipeline" data-i18n="nav.pipeline">Pipeline</a>
+      <a href="#isabel">Isabel</a>
+      <a href="#laurab">Laura B.</a>
+      <a href="#nino">Nino</a>
       <a href="mailto:info@cbxgermany.de" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="utils">
@@ -528,29 +510,42 @@
         </div>
       </a>
 
-      <a class="cover-block" href="#pipeline" data-i18n-aria="cover.aria03" aria-label="CBX-03, portfolio in progress">
-        <div class="cover-pending"><span class="idx mono">CBX-03</span><span class="lbl" data-i18n="cover.sourcing">Sourcing</span></div>
+      <a class="cover-block" href="#isabel" data-i18n-aria="cover.ariaIsabel" aria-label="View Isabel Smolen's full portfolio">
+        <div class="cover-main"><img src="images/isabel-primary.jpeg" alt="Isabel Smolen"></div>
+        <div class="cover-thumbs">
+          <div class="cover-thumb"><img src="images/isabel-2.jpeg" alt=""></div>
+          <div class="cover-thumb"><img src="images/isabel-3.jpeg" alt=""></div>
+          <div class="cover-thumb"><img src="images/isabel-4.jpeg" alt=""></div>
+        </div>
         <div class="cover-caption">
-          <span class="cover-name" data-i18n="cover.creator03">Creator 03</span>
-          <span class="cover-cta mono" data-i18n="cover.comingSoon">Coming Soon</span>
+          <span class="cover-cta mono" data-i18n="cover.viewPortfolio">View Portfolio ↓</span>
         </div>
       </a>
 
-      <a class="cover-block" href="#pipeline" data-i18n-aria="cover.aria04" aria-label="CBX-04, portfolio in progress">
-        <div class="cover-pending"><span class="idx mono">CBX-04</span><span class="lbl" data-i18n="cover.sourcing">Sourcing</span></div>
+      <a class="cover-block" href="#laurab" data-i18n-aria="cover.ariaLaurab" aria-label="View Laura Baumert's full portfolio">
+        <div class="cover-main"><img src="images/laurab-primary.jpeg" alt="Laura Baumert"></div>
+        <div class="cover-thumbs">
+          <div class="cover-thumb"><img src="images/laurab-2.jpeg" alt=""></div>
+          <div class="cover-thumb"><img src="images/laurab-3.jpeg" alt=""></div>
+          <div class="cover-thumb"><img src="images/laurab-4.jpeg" alt=""></div>
+        </div>
         <div class="cover-caption">
-          <span class="cover-name" data-i18n="cover.creator04">Creator 04</span>
-          <span class="cover-cta mono" data-i18n="cover.comingSoon">Coming Soon</span>
+          <span class="cover-cta mono" data-i18n="cover.viewPortfolio">View Portfolio ↓</span>
         </div>
       </a>
 
-      <a class="cover-block" href="#pipeline" data-i18n-aria="cover.aria05" aria-label="CBX-05, portfolio in progress">
-        <div class="cover-pending"><span class="idx mono">CBX-05</span><span class="lbl" data-i18n="cover.sourcing">Sourcing</span></div>
+      <a class="cover-block" href="#nino" data-i18n-aria="cover.ariaNino" aria-label="View Nino Struzhkini's full portfolio">
+        <div class="cover-main"><img src="images/nino-primary.jpeg" alt="Nino Struzhkini"></div>
+        <div class="cover-thumbs">
+          <div class="cover-thumb"><img src="images/nino-2.jpeg" alt=""></div>
+          <div class="cover-thumb"><img src="images/nino-3.jpeg" alt=""></div>
+          <div class="cover-thumb"><img src="images/nino-4.jpeg" alt=""></div>
+        </div>
         <div class="cover-caption">
-          <span class="cover-name" data-i18n="cover.creator05">Creator 05</span>
-          <span class="cover-cta mono" data-i18n="cover.comingSoon">Coming Soon</span>
+          <span class="cover-cta mono" data-i18n="cover.viewPortfolio">View Portfolio ↓</span>
         </div>
       </a>
+
     </div>
   </section>
 
@@ -558,9 +553,10 @@
     <h2 data-i18n="overview.heading">Roster</h2>
     <p class="lead" data-i18n="overview.lead">Chinese and Asian brands increasingly want a Western face for their campaigns — sourcing, vetting, and briefing that talent from overseas is usually slow. CBX Agency closes that gap: a curated roster of Western UGC creators, briefed for the market, managed end to end.</p>
     <div class="contact-row">
-      <a href="mailto:info@cbxgermany.de">info@cbxgermany.de</a>
-      <span class="sep">/</span>
-      <span data-i18n="overview.contactLine">Germany · EU ⇄ China</span>
+      <a href="mailto:info@cbxgermany.de" class="desktop-only">info@cbxgermany.de</a>
+      <span class="sep desktop-only">/</span>
+      <span class="desktop-only" data-i18n="overview.contactLine">Germany · EU ⇄ China</span>
+      <button type="button" class="about-toggle contact-inline mobile-only" data-i18n-aria="about.ariaOpen" aria-haspopup="dialog" aria-expanded="false" aria-controls="aboutOverlay" aria-label="What CBX Agency does"><span class="glyph">+</span></button>
     </div>
   </section>
 
@@ -569,9 +565,9 @@
       <h2 class="creator-bigname">Laura<br>Jaeschke</h2>
       <div class="masonry creator-grid">
         <div class="tile"><img src="images/laura-3.png" alt="Laura Jaeschke, portrait"></div>
+        <div class="tile"><img src="images/laura-2.png" alt="Laura Jaeschke, full length"></div>
         <div class="tile"><img src="images/laura-primary.png" alt="Laura Jaeschke"></div>
         <div class="tile"><img src="images/laura-4.png" alt="Laura Jaeschke, profile"></div>
-        <div class="tile"><img src="images/laura-2.png" alt="Laura Jaeschke, close portrait"></div>
       </div>
     </div>
     <div class="creator-meta">
@@ -627,15 +623,94 @@
     </div>
   </section>
 
-  <section class="pending-section wrap" id="pipeline">
-    <div class="pending-head">
-      <span class="eyebrow mono" data-i18n="pipeline.eyebrow">In the Pipeline</span>
-      <h2 data-i18n="pipeline.heading">Three more creators, clearing soon.</h2>
+  <section class="creator" id="isabel">
+    <div class="creator-stage">
+      <h2 class="creator-bigname">Isabel<br>Smolen</h2>
+      <div class="masonry creator-grid">
+        <div class="tile"><img src="images/isabel-3.jpeg" alt="Isabel Smolen, portrait"></div>
+        <div class="tile"><img src="images/isabel-primary.jpeg" alt="Isabel Smolen"></div>
+        <div class="tile"><img src="images/isabel-4.jpeg" alt="Isabel Smolen, profile"></div>
+        <div class="tile"><img src="images/isabel-2.jpeg" alt="Isabel Smolen, close portrait"></div>
+      </div>
     </div>
-    <div class="pending-grid">
-      <div class="tile tile-pending" style="aspect-ratio:4/5;"><span class="idx mono">CBX-03</span><span class="lbl" data-i18n="pipeline.inProgress">Portfolio in progress</span></div>
-      <div class="tile tile-pending" style="aspect-ratio:4/5;"><span class="idx mono">CBX-04</span><span class="lbl" data-i18n="pipeline.inProgress">Portfolio in progress</span></div>
-      <div class="tile tile-pending" style="aspect-ratio:4/5;"><span class="idx mono">CBX-05</span><span class="lbl" data-i18n="pipeline.inProgress">Portfolio in progress</span></div>
+    <div class="creator-meta">
+      <div class="idcol">
+        <h3>Isabel Smolen</h3>
+        <div class="role mono" data-i18n="role.ugcFaceModel">UGC Creator · Face Model</div>
+        <div class="tag-row">
+          <span class="tag" data-i18n="tag.beauty">Beauty</span>
+          <span class="tag" data-i18n="tag.skincare">Skincare</span>
+          <span class="tag" data-i18n="tag.fashion">Fashion</span>
+          <span class="tag" data-i18n="tag.lifestyle">Lifestyle</span>
+        </div>
+      </div>
+      <div>
+        <p class="bio" data-i18n="bio.isabel">Law student with a sharp eye for detail, creating premium yet relatable beauty, skincare, and fashion content built to perform on TikTok, Instagram, and e-commerce platforms like Amazon.</p>
+      </div>
+      <div class="actioncol">
+        <a class="inquire-btn" href="mailto:info@cbxgermany.de?subject=Inquiry%3A%20Isabel%20Smolen"><span data-i18n="cta.inquire">Inquire →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="creator flip" id="laurab">
+    <div class="creator-stage">
+      <h2 class="creator-bigname">Laura<br>Baumert</h2>
+      <div class="masonry creator-grid">
+        <div class="tile"><img src="images/laurab-primary.jpeg" alt="Laura Baumert, portrait"></div>
+        <div class="tile"><img src="images/laurab-2.jpeg" alt="Laura Baumert, casual"></div>
+        <div class="tile"><img src="images/laurab-3.jpeg" alt="Laura Baumert, travel"></div>
+        <div class="tile"><img src="images/laurab-4.jpeg" alt="Laura Baumert, fashion"></div>
+      </div>
+    </div>
+    <div class="creator-meta">
+      <div class="idcol">
+        <h3>Laura Baumert</h3>
+        <div class="role mono" data-i18n="role.ugcFaceModel">UGC Creator · Face Model</div>
+        <div class="tag-row">
+          <span class="tag" data-i18n="tag.fashion">Fashion</span>
+          <span class="tag" data-i18n="tag.beauty">Beauty</span>
+          <span class="tag" data-i18n="tag.fitness">Fitness</span>
+          <span class="tag" data-i18n="tag.travel">Travel</span>
+          <span class="tag" data-i18n="tag.lifestyle">Lifestyle</span>
+        </div>
+      </div>
+      <div>
+        <p class="bio" data-i18n="bio.laurab">Authentic, aesthetic-first UGC creator covering fashion, beauty, fitness, and travel — unboxing, try-on, and product videos with voiceover and product photography skills, built for Reels and TikTok.</p>
+      </div>
+      <div class="actioncol">
+        <a class="inquire-btn" href="mailto:info@cbxgermany.de?subject=Inquiry%3A%20Laura%20Baumert"><span data-i18n="cta.inquire">Inquire →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="creator" id="nino">
+    <div class="creator-stage">
+      <h2 class="creator-bigname">Nino<br>Struzhkini</h2>
+      <div class="masonry creator-grid">
+        <div class="tile"><img src="images/nino-2.jpeg" alt="Nino Struzhkini, portrait"></div>
+        <div class="tile"><img src="images/nino-primary.jpeg" alt="Nino Struzhkini"></div>
+        <div class="tile"><img src="images/nino-3.jpeg" alt="Nino Struzhkini, fashion"></div>
+        <div class="tile"><img src="images/nino-4.jpeg" alt="Nino Struzhkini, close portrait"></div>
+      </div>
+    </div>
+    <div class="creator-meta">
+      <div class="idcol">
+        <h3>Nino Struzhkini</h3>
+        <div class="role mono" data-i18n="role.ugcFaceModel">UGC Creator · Face Model</div>
+        <div class="tag-row">
+          <span class="tag" data-i18n="tag.beautySkincare">Beauty & Skincare</span>
+          <span class="tag" data-i18n="tag.makeup">Make-Up</span>
+          <span class="tag" data-i18n="tag.fashion">Fashion</span>
+          <span class="tag" data-i18n="tag.homeInterior">Home & Interior</span>
+        </div>
+      </div>
+      <div>
+        <p class="bio" data-i18n="bio.nino">UGC creator from Georgia focused on beauty, make-up, fashion, and interior content that steps into your target audience's world — built to build trust and drive sales.</p>
+      </div>
+      <div class="actioncol">
+        <a class="inquire-btn" href="mailto:info@cbxgermany.de?subject=Inquiry%3A%20Nino%20Struzhkini"><span data-i18n="cta.inquire">Inquire →</span></a>
+      </div>
     </div>
   </section>
 
@@ -673,11 +748,11 @@
         <span class="field-label mono" data-i18n="contact.fieldCreator">Creator</span>
         <select id="cfModel">
           <option value="General Inquiry" data-i18n="contact.optGeneral">General Inquiry</option>
-          <option value="CBX01 – Laura Jaeschke">CBX01 (Laura Jaeschke)</option>
-          <option value="CBX02 – Anna Tatarnikova">CBX02 (Anna Tatarnikova)</option>
-          <option value="CBX03" data-i18n="contact.opt03">CBX03 (Coming Soon)</option>
-          <option value="CBX04" data-i18n="contact.opt04">CBX04 (Coming Soon)</option>
-          <option value="CBX05" data-i18n="contact.opt05">CBX05 (Coming Soon)</option>
+          <option value="Laura Jaeschke">Laura Jaeschke</option>
+          <option value="Anna Tatarnikova">Anna Tatarnikova</option>
+          <option value="Isabel Smolen">Isabel Smolen</option>
+          <option value="Laura Baumert">Laura Baumert</option>
+          <option value="Nino Struzhkini">Nino Struzhkini</option>
         </select>
       </label>
       <label class="field">
@@ -720,19 +795,21 @@
 <script>
   (function(){
     var overlay = document.getElementById('aboutOverlay');
-    var openBtn = document.getElementById('aboutOpen');
+    var openBtns = document.querySelectorAll('.about-toggle');
     var closeBtn = document.getElementById('aboutClose');
-    function open(){
+    var lastOpener = null;
+    function open(e){
+      lastOpener = e.currentTarget;
       overlay.classList.add('open');
-      openBtn.setAttribute('aria-expanded','true');
+      openBtns.forEach(function(btn){ btn.setAttribute('aria-expanded','true'); });
       closeBtn.focus();
     }
     function close(){
       overlay.classList.remove('open');
-      openBtn.setAttribute('aria-expanded','false');
-      openBtn.focus();
+      openBtns.forEach(function(btn){ btn.setAttribute('aria-expanded','false'); });
+      if (lastOpener) lastOpener.focus();
     }
-    openBtn.addEventListener('click', open);
+    openBtns.forEach(function(btn){ btn.addEventListener('click', open); });
     closeBtn.addEventListener('click', close);
     overlay.addEventListener('click', function(e){ if (e.target === overlay) close(); });
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && overlay.classList.contains('open')) close(); });
@@ -813,27 +890,27 @@
   (function(){
     var i18n = {
       en: {
-        'nav.pipeline':'Pipeline','nav.contact':'Contact',
+        'nav.contact':'Contact',
         'hero.eyebrow':'Western UGC creators, sourced and vetted for brands entering China & APAC.',
         'about.ariaOpen':'What CBX Agency does','about.ariaClose':'Close','about.title':'What We Do',
         'about.body':'We source and vet Western UGC creators for Chinese and Asian brands, managing the entire relationship. Brief CBX once, and we handle every conversation with the creator from there, so you always have one reliable point of contact.',
-        'cover.ariaLaura':"View Laura Jaeschke's full portfolio",'cover.ariaAnna':"View Anna Tatarnikova's full portfolio",
-        'cover.aria03':'CBX-03, portfolio in progress','cover.aria04':'CBX-04, portfolio in progress','cover.aria05':'CBX-05, portfolio in progress',
-        'cover.viewPortfolio':'View Portfolio ↓','cover.comingSoon':'Coming Soon','cover.sourcing':'Sourcing',
-        'cover.creator03':'Creator 03','cover.creator04':'Creator 04','cover.creator05':'Creator 05',
+        'cover.ariaLaura':"View Laura Jaeschke's full portfolio",'cover.ariaAnna':"View Anna Tatarnikova's full portfolio",'cover.ariaIsabel':"View Isabel Smolen's full portfolio",'cover.ariaLaurab':"View Laura Baumert's full portfolio",'cover.ariaNino':"View Nino Struzhkini's full portfolio",
+        'cover.viewPortfolio':'View Portfolio ↓',
         'overview.heading':'Roster',
         'overview.lead':'Chinese and Asian brands increasingly want a Western face for their campaigns — sourcing, vetting, and briefing that talent from overseas is usually slow. CBX Agency closes that gap: a curated roster of Western UGC creators, briefed for the market, managed end to end.',
         'overview.contactLine':'Germany · EU ⇄ China',
         'role.ugcFaceModel':'UGC Creator · Face Model',
-        'tag.beauty':'Beauty','tag.skincare':'Skincare','tag.beautySkincare':'Beauty & Skincare','tag.fashion':'Fashion','tag.lifestyle':'Lifestyle','tag.fitness':'Fitness','tag.homeInterior':'Home & Interior','tag.outdoor':'Outdoor','tag.sports':'Sports',
+        'tag.beauty':'Beauty','tag.skincare':'Skincare','tag.beautySkincare':'Beauty & Skincare','tag.fashion':'Fashion','tag.lifestyle':'Lifestyle','tag.fitness':'Fitness','tag.homeInterior':'Home & Interior','tag.outdoor':'Outdoor','tag.sports':'Sports','tag.travel':'Travel','tag.makeup':'Make-Up',
         'bio.laura':"Psychology student creating vlogs, follow-me-around videos, and product hauls for beauty, fashion, and lifestyle brands — content built to feel like a friend's recommendation, not an ad.",
         'bio.anna':'Works full-time in the automotive industry and competes as a tennis player. Content spans beauty, fashion, fitness, and travel — 32 countries visited to date.',
+        'bio.isabel':'Law student with a sharp eye for detail, creating premium yet relatable beauty, skincare, and fashion content built to perform on TikTok, Instagram, and e-commerce platforms like Amazon.',
+        'bio.laurab':'Authentic, aesthetic-first UGC creator covering fashion, beauty, fitness, and travel — unboxing, try-on, and product videos with voiceover and product photography skills, built for Reels and TikTok.',
+        'bio.nino':"UGC creator from Georgia focused on beauty, make-up, fashion, and interior content that steps into your target audience's world — built to build trust and drive sales.",
         'cta.inquire':'Inquire →',
-        'pipeline.eyebrow':'In the Pipeline','pipeline.heading':'Three more creators, clearing soon.','pipeline.inProgress':'Portfolio in progress',
         'process.eyebrow':'How It Works','process.heading':'From inquiry to campaign-ready content.',
         'process.step1.num':'01 / Inquire','process.step1.title':'Tell us the brief','process.step1.body':'Reach out with your brand, the niche, and the campaign timeline — no account needed, just an email.',
         'contact.eyebrow':'Start Here','contact.heading':'Tell us who you need.','contact.fieldCreator':'Creator','contact.fieldEmail':'Your Email','contact.placeholderEmail':'you@brand.com','contact.fieldMessage':'What do you need this creator for?',
-        'contact.optGeneral':'General Inquiry','contact.opt03':'CBX03 (Coming Soon)','contact.opt04':'CBX04 (Coming Soon)','contact.opt05':'CBX05 (Coming Soon)',
+        'contact.optGeneral':'General Inquiry',
         'contact.placeholder':'Your brand, the campaign, and the timeline...','contact.send':'Send Inquiry →','contact.note':'We usually reply within 1–2 business days.',
         'process.step2.num':'02 / Match & Brief','process.step2.title':'We handle the creator','process.step2.body':'CBX matches a creator from the roster and briefs them for your market — all contact, including social media, runs through us, not directly to the creator.',
         'process.step3.num':'03 / Receive Content','process.step3.title':'Content, delivered','process.step3.body':'The creator delivers on the agreed timeline, ready for your own page or campaign — no additional posting on their end.',
@@ -841,27 +918,27 @@
         'lang.aria':'Switch language','theme.aria':'Switch color theme'
       },
       zh: {
-        'nav.pipeline':'储备达人','nav.contact':'联系我们',
+        'nav.contact':'联系我们',
         'hero.eyebrow':'面向进入中国及亚太市场的品牌,甄选把关的西方UGC达人。',
         'about.ariaOpen':'了解CBX Agency','about.ariaClose':'关闭','about.title':'我们做什么',
         'about.body':'我们为中国及亚洲品牌甄选、审核西方UGC达人,并全程管理合作关系。你只需向CBX说明一次需求,后续与达人的所有沟通均由我们负责 —— 让你始终拥有一个稳定可靠的联系窗口。',
-        'cover.ariaLaura':'查看 Laura Jaeschke 的完整作品集','cover.ariaAnna':'查看 Anna Tatarnikova 的完整作品集',
-        'cover.aria03':'CBX-03,作品集筹备中','cover.aria04':'CBX-04,作品集筹备中','cover.aria05':'CBX-05,作品集筹备中',
-        'cover.viewPortfolio':'查看作品集 ↓','cover.comingSoon':'即将上线','cover.sourcing':'招募中',
-        'cover.creator03':'达人 03','cover.creator04':'达人 04','cover.creator05':'达人 05',
+        'cover.ariaLaura':'查看 Laura Jaeschke 的完整作品集','cover.ariaAnna':'查看 Anna Tatarnikova 的完整作品集','cover.ariaIsabel':'查看 Isabel Smolen 的完整作品集','cover.ariaLaurab':'查看 Laura Baumert 的完整作品集','cover.ariaNino':'查看 Nino Struzhkini 的完整作品集',
+        'cover.viewPortfolio':'查看作品集 ↓',
         'overview.heading':'我们的达人',
         'overview.lead':'越来越多中国及亚洲品牌希望在广告中启用西方面孔 —— 但从海外寻找、审核并对接这类达人往往耗时费力。CBX Agency 正好填补这一空白:精选的西方UGC达人库,针对市场需求完成对接,并全程管理合作。',
         'overview.contactLine':'德国 · 欧洲 ⇄ 中国',
         'role.ugcFaceModel':'UGC达人 · 出镜模特',
-        'tag.beauty':'美妆','tag.skincare':'护肤','tag.beautySkincare':'美妆护肤','tag.fashion':'时尚','tag.lifestyle':'生活方式','tag.fitness':'健身','tag.homeInterior':'家居','tag.outdoor':'户外','tag.sports':'运动',
+        'tag.beauty':'美妆','tag.skincare':'护肤','tag.beautySkincare':'美妆护肤','tag.fashion':'时尚','tag.lifestyle':'生活方式','tag.fitness':'健身','tag.homeInterior':'家居','tag.outdoor':'户外','tag.sports':'运动','tag.travel':'旅行','tag.makeup':'彩妆',
         'bio.laura':'心理学专业学生,为美妆、时尚和生活方式品牌制作Vlog、跟拍视频和好物分享内容 —— 风格更像朋友推荐,而非广告植入。',
         'bio.anna':'全职从事汽车行业,同时也是一名网球运动员。内容涵盖美妆、时尚、健身与旅行 —— 迄今已走过32个国家。',
+        'bio.isabel':'法律专业学生,注重细节,擅长制作精致又不失真实感的美妆、护肤与时尚内容 —— 专为TikTok、Instagram及亚马逊等电商平台打造。',
+        'bio.laurab':'风格唯美又真实的UGC达人,专注时尚、美妆、健身与旅行内容 —— 开箱、试穿、产品视频全能,并具备配音与产品摄影能力,专为Reels和TikTok打造。',
+        'bio.nino':'来自格鲁吉亚的UGC达人,专注美妆、彩妆、时尚与家居内容 —— 站在目标受众的视角创作,重在建立信任、促成转化。',
         'cta.inquire':'立即咨询 →',
-        'pipeline.eyebrow':'储备达人','pipeline.heading':'三位新达人,即将上线。','pipeline.inProgress':'作品集筹备中',
         'process.eyebrow':'合作流程','process.heading':'从咨询到交付,内容即刻可用。',
         'process.step1.num':'01 / 咨询','process.step1.title':'告诉我们你的需求','process.step1.body':'发一封邮件告诉我们你的品牌、赛道和活动时间线 —— 无需注册账号。',
         'contact.eyebrow':'立即开始','contact.heading':'告诉我们你需要哪位达人。','contact.fieldCreator':'达人','contact.fieldEmail':'你的邮箱','contact.placeholderEmail':'you@brand.com','contact.fieldMessage':'这次合作是为了哪位达人?',
-        'contact.optGeneral':'一般咨询','contact.opt03':'CBX03(即将上线)','contact.opt04':'CBX04(即将上线)','contact.opt05':'CBX05(即将上线)',
+        'contact.optGeneral':'一般咨询',
         'contact.placeholder':'你的品牌、活动内容和时间线……','contact.send':'发送咨询 →','contact.note':'我们通常会在 1-2 个工作日内回复。',
         'process.step2.num':'02 / 匹配与对接','process.step2.title':'我们负责对接达人','process.step2.body':'CBX从达人库中匹配合适人选,并针对你的市场进行对接说明 —— 包括社交媒体在内的所有沟通均由我们负责,不会直接联系达人本人。',
         'process.step3.num':'03 / 交付内容','process.step3.title':'内容按时交付','process.step3.body':'达人按约定时间交付内容,可直接用于你自己的主页或广告投放 —— 达人本人无需额外发布。',
