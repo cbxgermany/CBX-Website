@@ -195,21 +195,23 @@
 
   /* ---------- masonry ---------- */
   .masonry{
-    column-count:4; column-gap:14px;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:14px;
     padding:0 32px 14px;
   }
   .tile{
-    break-inside:avoid; margin-bottom:14px;
+    aspect-ratio:3/4;
     position:relative; overflow:hidden;
     background:var(--surface);
   }
   .tile img{
-    width:100%; height:auto; display:block;
+    width:100%; height:100%; display:block;
+    object-fit:cover;
     filter:grayscale(.15) contrast(1.02);
     transition:transform .5s var(--cubic), filter .3s ease;
     transform:scale(1.001);
   }
   .tile:hover img{transform:scale(1.045); filter:grayscale(0) contrast(1.02);}
+  .tile img[src="images/anna-primary.png"], .cover-main img[src="images/anna-primary.png"]{object-position:top;}
   .tile .tag{
     position:absolute; left:10px; bottom:10px;
     font-family:'IBM Plex Mono',monospace;
@@ -223,9 +225,9 @@
   .tile:hover .tag{opacity:1; transform:translateY(0);}
 
 
-  @media (max-width:1024px){ .masonry{column-count:3;} }
+  @media (max-width:1024px){ .masonry{grid-template-columns:repeat(3,1fr);} }
   @media (max-width:700px){
-    .masonry{column-count:2; column-gap:10px; padding:0 16px 10px;}
+    .masonry{grid-template-columns:repeat(2,1fr); gap:10px; padding:0 16px 10px;}
     .hero{display:none;}
     .desktop-only{display:none;}
     .mobile-only{display:inline-flex;}
@@ -242,7 +244,6 @@
     .topbar-right{width:100%; justify-content:space-between;}
     .topbar nav{gap:14px; flex-wrap:wrap; row-gap:6px;}
   }
-  @media (max-width:460px){ .masonry{column-count:2;} }
 
   /* ---------- about overlay ---------- */
   .scrim{
@@ -408,10 +409,35 @@
   }
   footer .mail:hover, footer .mail:focus-visible{color:var(--accent); border-color:var(--accent);}
 
+  .wechat-block{
+    display:flex; flex-direction:column; align-items:center; gap:12px;
+    margin-top:22px;
+  }
+  .wechat-label{
+    display:block;
+    font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; letter-spacing:.08em;
+    color:rgba(245,243,240,.6);
+  }
+  .wechat-qr-btn{
+    display:block; border:none; background:none; padding:0; cursor:pointer;
+    transition:transform .2s var(--cubic);
+  }
+  .wechat-qr-btn:hover, .wechat-qr-btn:focus-visible{transform:scale(1.04);}
+  .wechat-qr{
+    display:block; width:214px; height:214px;
+    object-fit:contain;
+    border-radius:14px;
+  }
   .wechat{
-    display:block; margin-top:14px;
+    display:block;
     font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; letter-spacing:.05em;
     color:rgba(245,243,240,.6);
+  }
+  .qr-large{
+    display:block; margin:0 auto 24px;
+    width:340px; height:340px; max-width:80vw; max-height:60vh;
+    object-fit:contain;
+    background:#fff; padding:22px; border-radius:8px;
   }
 
   .route{
@@ -451,6 +477,14 @@
     <span class="eyebrow">CBX Agency</span>
     <h3 data-i18n="about.title">What We Do</h3>
     <p data-i18n="about.body">We source and vet Western UGC creators for Chinese and Asian brands, managing the entire relationship. Brief CBX once, and we handle every conversation with the creator from there, so you always have one reliable point of contact.</p>
+  </div>
+</div>
+
+<div class="scrim" id="qrOverlay" role="dialog" aria-modal="true" aria-label="WeChat QR code">
+  <div class="scrim-panel">
+    <button class="scrim-close" id="qrClose" data-i18n-aria="about.ariaClose" aria-label="Close">×</button>
+    <img class="qr-large" src="images/wechat-qr.png" alt="CBX Agency WeChat QR code">
+    <span class="wechat mono">wxid_4u3l44p9xumo22</span>
   </div>
 </div>
 
@@ -583,7 +617,7 @@
         </div>
       </div>
       <div>
-        <p class="bio" data-i18n="bio.laura">Psychology student creating vlogs, follow-me-around videos, and product hauls for beauty, fashion, and lifestyle brands — content built to feel like a friend's recommendation, not an ad.</p>
+        <p class="bio" data-i18n="bio.laura">Psychology student and beauty focused creator making vlogs, everyday follow along videos, and product hauls for beauty, fashion, and lifestyle brands. A trained eye for photography and trend awareness keeps every video feeling like a real recommendation, not an ad.</p>
       </div>
       <div class="actioncol">
         <a class="inquire-btn" href="mailto:info@cbxgermany.de?subject=Inquiry%3A%20Laura%20Jaeschke"><span data-i18n="cta.inquire">Inquire →</span></a>
@@ -616,7 +650,7 @@
         </div>
       </div>
       <div>
-        <p class="bio" data-i18n="bio.anna">Works full-time in the automotive industry and competes as a tennis player. Content spans beauty, fashion, fitness, and travel — 32 countries visited to date.</p>
+        <p class="bio" data-i18n="bio.anna">Works full time in the automotive industry and competes as a professional tennis player, with content spanning beauty, skincare, fashion, fitness, and lifestyle. Well traveled across 32 countries, and just as comfortable covering home and interior, outdoor, and sports content.</p>
       </div>
       <div class="actioncol">
         <a class="inquire-btn" href="mailto:info@cbxgermany.de?subject=Inquiry%3A%20Anna%20Tatarnikova"><span data-i18n="cta.inquire">Inquire →</span></a>
@@ -646,7 +680,7 @@
         </div>
       </div>
       <div>
-        <p class="bio" data-i18n="bio.isabel">Law student with a sharp eye for detail, creating premium yet relatable beauty, skincare, and fashion content built to perform on TikTok, Instagram, and e-commerce platforms like Amazon.</p>
+        <p class="bio" data-i18n="bio.isabel">Law student with a sharp eye for detail and a natural talent for persuasive communication, creating premium yet relatable beauty, skincare, and fashion content built to perform on TikTok, Instagram, and e-commerce platforms like Amazon.</p>
       </div>
       <div class="actioncol">
         <a class="inquire-btn" href="mailto:info@cbxgermany.de?subject=Inquiry%3A%20Isabel%20Smolen"><span data-i18n="cta.inquire">Inquire →</span></a>
@@ -677,7 +711,7 @@
         </div>
       </div>
       <div>
-        <p class="bio" data-i18n="bio.laurab">Authentic, aesthetic-first UGC creator covering fashion, beauty, fitness, and travel — unboxing, try-on, and product videos with voiceover and product photography skills, built for Reels and TikTok.</p>
+        <p class="bio" data-i18n="bio.laurab">Authentic, aesthetic driven creator covering fashion, beauty, fitness, and travel, with hands on skills across unboxing, try on content, voiceover, and product photography. Everything built natively for Reels and TikTok, from first frame to final cut.</p>
       </div>
       <div class="actioncol">
         <a class="inquire-btn" href="mailto:info@cbxgermany.de?subject=Inquiry%3A%20Laura%20Baumert"><span data-i18n="cta.inquire">Inquire →</span></a>
@@ -707,7 +741,7 @@
         </div>
       </div>
       <div>
-        <p class="bio" data-i18n="bio.nino">UGC creator from Georgia focused on beauty, make-up, fashion, and interior content that steps into your target audience's world — built to build trust and drive sales.</p>
+        <p class="bio" data-i18n="bio.nino">UGC creator from Georgia focused on beauty, skincare, makeup, fashion, and interior and home content, with a knack for stepping fully into the target audience's world. Every piece is built to earn trust first and drive sales as a result.</p>
       </div>
       <div class="actioncol">
         <a class="inquire-btn" href="mailto:info@cbxgermany.de?subject=Inquiry%3A%20Nino%20Struzhkini"><span data-i18n="cta.inquire">Inquire →</span></a>
@@ -776,7 +810,13 @@
     <span class="eyebrow mono" data-i18n="footer.eyebrow">Ready to brief a creator?</span>
     <h2 data-i18n="footer.heading">Let's talk.</h2>
     <a class="mail" href="mailto:info@cbxgermany.de">info@cbxgermany.de</a>
-    <span class="wechat mono">WeChat: CBX</span>
+    <div class="wechat-block">
+      <span class="wechat-label mono">WeChat</span>
+      <button type="button" class="wechat-qr-btn" id="qrOpen" aria-haspopup="dialog" aria-controls="qrOverlay" aria-label="Enlarge WeChat QR code">
+        <img class="wechat-qr" src="images/wechat-qr.png" alt="CBX Agency WeChat QR code" width="214" height="214">
+      </button>
+      <span class="wechat mono">wxid_4u3l44p9xumo22</span>
+    </div>
     <div class="route">
       <span>EUROPE</span>
       <span class="line"><span class="dot"></span></span>
@@ -811,6 +851,24 @@
       if (lastOpener) lastOpener.focus();
     }
     openBtns.forEach(function(btn){ btn.addEventListener('click', open); });
+    closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', function(e){ if (e.target === overlay) close(); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && overlay.classList.contains('open')) close(); });
+  })();
+
+  (function(){
+    var overlay = document.getElementById('qrOverlay');
+    var openBtn = document.getElementById('qrOpen');
+    var closeBtn = document.getElementById('qrClose');
+    function open(){
+      overlay.classList.add('open');
+      closeBtn.focus();
+    }
+    function close(){
+      overlay.classList.remove('open');
+      openBtn.focus();
+    }
+    openBtn.addEventListener('click', open);
     closeBtn.addEventListener('click', close);
     overlay.addEventListener('click', function(e){ if (e.target === overlay) close(); });
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && overlay.classList.contains('open')) close(); });
@@ -902,11 +960,11 @@
         'overview.contactLine':'Germany · EU ⇄ China',
         'role.ugcFaceModel':'UGC Creator · Face Model',
         'tag.beauty':'Beauty','tag.skincare':'Skincare','tag.beautySkincare':'Beauty & Skincare','tag.fashion':'Fashion','tag.lifestyle':'Lifestyle','tag.fitness':'Fitness','tag.homeInterior':'Home & Interior','tag.outdoor':'Outdoor','tag.sports':'Sports','tag.travel':'Travel','tag.makeup':'Make-Up',
-        'bio.laura':"Psychology student creating vlogs, follow-me-around videos, and product hauls for beauty, fashion, and lifestyle brands — content built to feel like a friend's recommendation, not an ad.",
-        'bio.anna':'Works full-time in the automotive industry and competes as a tennis player. Content spans beauty, fashion, fitness, and travel — 32 countries visited to date.',
-        'bio.isabel':'Law student with a sharp eye for detail, creating premium yet relatable beauty, skincare, and fashion content built to perform on TikTok, Instagram, and e-commerce platforms like Amazon.',
-        'bio.laurab':'Authentic, aesthetic-first UGC creator covering fashion, beauty, fitness, and travel — unboxing, try-on, and product videos with voiceover and product photography skills, built for Reels and TikTok.',
-        'bio.nino':"UGC creator from Georgia focused on beauty, make-up, fashion, and interior content that steps into your target audience's world — built to build trust and drive sales.",
+        'bio.laura':"Psychology student and beauty focused creator making vlogs, everyday follow along videos, and product hauls for beauty, fashion, and lifestyle brands. A trained eye for photography and trend awareness keeps every video feeling like a real recommendation, not an ad.",
+        'bio.anna':'Works full time in the automotive industry and competes as a professional tennis player, with content spanning beauty, skincare, fashion, fitness, and lifestyle. Well traveled across 32 countries, and just as comfortable covering home and interior, outdoor, and sports content.',
+        'bio.isabel':'Law student with a sharp eye for detail and a natural talent for persuasive communication, creating premium yet relatable beauty, skincare, and fashion content built to perform on TikTok, Instagram, and e-commerce platforms like Amazon.',
+        'bio.laurab':'Authentic, aesthetic driven creator covering fashion, beauty, fitness, and travel, with hands on skills across unboxing, try on content, voiceover, and product photography. Everything built natively for Reels and TikTok, from first frame to final cut.',
+        'bio.nino':"UGC creator from Georgia focused on beauty, skincare, makeup, fashion, and interior and home content, with a knack for stepping fully into the target audience's world. Every piece is built to earn trust first and drive sales as a result.",
         'cta.inquire':'Inquire →',
         'process.eyebrow':'How It Works','process.heading':'From inquiry to campaign-ready content.',
         'process.step1.num':'01 / Inquire','process.step1.title':'Tell us the brief','process.step1.body':'Reach out with your brand, the niche, and the campaign timeline — no account needed, just an email.',
@@ -930,11 +988,11 @@
         'overview.contactLine':'德国 · 欧洲 ⇄ 中国',
         'role.ugcFaceModel':'UGC达人 · 出镜模特',
         'tag.beauty':'美妆','tag.skincare':'护肤','tag.beautySkincare':'美妆护肤','tag.fashion':'时尚','tag.lifestyle':'生活方式','tag.fitness':'健身','tag.homeInterior':'家居','tag.outdoor':'户外','tag.sports':'运动','tag.travel':'旅行','tag.makeup':'彩妆',
-        'bio.laura':'心理学专业学生,为美妆、时尚和生活方式品牌制作Vlog、跟拍视频和好物分享内容 —— 风格更像朋友推荐,而非广告植入。',
-        'bio.anna':'全职从事汽车行业,同时也是一名网球运动员。内容涵盖美妆、时尚、健身与旅行 —— 迄今已走过32个国家。',
-        'bio.isabel':'法律专业学生,注重细节,擅长制作精致又不失真实感的美妆、护肤与时尚内容 —— 专为TikTok、Instagram及亚马逊等电商平台打造。',
-        'bio.laurab':'风格唯美又真实的UGC达人,专注时尚、美妆、健身与旅行内容 —— 开箱、试穿、产品视频全能,并具备配音与产品摄影能力,专为Reels和TikTok打造。',
-        'bio.nino':'来自格鲁吉亚的UGC达人,专注美妆、彩妆、时尚与家居内容 —— 站在目标受众的视角创作,重在建立信任、促成转化。',
+        'bio.laura':'心理学专业学生,专注美妆内容创作,制作Vlog、日常跟拍视频和好物分享,涵盖美妆、时尚与生活方式品牌。专业摄影眼光与敏锐的潮流嗅觉,让每支视频都像朋友推荐,而非广告植入。',
+        'bio.anna':'全职从事汽车行业,同时是职业网球运动员,内容涵盖美妆、护肤、时尚、健身与生活方式。足迹遍布32个国家,同样擅长家居、户外与运动类内容。',
+        'bio.isabel':'法律专业学生,注重细节,擅长说服性表达,打造精致又真实的美妆、护肤与时尚内容,专为TikTok、Instagram及亚马逊等电商平台打造。',
+        'bio.laurab':'风格真实唯美的达人,专注时尚、美妆、健身与旅行内容,精通开箱、试穿、配音与产品摄影,所有内容均为Reels和TikTok原生打造,从第一帧到最终成片。',
+        'bio.nino':'来自格鲁吉亚的UGC达人,专注美妆、护肤、彩妆、时尚与家居内容,擅长完全代入目标受众的视角。每一支内容都以建立信任为先,进而促成转化。',
         'cta.inquire':'立即咨询 →',
         'process.eyebrow':'合作流程','process.heading':'从咨询到交付,内容即刻可用。',
         'process.step1.num':'01 / 咨询','process.step1.title':'告诉我们你的需求','process.step1.body':'发一封邮件告诉我们你的品牌、赛道和活动时间线 —— 无需注册账号。',
