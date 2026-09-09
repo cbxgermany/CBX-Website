@@ -672,7 +672,7 @@
       <div class="masonry creator-grid">
         <div class="tile tile-video">
           <img src="images/isabel-3.jpeg" alt="Isabel Smolen, portrait">
-          <video src="videos/isabel-ugc.mov" muted loop playsinline preload="none"></video>
+          <video src="videos/isabel-ugc.mov" muted playsinline preload="none"></video>
         </div>
         <div class="tile"><img src="images/isabel-primary.jpeg" alt="Isabel Smolen"></div>
         <div class="tile"><img src="images/isabel-4.jpeg" alt="Isabel Smolen, profile"></div>
@@ -705,7 +705,7 @@
       <div class="masonry creator-grid">
         <div class="tile tile-video">
           <img src="images/laurab-primary.jpeg" alt="Laura Baumert, portrait">
-          <video src="videos/laurab-ugc.mov" muted loop playsinline preload="none"></video>
+          <video src="videos/laurab-ugc.mov" muted playsinline preload="none"></video>
         </div>
         <div class="tile"><img src="images/laurab-2.jpeg" alt="Laura Baumert, casual"></div>
         <div class="tile"><img src="images/laurab-3.jpeg" alt="Laura Baumert, travel"></div>
@@ -904,6 +904,19 @@
     var tiles = document.querySelectorAll('.tile-video');
     if (!tiles.length) return;
 
+    tiles.forEach(function(tile){
+      var video = tile.querySelector('video');
+      if (!video) return;
+      video.addEventListener('ended', function(){
+        tile.classList.remove('in-view');
+      });
+      tile.addEventListener('mouseenter', function(){
+        video.currentTime = 0;
+        tile.classList.add('in-view');
+        video.play().catch(function(){});
+      });
+    });
+
     if (!('IntersectionObserver' in window)){
       tiles.forEach(function(tile){ tile.classList.add('in-view'); });
       return;
@@ -915,6 +928,7 @@
         var video = tile.querySelector('video');
         if (!video) return;
         if (entry.isIntersecting){
+          video.currentTime = 0;
           tile.classList.add('in-view');
           video.play().catch(function(){});
         } else {
