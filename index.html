@@ -207,11 +207,19 @@
     width:100%; height:100%; display:block;
     object-fit:cover;
     filter:grayscale(.15) contrast(1.02);
-    transition:transform .5s var(--cubic), filter .3s ease;
+    transition:transform .5s var(--cubic), filter .3s ease, opacity .3s var(--cubic);
     transform:scale(1.001);
   }
   .tile:hover img{transform:scale(1.045); filter:grayscale(0) contrast(1.02);}
   .tile img[src="images/anna-primary.png"], .cover-main img[src="images/anna-primary.png"]{object-position:top;}
+  .tile-video video{
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; object-position:center 25%;
+    opacity:0; transition:opacity .3s var(--cubic);
+    pointer-events:none;
+  }
+  .tile-video:hover video{opacity:1;}
+  .tile-video:hover img{opacity:0;}
   .tile .tag{
     position:absolute; left:10px; bottom:10px;
     font-family:'IBM Plex Mono',monospace;
@@ -332,7 +340,7 @@
   .creator-meta .idcol{display:flex; flex-direction:column; gap:16px;}
   .creator-meta .idcol .index{font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; letter-spacing:.06em; color:var(--muted);}
   .creator-meta .idcol h3{font-size:clamp(30px,3.4vw,46px); font-weight:700; letter-spacing:-.015em; line-height:1.03;}
-  .creator-meta .idcol .role{font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:500; color:var(--muted); letter-spacing:.05em; text-transform:none;}
+  .creator-meta .idcol .stats{font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:500; color:var(--muted); letter-spacing:.05em; text-transform:none;}
   .tag-row{display:flex; flex-wrap:wrap; gap:8px;}
   .tag-row .tag{
     font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600; letter-spacing:.05em;
@@ -608,7 +616,7 @@
     <div class="creator-meta">
       <div class="idcol">
         <h3>Laura Jaeschke</h3>
-        <div class="role mono" data-i18n="role.ugcFaceModel">UGC Creator · Face Model</div>
+        <div class="stats mono">173cm · 26</div>
         <div class="tag-row">
           <span class="tag" data-i18n="tag.beauty">Beauty</span>
           <span class="tag" data-i18n="tag.skincare">Skincare</span>
@@ -638,7 +646,7 @@
     <div class="creator-meta">
       <div class="idcol">
         <h3>Anna Tatarnikova</h3>
-        <div class="role mono" data-i18n="role.ugcFaceModel">UGC Creator · Face Model</div>
+        <div class="stats mono">173cm · 26</div>
         <div class="tag-row">
           <span class="tag" data-i18n="tag.beautySkincare">Beauty &amp; Skincare</span>
           <span class="tag" data-i18n="tag.fashion">Fashion</span>
@@ -662,7 +670,10 @@
     <div class="creator-stage">
       <h2 class="creator-bigname">Isabel<br>Smolen</h2>
       <div class="masonry creator-grid">
-        <div class="tile"><img src="images/isabel-3.jpeg" alt="Isabel Smolen, portrait"></div>
+        <div class="tile tile-video">
+          <img src="images/isabel-3.jpeg" alt="Isabel Smolen, portrait">
+          <video src="videos/isabel-ugc.mov" muted loop playsinline preload="none"></video>
+        </div>
         <div class="tile"><img src="images/isabel-primary.jpeg" alt="Isabel Smolen"></div>
         <div class="tile"><img src="images/isabel-4.jpeg" alt="Isabel Smolen, profile"></div>
         <div class="tile"><img src="images/isabel-2.jpeg" alt="Isabel Smolen, close portrait"></div>
@@ -671,7 +682,7 @@
     <div class="creator-meta">
       <div class="idcol">
         <h3>Isabel Smolen</h3>
-        <div class="role mono" data-i18n="role.ugcFaceModel">UGC Creator · Face Model</div>
+        <div class="stats mono">170cm · 24</div>
         <div class="tag-row">
           <span class="tag" data-i18n="tag.beauty">Beauty</span>
           <span class="tag" data-i18n="tag.skincare">Skincare</span>
@@ -692,7 +703,10 @@
     <div class="creator-stage">
       <h2 class="creator-bigname">Laura<br>Baumert</h2>
       <div class="masonry creator-grid">
-        <div class="tile"><img src="images/laurab-primary.jpeg" alt="Laura Baumert, portrait"></div>
+        <div class="tile tile-video">
+          <img src="images/laurab-primary.jpeg" alt="Laura Baumert, portrait">
+          <video src="videos/laurab-ugc.mov" muted loop playsinline preload="none"></video>
+        </div>
         <div class="tile"><img src="images/laurab-2.jpeg" alt="Laura Baumert, casual"></div>
         <div class="tile"><img src="images/laurab-3.jpeg" alt="Laura Baumert, travel"></div>
         <div class="tile"><img src="images/laurab-4.jpeg" alt="Laura Baumert, fashion"></div>
@@ -701,7 +715,7 @@
     <div class="creator-meta">
       <div class="idcol">
         <h3>Laura Baumert</h3>
-        <div class="role mono" data-i18n="role.ugcFaceModel">UGC Creator · Face Model</div>
+        <div class="stats mono">159cm · 25</div>
         <div class="tag-row">
           <span class="tag" data-i18n="tag.fashion">Fashion</span>
           <span class="tag" data-i18n="tag.beauty">Beauty</span>
@@ -732,7 +746,7 @@
     <div class="creator-meta">
       <div class="idcol">
         <h3>Nino Struzhkini</h3>
-        <div class="role mono" data-i18n="role.ugcFaceModel">UGC Creator · Face Model</div>
+        <div class="stats mono">165cm · 20</div>
         <div class="tag-row">
           <span class="tag" data-i18n="tag.beautySkincare">Beauty & Skincare</span>
           <span class="tag" data-i18n="tag.makeup">Make-Up</span>
@@ -887,6 +901,20 @@
   })();
 
   (function(){
+    document.querySelectorAll('.tile-video').forEach(function(tile){
+      var video = tile.querySelector('video');
+      if (!video) return;
+      tile.addEventListener('mouseenter', function(){
+        video.currentTime = 0;
+        video.play().catch(function(){});
+      });
+      tile.addEventListener('mouseleave', function(){
+        video.pause();
+      });
+    });
+  })();
+
+  (function(){
     var select = document.getElementById('cfModel');
     var email = document.getElementById('cfEmail');
     var message = document.getElementById('cfMessage');
@@ -958,7 +986,6 @@
         'overview.heading':'Roster',
         'overview.lead':'Chinese and Asian brands increasingly want a Western face for their campaigns. Sourcing, vetting, and briefing that talent from overseas is usually slow. CBX Agency closes that gap: a curated roster of Western UGC creators, briefed for the market, managed end to end.',
         'overview.contactLine':'Germany · EU ⇄ China',
-        'role.ugcFaceModel':'UGC Creator · Face Model',
         'tag.beauty':'Beauty','tag.skincare':'Skincare','tag.beautySkincare':'Beauty & Skincare','tag.fashion':'Fashion','tag.lifestyle':'Lifestyle','tag.fitness':'Fitness','tag.homeInterior':'Home & Interior','tag.outdoor':'Outdoor','tag.sports':'Sports','tag.travel':'Travel','tag.makeup':'Make-Up',
         'bio.laura':"Psychology student and beauty focused creator making vlogs, everyday follow along videos, and product hauls for beauty, fashion, and lifestyle brands. A trained eye for photography and trend awareness keeps every video feeling like a real recommendation, not an ad.",
         'bio.anna':'Works full time in the automotive industry and competes as a professional tennis player, with content spanning beauty, skincare, fashion, fitness, and lifestyle. Well traveled across 32 countries, and just as comfortable covering home and interior, outdoor, and sports content.',
@@ -986,7 +1013,6 @@
         'overview.heading':'我们的达人',
         'overview.lead':'越来越多中国及亚洲品牌希望在广告中启用西方面孔。但从海外寻找、审核并对接这类达人往往耗时费力。CBX Agency 正好填补这一空白:精选的西方UGC达人库,针对市场需求完成对接,并全程管理合作。',
         'overview.contactLine':'德国 · 欧洲 ⇄ 中国',
-        'role.ugcFaceModel':'UGC达人 · 出镜模特',
         'tag.beauty':'美妆','tag.skincare':'护肤','tag.beautySkincare':'美妆护肤','tag.fashion':'时尚','tag.lifestyle':'生活方式','tag.fitness':'健身','tag.homeInterior':'家居','tag.outdoor':'户外','tag.sports':'运动','tag.travel':'旅行','tag.makeup':'彩妆',
         'bio.laura':'心理学专业学生,专注美妆内容创作,制作Vlog、日常跟拍视频和好物分享,涵盖美妆、时尚与生活方式品牌。专业摄影眼光与敏锐的潮流嗅觉,让每支视频都像朋友推荐,而非广告植入。',
         'bio.anna':'全职从事汽车行业,同时是职业网球运动员,内容涵盖美妆、护肤、时尚、健身与生活方式。足迹遍布32个国家,同样擅长家居、户外与运动类内容。',
