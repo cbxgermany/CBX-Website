@@ -218,8 +218,8 @@
     opacity:0; transition:opacity .3s var(--cubic);
     pointer-events:none;
   }
-  .tile-video:hover video{opacity:1;}
-  .tile-video:hover img{opacity:0;}
+  .tile-video.in-view video{opacity:1;}
+  .tile-video.in-view img{opacity:0;}
   .tile .tag{
     position:absolute; left:10px; bottom:10px;
     font-family:'IBM Plex Mono',monospace;
@@ -566,9 +566,9 @@
       </a>
 
       <a class="cover-block" href="#laurab" data-i18n-aria="cover.ariaLaurab" aria-label="View Laura Baumert's full portfolio">
-        <div class="cover-main"><img src="images/laurab-primary.jpeg" alt="Laura Baumert"></div>
+        <div class="cover-main"><img src="images/laurab-2.jpeg" alt="Laura Baumert"></div>
         <div class="cover-thumbs">
-          <div class="cover-thumb"><img src="images/laurab-2.jpeg" alt=""></div>
+          <div class="cover-thumb"><img src="images/laurab-primary.jpeg" alt=""></div>
           <div class="cover-thumb"><img src="images/laurab-3.jpeg" alt=""></div>
           <div class="cover-thumb"><img src="images/laurab-4.jpeg" alt=""></div>
         </div>
@@ -901,17 +901,30 @@
   })();
 
   (function(){
-    document.querySelectorAll('.tile-video').forEach(function(tile){
-      var video = tile.querySelector('video');
-      if (!video) return;
-      tile.addEventListener('mouseenter', function(){
-        video.currentTime = 0;
-        video.play().catch(function(){});
+    var tiles = document.querySelectorAll('.tile-video');
+    if (!tiles.length) return;
+
+    if (!('IntersectionObserver' in window)){
+      tiles.forEach(function(tile){ tile.classList.add('in-view'); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var tile = entry.target;
+        var video = tile.querySelector('video');
+        if (!video) return;
+        if (entry.isIntersecting){
+          tile.classList.add('in-view');
+          video.play().catch(function(){});
+        } else {
+          tile.classList.remove('in-view');
+          video.pause();
+        }
       });
-      tile.addEventListener('mouseleave', function(){
-        video.pause();
-      });
-    });
+    }, { threshold: 0.4 });
+
+    tiles.forEach(function(tile){ observer.observe(tile); });
   })();
 
   (function(){
