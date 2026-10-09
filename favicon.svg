@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
-  <rect x="2.4" y="2.4" width="31.2" height="31.2" fill="none" stroke="#0C0C0C" stroke-width="2.8"/>
-  <text x="18" y="19" text-anchor="middle" dominant-baseline="central" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="12.5" letter-spacing="0.3" fill="#0C0C0C">CBX</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#0A0A0A"/>
+  <g transform="translate(0.5 0.5)" stroke="#F4F2EE" stroke-width="1.3" stroke-linejoin="round">
+    <path d="M4 6H23L27 11.5H8Z" fill="#262626"/>
+    <path d="M4 6L8 11.5V27L4 22Z" fill="#171717"/>
+    <path d="M8 11.5H27V27H8Z" fill="#0A0A0A"/>
+  </g>
+  <path d="M13 6.5H17L21 12H17Z" fill="#FF6504"/>
+  <path d="M17.5 12H21.5V16H17.5Z" fill="#FF6504"/>
 </svg>

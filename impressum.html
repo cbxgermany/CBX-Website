@@ -1,99 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Legal Notice — CBX Agency</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Legal Notice · CBX Germany</title>
 <meta name="robots" content="noindex">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --dark:#0C0C0C;
-    --light:#F5F3F0;
-    --line: rgba(12,12,12,0.14);
-    --line-strong: rgba(12,12,12,0.28);
-    --accent:#E0362B;
-    --muted: rgba(12,12,12,0.56);
-    --cubic: cubic-bezier(.77,0,.175,1);
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  body{
-    background:var(--light); color:var(--dark);
-    font-family:'Barlow Condensed','Helvetica Neue',Arial,sans-serif;
-    font-weight:700; text-transform:uppercase; letter-spacing:.02em;
-  }
-  a{color:inherit;}
-  .mono{font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:.04em;}
-  :focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
-
-  header{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:22px 32px;
-  }
-  .logo{display:flex; align-items:center; gap:11px; font-size:28px; font-weight:800; letter-spacing:.03em; text-decoration:none;}
-  .logo .mark{display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border:2px solid currentColor; font-size:15px;}
-  header a.back{font-size:13px; font-weight:600; letter-spacing:.05em; text-decoration:none; border-bottom:1px solid var(--line-strong); padding-bottom:2px; transition:border-color .2s var(--cubic);}
-  header a.back:hover, header a.back:focus-visible{border-color:var(--dark);}
-
-  main{max-width:760px; margin:0 auto; padding:40px 32px 120px;}
-  h1{font-size:clamp(32px,5vw,52px); letter-spacing:-.02em; font-weight:800; margin-bottom:40px;}
-  h2{font-size:18px; font-weight:700; letter-spacing:.01em; margin:36px 0 12px; color:var(--accent);}
-  p, li{
-    font-family:'IBM Plex Mono',monospace; text-transform:none; letter-spacing:.01em;
-    font-size:14px; font-weight:500; line-height:1.75; color:var(--muted);
-  }
-  ul{padding-left:20px; margin-top:6px;}
-  a.inline{color:var(--accent); text-decoration:underline; text-underline-offset:2px;}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800;900&amp;family=Instrument+Serif:ital@1&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-box" viewBox="0 0 32 32">
+    <g stroke="currentColor" stroke-width="1.2" stroke-linejoin="round">
+      <path d="M4 5H24L28 11H8Z" fill="#232323"/>
+      <path d="M4 5L8 11V29L4 23Z" fill="#161616"/>
+      <path d="M8 11H28V29H8Z" fill="#0A0A0A"/>
+    </g>
+    <path d="M13 5H17L21 11H17Z" fill="#FF6504"/>
+    <path d="M17 11H21V15H17Z" fill="#FF6504"/>
+  </symbol>
+</svg>
 
-<header>
-  <a class="logo" href="index.html">
-    <span class="mark">CBX</span>
-    AGENCY
-  </a>
-  <a class="back" href="index.html">← Back</a>
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a class="logo" href="index.html" aria-label="CBX Germany, home">
+      <svg class="logo__box" aria-hidden="true"><use href="#i-box"/></svg>
+      <span class="logo__word">CBX</span>
+      <span class="logo__sub">Germany</span>
+    </a>
+    <nav class="nav__right" aria-label="Main">
+      <a class="nav__link" href="index.html#help">How we help</a>
+      <a class="nav__link" href="index.html#contact">Contact</a>
+      <a class="btn btn--solid btn--sm" href="creators.html">Our UGC Creators</a>
+      <button class="burger" type="button" aria-controls="menu" aria-expanded="false" aria-label="Open menu"><span></span></button>
+    </nav>
+  </div>
 </header>
+<div class="menu" id="menu">
+  <a class="menu__creators" href="creators.html">Our UGC Creators <span class="label" aria-hidden="true">→</span></a>
+  <a href="index.html#help">How we help</a>
+  <a href="index.html#how">How it works</a>
+  <a href="index.html#contact">Contact</a>
+  <div class="menu__foot"><span class="label">info@cbxgermany.de</span></div>
+</div>
 
-<main>
-  <h1>Legal Notice</h1>
+<main id="main" class="legal scene scene--light scene--dots">
+  <div class="wrap">
+    <a class="textlink back" href="index.html">← Back</a>
+    <h1>Legal Notice</h1>
 
-  <h2>Information pursuant to § 5 DDG (German Digital Services Act)</h2>
-  <p>
-    Firma CBX Germany<br>
-    Tulpenweg 6<br>
-    51503 Rösrath<br>
-    Germany
-  </p>
+    <h2>Information pursuant to § 5 DDG (German Digital Services Act)</h2>
+    <p>
+      Firma CBX Germany<br>
+      Tulpenweg 6<br>
+      51503 Rösrath<br>
+      Germany
+    </p>
 
-  <h2>Represented by</h2>
-  <p>Claudio Janota</p>
+    <h2>Represented by</h2>
+    <p>Claudio Janota</p>
 
-  <h2>Contact</h2>
-  <p>
-    Website: cbxgermany.de<br>
-    Email: <a class="inline" href="mailto:info@cbxgermany.de">info@cbxgermany.de</a><br>
-    Phone: +49 176 31697103
-  </p>
+    <h2>Contact</h2>
+    <p>
+      Website: cbxgermany.de<br>
+      Email: <a class="inline" href="mailto:info@cbxgermany.de">info@cbxgermany.de</a><br>
+      Phone: +49 176 31697103
+    </p>
 
-  <h2>Responsible for content pursuant to § 18(2) MStV (German Interstate Media Treaty)</h2>
-  <p>
-    Claudio Janota<br>
-    Tulpenweg 6, 51503 Rösrath, Germany
-  </p>
+    <h2>Responsible for content pursuant to § 18(2) MStV (German Interstate Media Treaty)</h2>
+    <p>
+      Claudio Janota<br>
+      Tulpenweg 6, 51503 Rösrath, Germany
+    </p>
 
-  <h2>EU Dispute Resolution</h2>
-  <p>The European Commission provides a platform for online dispute resolution (ODR): <a class="inline" href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. Our email address can be found above.</p>
+    <h2>EU Dispute Resolution</h2>
+    <p>The European Commission provides a platform for online dispute resolution (ODR): <a class="inline" href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. Our email address can be found above.</p>
 
-  <h2>Consumer Dispute Resolution</h2>
-  <p>We are not willing or obligated to participate in dispute resolution proceedings before a consumer arbitration board.</p>
+    <h2>Consumer Dispute Resolution</h2>
+    <p>We are not willing or obligated to participate in dispute resolution proceedings before a consumer arbitration board.</p>
+  </div>
 </main>
 
+<footer class="footer footer--compact scene scene--dark">
+  <div class="wrap footer__bottom">
+    <span class="label">© 2026 CBX Germany</span>
+    <nav class="footer__legal" aria-label="Footer">
+      <a class="label" href="creators.html">Our UGC Creators</a>
+      <a class="label" href="impressum.html" aria-current="page">Impressum</a>
+      <a class="label" href="datenschutz.html">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
 </body>
 </html>

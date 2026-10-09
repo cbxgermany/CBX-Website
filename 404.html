@@ -1,86 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page Not Found — CBX Agency</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found · CBX Germany</title>
 <meta name="robots" content="noindex">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --dark:#0C0C0C;
-    --light:#F5F3F0;
-    --line: rgba(12,12,12,0.14);
-    --line-strong: rgba(12,12,12,0.28);
-    --accent:#E0362B;
-    --muted: rgba(12,12,12,0.56);
-    --cubic: cubic-bezier(.77,0,.175,1);
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html,body{height:100%;}
-  body{
-    background:var(--light); color:var(--dark);
-    font-family:'Barlow Condensed','Helvetica Neue',Arial,sans-serif;
-    font-weight:700; text-transform:uppercase; letter-spacing:.02em;
-    display:flex; flex-direction:column;
-  }
-  a{color:inherit;}
-  .mono{font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:.04em;}
-  :focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
-
-  header{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:22px 32px;
-  }
-  .logo{display:flex; align-items:center; gap:11px; font-size:28px; font-weight:800; letter-spacing:.03em; text-decoration:none;}
-  .logo .mark{display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border:2px solid currentColor; font-size:15px;}
-
-  main{
-    flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
-    text-align:center; padding:40px 32px 100px;
-  }
-  .code{font-size:clamp(90px,18vw,180px); font-weight:900; letter-spacing:-.03em; line-height:1; color:var(--dark);}
-  .code .accent{color:var(--accent);}
-  h1{font-size:clamp(22px,3vw,30px); font-weight:700; letter-spacing:-.01em; margin-top:8px; text-transform:none;}
-  p{
-    font-family:'IBM Plex Mono',monospace; text-transform:none; letter-spacing:.01em;
-    font-size:14px; font-weight:500; line-height:1.75; color:var(--muted);
-    max-width:420px; margin:18px 0 36px;
-  }
-  .home-btn{
-    display:inline-flex; align-items:center; gap:8px;
-    background:var(--dark); color:var(--light);
-    font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; letter-spacing:.05em;
-    padding:13px 20px;
-    border:1px solid var(--dark);
-    text-decoration:none;
-    box-shadow: 0 1px 2px rgba(12,12,12,.08), 0 10px 24px rgba(12,12,12,.14);
-    transition:background .18s var(--cubic), color .18s var(--cubic), transform .12s var(--cubic);
-  }
-  .home-btn:hover, .home-btn:focus-visible{background:var(--accent); color:#fff; border-color:var(--accent);}
-  .home-btn:active{transform:scale(.97);}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800;900&amp;family=Instrument+Serif:ital@1&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<link rel="stylesheet" href="/styles.css">
+<script src="/script.js" defer></script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-box" viewBox="0 0 32 32">
+    <g stroke="currentColor" stroke-width="1.2" stroke-linejoin="round">
+      <path d="M4 5H24L28 11H8Z" fill="#232323"/>
+      <path d="M4 5L8 11V29L4 23Z" fill="#161616"/>
+      <path d="M8 11H28V29H8Z" fill="#0A0A0A"/>
+    </g>
+    <path d="M13 5H17L21 11H17Z" fill="#FF6504"/>
+    <path d="M17 11H21V15H17Z" fill="#FF6504"/>
+  </symbol>
+</svg>
 
-<header>
-  <a class="logo" href="/">
-    <span class="mark">CBX</span>
-    AGENCY
-  </a>
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a class="logo" href="/" aria-label="CBX Germany, home">
+      <svg class="logo__box" aria-hidden="true"><use href="#i-box"/></svg>
+      <span class="logo__word">CBX</span>
+      <span class="logo__sub">Germany</span>
+    </a>
+    <nav class="nav__right" aria-label="Main">
+      <a class="nav__link" href="/#help">How we help</a>
+      <a class="nav__link" href="/#contact">Contact</a>
+      <a class="btn btn--solid btn--sm" href="/creators.html">Our UGC Creators</a>
+      <button class="burger" type="button" aria-controls="menu" aria-expanded="false" aria-label="Open menu"><span></span></button>
+    </nav>
+  </div>
 </header>
+<div class="menu" id="menu">
+  <a class="menu__creators" href="/creators.html">Our UGC Creators <span class="label" aria-hidden="true">→</span></a>
+  <a href="/#help">How we help</a>
+  <a href="/#contact">Contact</a>
+</div>
 
-<main>
-  <div class="code">4<span class="accent">0</span>4</div>
-  <h1>This page didn't clear customs.</h1>
-  <p>The page you're looking for doesn't exist or has moved. Head back to the roster.</p>
-  <a class="home-btn" href="/"><span>Back to Home →</span></a>
+<main id="main" class="notfound scene scene--dark scene--dots">
+  <div class="wrap">
+    <div class="chapter"><span class="label"><b>404</b> / Not found</span><span class="label">CN → DE / EU</span></div>
+    <h1 class="display rw">This page is <em class="accent">missing.</em></h1>
+    <p class="lead">The page you are looking for does not exist or has moved.</p>
+    <div class="hero__actions">
+      <a class="btn btn--solid" href="/">Back to the start</a>
+      <a class="btn" href="/creators.html">Our UGC Creators <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
 </main>
-
 </body>
 </html>
