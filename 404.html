@@ -2,26 +2,28 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>try{var l=localStorage.getItem("cbx-lang")||((navigator.language||"").toLowerCase().indexOf("zh")===0?"zh":"en");if(l==="zh"){document.documentElement.classList.add("i18n-pending");setTimeout(function(){document.documentElement.classList.remove("i18n-pending")},2500)}}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page not found · CBX Germany</title>
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#0A0A0A">
+<meta name="theme-color" content="#F1F0EB">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800;900&amp;family=Instrument+Serif:ital@1&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap">
 <link rel="stylesheet" href="/styles.css">
+<script src="/i18n.js" defer></script>
 <script src="/script.js" defer></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-box" viewBox="0 0 32 32">
     <g stroke="currentColor" stroke-width="1.2" stroke-linejoin="round">
-      <path d="M4 5H24L28 11H8Z" fill="#232323"/>
-      <path d="M4 5L8 11V29L4 23Z" fill="#161616"/>
-      <path d="M8 11H28V29H8Z" fill="#0A0A0A"/>
+      <path d="M4 5H24L28 11H8Z" fill="#FBFAF7"/>
+      <path d="M4 5L8 11V29L4 23Z" fill="#CFC9BF"/>
+      <path d="M8 11H28V29H8Z" fill="#E6E2DA"/>
     </g>
     <path d="M13 5H17L21 11H17Z" fill="#FF6504"/>
     <path d="M17 11H21V15H17Z" fill="#FF6504"/>
@@ -38,6 +40,7 @@
     <nav class="nav__right" aria-label="Main">
       <a class="nav__link" href="/#help">How we help</a>
       <a class="nav__link" href="/#contact">Contact</a>
+      <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language to Chinese" lang="zh-CN">中文</button>
       <a class="btn btn--solid btn--sm" href="/creators.html">Our UGC Creators</a>
       <button class="burger" type="button" aria-controls="menu" aria-expanded="false" aria-label="Open menu"><span></span></button>
     </nav>
@@ -49,7 +52,7 @@
   <a href="/#contact">Contact</a>
 </div>
 
-<main id="main" class="notfound scene scene--dark scene--dots">
+<main id="main" class="notfound scene scene--tone">
   <div class="wrap">
     <div class="chapter"><span class="label"><b>404</b> / Not found</span><span class="label">CN → DE / EU</span></div>
     <h1 class="display rw">This page is <em class="accent">missing.</em></h1>

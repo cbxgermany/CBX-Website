@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>try{var l=localStorage.getItem("cbx-lang")||((navigator.language||"").toLowerCase().indexOf("zh")===0?"zh":"en");if(l==="zh"){document.documentElement.classList.add("i18n-pending");setTimeout(function(){document.documentElement.classList.remove("i18n-pending")},2500)}}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CBX Germany · We bring Chinese brands to Europe</title>
 <meta name="description" content="CBX Germany brings Chinese brands to Europe. We set up your online store, run your ads and work with Western UGC creators. One team, from China to your customer.">
 <meta name="keywords" content="CBX Germany, Chinese brands Europe, UGC creators, Western UGC creators, Shopify Europe, 中国品牌出海欧洲, 西方网红代理, 小红书 西方达人, cross border marketing">
-<meta name="theme-color" content="#0A0A0A">
+<meta name="theme-color" content="#F1F0EB">
 <link rel="canonical" href="https://www.cbxgermany.de/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
@@ -25,11 +26,12 @@
 <meta name="twitter:title" content="CBX Germany · We bring Chinese brands to Europe">
 <meta name="twitter:description" content="Store, ads and UGC creators. One team, from China to your customer.">
 <meta name="twitter:image" content="https://www.cbxgermany.de/assets/og-image.jpg">
-<link rel="preload" as="image" href="assets/cbx-video-poster.jpg">
+<link rel="preload" as="image" href="images/gallery/yana-moroz-15.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800;900&amp;family=Instrument+Serif:ital@1&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap">
 <link rel="stylesheet" href="styles.css">
+<script src="i18n.js" defer></script>
 <script src="script.js" defer></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"CBX Germany","url":"https://www.cbxgermany.de/","email":"info@cbxgermany.de","logo":"https://www.cbxgermany.de/apple-touch-icon.png","description":"CBX Germany brings Chinese brands to Europe with online stores, ads and Western UGC creators."}
@@ -38,44 +40,16 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<!-- shared symbols: box mark and Cleared stamps -->
+<!-- logo mark -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <defs>
-    <path id="ring-top" d="M37 100A63 63 0 0 1 163 100"/>
-    <path id="ring-bottom" d="M28 100A72 72 0 0 0 172 100"/>
-  </defs>
   <symbol id="i-box" viewBox="0 0 32 32">
     <g stroke="currentColor" stroke-width="1.2" stroke-linejoin="round">
-      <path d="M4 5H24L28 11H8Z" fill="#232323"/>
-      <path d="M4 5L8 11V29L4 23Z" fill="#161616"/>
-      <path d="M8 11H28V29H8Z" fill="#0A0A0A"/>
+      <path d="M4 5H24L28 11H8Z" fill="#FBFAF7"/>
+      <path d="M4 5L8 11V29L4 23Z" fill="#CFC9BF"/>
+      <path d="M8 11H28V29H8Z" fill="#E6E2DA"/>
     </g>
     <path d="M13 5H17L21 11H17Z" fill="#FF6504"/>
     <path d="M17 11H21V15H17Z" fill="#FF6504"/>
-  </symbol>
-  <symbol id="stamp-creator" viewBox="0 0 200 200">
-    <g fill="none" stroke="currentColor"><circle cx="100" cy="100" r="93" stroke-width="7"/><circle cx="100" cy="100" r="81" stroke-width="2"/><circle cx="100" cy="100" r="52" stroke-width="2"/></g>
-    <g fill="currentColor" font-family="JetBrains Mono, monospace" font-size="12.5" font-weight="600" letter-spacing="3.2">
-      <text><textPath href="#ring-top" startOffset="50%" text-anchor="middle">CBX GERMANY</textPath></text>
-      <text><textPath href="#ring-bottom" startOffset="50%" text-anchor="middle">UGC CREATOR</textPath></text>
-    </g>
-    <g transform="rotate(-8 100 100)"><rect x="4" y="77" width="192" height="46" fill="currentColor"/><text x="100" y="111" text-anchor="middle" font-family="Inter Tight, Arial Black, sans-serif" font-size="33" font-weight="900" style="fill:var(--stamp-ink,#0A0A0A)">CLEARED</text></g>
-  </symbol>
-  <symbol id="stamp-europe" viewBox="0 0 200 200">
-    <g fill="none" stroke="currentColor"><circle cx="100" cy="100" r="93" stroke-width="7"/><circle cx="100" cy="100" r="81" stroke-width="2"/><circle cx="100" cy="100" r="52" stroke-width="2"/></g>
-    <g fill="currentColor" font-family="JetBrains Mono, monospace" font-size="12.5" font-weight="600" letter-spacing="3.2">
-      <text><textPath href="#ring-top" startOffset="50%" text-anchor="middle">CBX GERMANY</textPath></text>
-      <text><textPath href="#ring-bottom" startOffset="50%" text-anchor="middle">FOR EUROPE</textPath></text>
-    </g>
-    <g transform="rotate(-8 100 100)"><rect x="4" y="77" width="192" height="46" fill="currentColor"/><text x="100" y="111" text-anchor="middle" font-family="Inter Tight, Arial Black, sans-serif" font-size="33" font-weight="900" style="fill:var(--stamp-ink,#0A0A0A)">CLEARED</text></g>
-  </symbol>
-  <symbol id="stamp-asia" viewBox="0 0 200 200">
-    <g fill="none" stroke="currentColor"><circle cx="100" cy="100" r="93" stroke-width="7"/><circle cx="100" cy="100" r="81" stroke-width="2"/><circle cx="100" cy="100" r="52" stroke-width="2"/></g>
-    <g fill="currentColor" font-family="JetBrains Mono, monospace" font-size="12.5" font-weight="600" letter-spacing="3.2">
-      <text><textPath href="#ring-top" startOffset="50%" text-anchor="middle">CBX GERMANY</textPath></text>
-      <text><textPath href="#ring-bottom" startOffset="50%" text-anchor="middle">CHINA &amp; APAC</textPath></text>
-    </g>
-    <g transform="rotate(-8 100 100)"><rect x="4" y="77" width="192" height="46" fill="currentColor"/><text x="100" y="111" text-anchor="middle" font-family="Inter Tight, Arial Black, sans-serif" font-size="33" font-weight="900" style="fill:var(--stamp-ink,#0A0A0A)">CLEARED</text></g>
   </symbol>
 </svg>
 
@@ -89,6 +63,7 @@
     <nav class="nav__right" aria-label="Main">
       <a class="nav__link" href="#help">How we help</a>
       <a class="nav__link" href="#contact">Contact</a>
+      <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language to Chinese" lang="zh-CN">中文</button>
       <a class="btn btn--solid btn--sm" href="creators.html">Our UGC Creators</a>
       <button class="burger" type="button" aria-controls="menu" aria-expanded="false" aria-label="Open menu"><span></span></button>
     </nav>
@@ -107,136 +82,86 @@
 
 <main id="main">
 
-  <!-- HERO: the film -->
-  <section class="hero scene scene--dark" id="top" aria-labelledby="hero-title">
-    <div class="wrap">
-      <div class="film" id="film" data-film>
-        <div class="film__bar">
-          <span class="label">CBX Germany / Film</span>
-          <span class="label rec"><span class="spec">0:34 · </span>Sound on</span>
-        </div>
-        <div class="film__frame">
-          <div class="film__screen">
-            <video playsinline preload="metadata" poster="assets/cbx-video-poster.jpg" aria-label="CBX Germany brand film, 34 seconds, with voice over">
-              <source src="assets/cbx-video-720.mp4" type="video/mp4" media="(max-width: 900px)">
-              <source src="assets/cbx-video.mp4" type="video/mp4">
-            </video>
-            <button class="play" type="button" aria-label="Play the CBX Germany film with sound">
-              <span class="play__btn">
-                <span class="play__frame" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2l18 10L4 22z" fill="currentColor"/></svg>
-              </span>
-              <span class="play__label label">Play film · 0:34</span>
-            </button>
-          </div>
-        </div>
-        <div class="film__bottom">
-          <span class="label" data-tc>TC 00:00:00:00</span>
-          <div class="ruler" aria-hidden="true"></div>
-          <span class="label" data-chapter>00 / The problem</span>
+  <!-- HERO: real faces first -->
+  <section class="hero scene scene--base" id="top" aria-labelledby="hero-title">
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <h1 class="display rw" id="hero-title">We bring Chinese brands to <em class="accent">Europe.</em></h1>
+        <p class="lead reveal">Store, ads and UGC creators. One team, from China to your customer.</p>
+        <div class="hero__actions reveal" data-d="1">
+          <a class="btn btn--solid" href="creators.html">Meet our UGC creators <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn--play" href="#film" data-play-film>Watch the film</a>
         </div>
       </div>
-
-      <div class="hero__text">
-        <div>
-          <span class="label">CN → DE / EU</span>
-          <h1 class="display rw" id="hero-title">We bring Chinese brands to <em class="accent">Europe.</em></h1>
-        </div>
-        <div class="hero__side reveal">
-          <p class="lead">Store, ads and UGC creators. One team, from China to your customer.</p>
-          <div class="hero__actions">
-            <a class="btn btn--solid btn--play" href="#film" data-play-film>Watch the film</a>
-            <a class="btn" href="creators.html">Meet our UGC creators <span class="arrow" aria-hidden="true">→</span></a>
-          </div>
-        </div>
+      <div class="hero__photos">
+        <a class="photo hero__main reveal" href="creators/yana-moroz.html">
+          <span class="photo__img"><img src="images/gallery/yana-moroz-15.jpg" alt="Yana Moroz" width="1200" height="1600" fetchpriority="high"></span>
+          <span class="photo__cap">Yana Moroz</span>
+        </a>
+        <a class="photo hero__side reveal" data-d="2" href="creators/anna-tatarnikova.html">
+          <span class="photo__img"><img class="pos-top" src="images/gallery/anna-tatarnikova-01.jpg" alt="Anna Tatarnikova" width="466" height="680"></span>
+          <span class="photo__cap">Anna Tatarnikova</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- 00 THE PROBLEM -->
-  <section class="problem section scene scene--light scene--dots" id="problem" aria-labelledby="problem-title">
+  <!-- THE PROBLEM -->
+  <section class="problem section scene scene--tone" id="problem" aria-labelledby="problem-title">
     <div class="wrap">
-      <div class="chapter"><span class="label"><b>00</b> / The problem</span><span class="label">CN → EU</span></div>
+      <div class="chapter"><span class="label">The problem</span></div>
       <div class="problem__grid">
         <h2 class="display rw" id="problem-title"><span class="soft">Your product is <em class="accent">great.</em></span> But Europe has no idea you exist<span class="dot">.</span></h2>
-        <div class="reveal">
-          <p class="lead">Many Chinese brands make things people in Europe would buy. Without a local shop and faces people trust, nobody here gets to see them. We fix that.</p>
-          <div class="route" aria-hidden="true">
-            <span class="label">CN</span>
-            <span class="route__line"><span class="route__dot"></span></span>
-            <span class="label">EU</span>
-          </div>
+        <p class="lead reveal">Many Chinese brands make things people in Europe would buy. Without a local shop and faces people trust, nobody here gets to see them. We fix that.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE FILM -->
+  <section class="filmsec scene scene--tone" aria-label="The film">
+    <div class="wrap">
+      <div class="film" id="film" data-film>
+        <div class="film__screen">
+          <video playsinline preload="none" poster="assets/cbx-film-poster.jpg" aria-label="CBX Germany brand film, 34 seconds, with voice over">
+            <source src="assets/cbx-video-720.mp4" type="video/mp4" media="(max-width: 900px)">
+            <source src="assets/cbx-video.mp4" type="video/mp4">
+          </video>
+          <button class="play" type="button" aria-label="Play the CBX Germany film with sound">
+            <span class="play__btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5l14 8.5-14 8.5z" fill="currentColor"/></svg></span>
+            <span class="play__label">Play film · 0:34</span>
+          </button>
+        </div>
+        <div class="film__bar">
+          <span class="label">CBX Germany / Film</span>
+          <span class="label"><span class="spec">0:34 · </span>Sound on</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 01 HOW WE HELP -->
-  <section class="help section scene scene--dark" id="help" aria-labelledby="help-title">
+  <!-- HOW WE HELP -->
+  <section class="help section scene scene--base" id="help" aria-labelledby="help-title">
     <div class="wrap">
-      <div class="chapter"><span class="label"><b>01</b> / How we help</span><span class="label">Store · Ads · Creators · Live</span></div>
+      <div class="chapter"><span class="label">How we help</span></div>
       <div class="help__head">
         <h2 class="display rw" id="help-title">Everything your brand needs to <em class="accent">sell</em> in Europe<span class="dot">.</span></h2>
         <p class="lead reveal">Four services. One team that runs them for you.</p>
       </div>
-
       <div class="services">
         <article class="service reveal">
-          <span class="sel" aria-hidden="true"><i></i><i></i><i></i><i></i><span class="sel__tag">Layer · Store</span></span>
-          <div class="service__top">
-            <svg class="service__icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="5" y="9" width="46" height="38"/><path d="M5 17h46"/>
-              <rect x="9" y="11.5" width="3" height="3" fill="#FF6504" stroke="none"/><rect x="14" y="11.5" width="3" height="3" fill="currentColor" stroke="none" opacity=".5"/>
-              <rect x="11" y="23" width="14" height="18"/><path d="M31 25h14M31 30h9"/>
-              <rect x="31" y="36" width="12" height="5" fill="#FF6504" stroke="none"/>
-            </svg>
-            <span class="label">01 / 04</span>
-          </div>
           <h3>Online store</h3>
           <p>We set up your Shopify store and a landing page for European buyers. In German and English, with prices in euro and the payment methods people here use.</p>
         </article>
-
         <article class="service reveal" data-d="1">
-          <span class="sel" aria-hidden="true"><i></i><i></i><i></i><i></i><span class="sel__tag">Layer · Ads</span></span>
-          <div class="service__top">
-            <svg class="service__icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M6 48h44"/>
-              <rect x="9" y="38" width="7" height="10"/><rect x="20" y="33" width="7" height="15"/><rect x="31" y="28" width="7" height="20"/>
-              <rect x="42" y="20" width="7" height="28" fill="#FF6504" stroke="none"/>
-              <path d="M8 26l12-8 9 3 15-13" stroke="#FF6504"/><path d="M37 8h7v7" stroke="#FF6504"/>
-            </svg>
-            <span class="label">02 / 04</span>
-          </div>
           <h3>Ads</h3>
           <p>We plan, launch and run your ad campaigns. The money comes from your own ad budget, we do the work.</p>
         </article>
-
-        <article class="service reveal">
-          <span class="sel" aria-hidden="true"><i></i><i></i><i></i><i></i><span class="sel__tag">Layer · Creators</span></span>
-          <div class="service__top">
-            <svg class="service__icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="13" y="4" width="22" height="44" rx="3"/><path d="M21 8h6"/>
-              <path d="M21 20v12l10-6z" fill="#FF6504" stroke="#FF6504" stroke-linejoin="round"/>
-              <circle cx="41" cy="42" r="9" stroke="#FF6504"/><circle cx="41" cy="42" r="5.5" stroke="#FF6504" stroke-width="1"/>
-            </svg>
-            <span class="label">03 / 04</span>
-          </div>
+        <article class="service reveal" data-d="2">
           <h3>UGC creators</h3>
           <p>Western creators film short videos with your product. People trust a real face more than a banner.</p>
           <a class="textlink" href="creators.html">Meet the creators →</a>
         </article>
-
-        <article class="service reveal" data-d="1">
-          <span class="sel" aria-hidden="true"><i></i><i></i><i></i><i></i><span class="sel__tag">Layer · Live</span></span>
-          <div class="service__top">
-            <svg class="service__icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="8" y="12" width="40" height="28"/><path d="M20 47h16M28 40v7"/>
-              <circle cx="28" cy="26" r="3.5" fill="#FF6504" stroke="none"/>
-              <path d="M22 20a9 9 0 0 0 0 12M34 20a9 9 0 0 1 0 12" stroke="#FF6504"/>
-              <path d="M18 16.5a14 14 0 0 0 0 19M38 16.5a14 14 0 0 1 0 19"/>
-            </svg>
-            <span class="label">04 / 04</span>
-          </div>
+        <article class="service reveal" data-d="3">
           <h3>Live commerce <span class="tagbox tagbox--orange">New</span></h3>
           <p>Selling through livestreams, the way it already works in China. We are building this offer right now.</p>
         </article>
@@ -244,136 +169,107 @@
     </div>
   </section>
 
-  <!-- 02 HOW IT WORKS -->
-  <section class="how section scene scene--light scene--dots" id="how" aria-labelledby="how-title">
+  <!-- HOW IT WORKS -->
+  <section class="how section scene scene--tone" id="how" aria-labelledby="how-title">
     <div class="wrap">
-      <div class="chapter"><span class="label"><b>02</b> / How it works</span><span class="label">Brief · Setup · Launch</span></div>
-      <div class="how__head">
-        <h2 class="display rw" id="how-title">From brief to <em class="accent">launch.</em></h2>
-      </div>
+      <div class="chapter"><span class="label">How it works</span></div>
+      <h2 class="display rw how__title" id="how-title">From brief to <em class="accent">launch.</em></h2>
       <ol class="steps">
         <li class="step reveal">
-          <div class="step__top"><span class="label">Step</span><span class="label">01 / 03</span></div>
-          <span class="step__num display rw" aria-hidden="true">01</span>
-          <div class="step__bar"><h3 class="label">Brief</h3><span class="label">Start</span></div>
+          <span class="step__num" aria-hidden="true">1</span>
+          <h3>Brief</h3>
           <p>Tell us about your brand and your product. Together we decide where to start.</p>
         </li>
-        <li class="step scene scene--dark reveal" data-d="1">
-          <div class="step__top"><span class="label">Step</span><span class="label">02 / 03</span></div>
-          <span class="step__num display rw" aria-hidden="true">02</span>
-          <div class="step__bar"><h3 class="label">Setup</h3><span class="label">Build</span></div>
+        <li class="step reveal" data-d="1">
+          <span class="step__num" aria-hidden="true">2</span>
+          <h3>Setup</h3>
           <p>We build the store, prepare the ads and choose the creators who fit your product.</p>
         </li>
         <li class="step reveal" data-d="2">
-          <div class="step__top"><span class="label">Step</span><span class="label">03 / 03</span></div>
-          <span class="step__num display rw" aria-hidden="true">03</span>
-          <div class="step__bar"><h3 class="label">Launch</h3><span class="label">Live</span></div>
+          <span class="step__num" aria-hidden="true">3</span>
+          <h3>Launch</h3>
           <p>Your brand goes live in Europe. We keep working on it with you after the launch.</p>
         </li>
       </ol>
     </div>
   </section>
 
-  <!-- 03 UGC CREATORS TEASER -->
-  <section class="teaser section scene scene--dark" id="creators" aria-labelledby="teaser-title">
+  <!-- UGC CREATORS TEASER -->
+  <section class="teaser section scene scene--base" id="creators" aria-labelledby="teaser-title">
     <div class="wrap">
-      <div class="chapter"><span class="label"><b>03</b> / UGC creators</span><span class="label">7 on the roster</span></div>
+      <div class="chapter"><span class="label">UGC creators</span><span class="label">7 on the roster</span></div>
       <div class="teaser__head">
         <h2 class="display rw" id="teaser-title">Real Western <em class="accent">creators.</em></h2>
         <p class="lead reveal">Content people actually believe. We check every creator ourselves, and all contact runs through us, never directly to the creator.</p>
       </div>
       <div class="teaser__grid">
         <a class="tcard reveal" href="creators.html#laura">
-          <div class="tcard__img"><div class="clip"><img src="images/web/laura-primary.jpg" alt="Laura Jaeschke" loading="lazy"></div><div class="corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+          <div class="tcard__img"><img src="images/web/laura-primary.jpg" alt="Laura Jaeschke" loading="lazy"></div>
           <p class="tcard__name">Laura Jaeschke</p>
           <p class="tcard__meta label">Beauty · Lifestyle</p>
         </a>
         <a class="tcard reveal" data-d="1" href="creators.html#anna">
-          <div class="tcard__img"><div class="clip"><img class="pos-top" src="images/web/anna-primary.jpg" alt="Anna Tatarnikova" loading="lazy"></div><div class="corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+          <div class="tcard__img"><img class="pos-top" src="images/web/anna-primary.jpg" alt="Anna Tatarnikova" loading="lazy"></div>
           <p class="tcard__name">Anna Tatarnikova</p>
           <p class="tcard__meta label">Fashion · Fitness</p>
         </a>
         <a class="tcard reveal" data-d="2" href="creators.html#isabel">
-          <div class="tcard__img"><div class="clip"><img src="images/web/isabel-primary.jpg" alt="Isabel Smolen" loading="lazy"></div><div class="corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+          <div class="tcard__img"><img src="images/web/isabel-primary.jpg" alt="Isabel Smolen" loading="lazy"></div>
           <p class="tcard__name">Isabel Smolen</p>
           <p class="tcard__meta label">Beauty · Fashion</p>
         </a>
         <a class="tcard reveal" data-d="3" href="creators.html#laurab">
-          <div class="tcard__img"><div class="clip"><img src="images/web/laurab-2.jpg" alt="Laura Baumert" loading="lazy"></div><div class="corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+          <div class="tcard__img"><img src="images/web/laurab-2.jpg" alt="Laura Baumert" loading="lazy"></div>
           <p class="tcard__name">Laura Baumert</p>
           <p class="tcard__meta label">Fashion · Travel</p>
         </a>
         <a class="tcard reveal" data-d="4" href="creators.html#nino">
-          <div class="tcard__img"><div class="clip"><img src="images/web/nino-primary.jpg" alt="Nino Struzhkini" loading="lazy"></div><div class="corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+          <div class="tcard__img"><img src="images/web/nino-primary.jpg" alt="Nino Struzhkini" loading="lazy"></div>
           <p class="tcard__name">Nino Struzhkini</p>
           <p class="tcard__meta label">Beauty · Interior</p>
         </a>
       </div>
       <div class="teaser__cta reveal">
-        <a class="btn btn--solid btn--xl" href="creators.html">See all UGC creators <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn--solid" href="creators.html">See all UGC creators <span class="arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
 
-  <!-- REVERSE DIRECTION STRIP -->
-  <section class="strip scene scene--orange" aria-labelledby="strip-title">
+  <!-- THE OTHER DIRECTION -->
+  <section class="strip scene scene--tone" aria-labelledby="strip-title">
     <div class="wrap strip__inner">
-      <svg class="strip__stamp" viewBox="0 0 200 200" aria-hidden="true"><use href="#stamp-asia"/></svg>
+      <h2 class="display" id="strip-title">Western Faces, Cleared for <em class="accent">China &amp; APAC.</em></h2>
       <div class="strip__copy">
-        <h2 class="display" id="strip-title">Western Faces, Cleared for <em class="accent">China &amp; APAC.</em></h2>
         <p>It works the other way too. We also place Western creators with Chinese and Asian brands.</p>
         <a class="textlink" href="#contact">Talk to us →</a>
       </div>
     </div>
   </section>
 
-  <!-- 04 CONTACT -->
-  <section class="contact section scene scene--light scene--dots" id="contact" aria-labelledby="contact-title">
+  <!-- CONTACT -->
+  <section class="contact section scene scene--base" id="contact" aria-labelledby="contact-title">
     <div class="wrap">
-      <div class="chapter"><span class="label"><b>04</b> / Contact</span><span class="label">Germany · CN → DE / EU</span></div>
+      <div class="chapter"><span class="label">Contact</span></div>
       <div class="contact__grid">
         <div>
           <h2 class="display rw" id="contact-title">Your brand, <em class="accent">cleared</em> for Europe<span class="dot">.</span></h2>
           <p class="lead reveal">Tell us about your brand and what you want to sell in Europe.</p>
           <div class="contact__actions reveal" data-d="1">
-            <a class="btn btn--solid btn--mail" href="mailto:info@cbxgermany.de?subject=Hello%20CBX%20Germany">info@cbxgermany.de</a>
-            <button class="btn btn--mail" type="button" data-open-dialog="wechat">WeChat</button>
+            <a class="btn btn--solid" href="mailto:info@cbxgermany.de?subject=Hello%20CBX%20Germany">info@cbxgermany.de</a>
+            <button class="btn" type="button" data-open-dialog="wechat">WeChat</button>
           </div>
         </div>
-        <figure class="contact__art reveal" data-d="2" aria-hidden="true">
-          <svg viewBox="0 0 540 440">
-            <defs>
-              <linearGradient id="side-glow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF6504" stop-opacity=".55"/><stop offset=".65" stop-color="#FF6504" stop-opacity="0"/></linearGradient>
-            </defs>
-            <g stroke="#F4F2EE" stroke-width="1.4" stroke-linejoin="round">
-              <path d="M40 40H300L350 110H90Z" fill="#1E1E1E"/>
-              <path d="M40 40L90 110V380L40 310Z" fill="#141414"/>
-              <path d="M90 110H350V380H90Z" fill="#0A0A0A"/>
-            </g>
-            <path d="M41 42L89 110V378L41 310Z" fill="url(#side-glow)"/>
-            <path d="M160 40H196L246 110H210Z" fill="#FF6504"/>
-            <rect x="210" y="110" width="36" height="40" fill="#FF6504"/>
-            <text x="116" y="268" font-family="Inter Tight, Arial Black, sans-serif" font-weight="900" font-size="94" letter-spacing="-3" fill="#ECEAE6">CBX</text>
-            <rect x="309" y="249" width="19" height="19" fill="#FF6504"/>
-            <text x="220" y="304" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" letter-spacing="8" fill="#B9B7B2">GERMANY</text>
-            <g font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1.5" fill="#8A8884">
-              <text x="110" y="350">ORIGIN</text><text x="166" y="350">CN</text>
-              <text x="110" y="366">DEST</text><text x="166" y="366">DE / EU</text>
-            </g>
-            <use href="#stamp-europe" x="282" y="298" width="124" height="124" transform="rotate(-10 344 360)" style="color:#FF6504"/>
-            <circle cx="398" cy="318" r="4.5" fill="none" stroke="#FF6504" stroke-width="1.5"/>
-            <circle cx="398" cy="318" r="1.6" fill="#FF6504"/>
-            <path d="M401 314L428 262H536" fill="none" stroke="#0A0A0A" stroke-width="1"/>
-            <text x="430" y="254" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1.4" fill="#0A0A0A">STATUS · CLEARED</text>
-          </svg>
-        </figure>
+        <a class="photo contact__photo reveal" data-d="2" href="creators/laura-jaeschke.html">
+          <span class="photo__img"><img src="images/gallery/laura-jaeschke-03.jpg" alt="Laura Jaeschke" width="484" height="704" loading="lazy"></span>
+          <span class="photo__cap">Laura Jaeschke</span>
+        </a>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="footer scene scene--dark">
+<footer class="footer scene scene--tone">
   <div class="wrap talk">
     <span class="label talk__eyebrow">Ready to brief a creator?</span>
     <h2 class="display rw talk__title">Let's talk<span class="dot">.</span></h2>
@@ -403,8 +299,7 @@
 </footer>
 
 <dialog class="modal" id="wechat" aria-labelledby="wechat-title">
-  <div class="modal__panel scene scene--dark">
-    <div class="corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="modal__panel scene scene--tone">
     <button class="modal__close" type="button" data-close-dialog aria-label="Close">✕</button>
     <span class="label">CBX Germany</span>
     <h2 class="display" id="wechat-title">WeChat</h2>

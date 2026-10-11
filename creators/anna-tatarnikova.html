@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>try{var l=localStorage.getItem("cbx-lang")||((navigator.language||"").toLowerCase().indexOf("zh")===0?"zh":"en");if(l==="zh"){document.documentElement.classList.add("i18n-pending");setTimeout(function(){document.documentElement.classList.remove("i18n-pending")},2500)}}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Anna Tatarnikova · UGC Creator · CBX Germany</title>
 <meta name="description" content="Anna Tatarnikova, UGC creator on the CBX Germany roster. Beauty &amp; Skincare, Fashion, Fitness, Lifestyle, Home &amp; Interior, Outdoor, Sports. See all photos.">
-<meta name="theme-color" content="#0A0A0A">
+<meta name="theme-color" content="#F1F0EB">
 <link rel="canonical" href="https://www.cbxgermany.de/creators/anna-tatarnikova.html">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
@@ -17,8 +18,9 @@
 <meta property="og:url" content="https://www.cbxgermany.de/creators/anna-tatarnikova.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800;900&amp;family=Instrument+Serif:ital@1&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap">
 <link rel="stylesheet" href="../styles.css">
+<script src="../i18n.js" defer></script>
 <script src="../script.js" defer></script>
 </head>
 <body>
@@ -26,9 +28,9 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-box" viewBox="0 0 32 32">
     <g stroke="currentColor" stroke-width="1.2" stroke-linejoin="round">
-      <path d="M4 5H24L28 11H8Z" fill="#232323"/>
-      <path d="M4 5L8 11V29L4 23Z" fill="#161616"/>
-      <path d="M8 11H28V29H8Z" fill="#0A0A0A"/>
+      <path d="M4 5H24L28 11H8Z" fill="#FBFAF7"/>
+      <path d="M4 5L8 11V29L4 23Z" fill="#CFC9BF"/>
+      <path d="M8 11H28V29H8Z" fill="#E6E2DA"/>
     </g>
     <path d="M13 5H17L21 11H17Z" fill="#FF6504"/>
     <path d="M17 11H21V15H17Z" fill="#FF6504"/>
@@ -45,6 +47,7 @@
     <nav class="nav__right" aria-label="Main">
       <a class="nav__link" href="../index.html#help">How we help</a>
       <a class="nav__link" href="../index.html#contact">Contact</a>
+      <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language to Chinese" lang="zh-CN">中文</button>
       <a class="btn btn--solid btn--sm" href="../creators.html" aria-current="page">Our UGC Creators</a>
       <button class="burger" type="button" aria-controls="menu" aria-expanded="false" aria-label="Open menu"><span></span></button>
     </nav>
@@ -63,7 +66,7 @@
 
 <main id="main">
 
-  <section class="cdetail scene scene--dark" aria-labelledby="cname">
+  <section class="cdetail scene scene--tone" aria-labelledby="cname">
     <div class="wrap">
       <a class="textlink back" href="../creators.html#anna">← All creators</a>
       <div class="chapter"><span class="label"><b>UGC</b> / Creator</span><span class="label">5 photos</span></div>
@@ -78,7 +81,7 @@
     </div>
   </section>
 
-  <section class="gallery section scene scene--light scene--dots" aria-labelledby="photos-title">
+  <section class="gallery section scene scene--base" aria-labelledby="photos-title">
     <div class="wrap">
       <div class="chapter"><span class="label"><b>01</b> / <span id="photos-title">Photos</span></span><span class="label">5 photos · Tap to enlarge</span></div>
       <div class="pgrid">
@@ -101,7 +104,7 @@
     </div>
   </section>
 
-  <nav class="cnav scene scene--light" aria-label="More creators">
+  <nav class="cnav scene scene--base" aria-label="More creators">
     <div class="wrap cnav__inner">
       <a class="cnav__link" href="laura-jaeschke.html"><span class="label">← Previous</span><span class="cnav__name">Laura Jaeschke</span></a>
       <a class="cnav__all textlink" href="../creators.html">All creators</a>
@@ -111,7 +114,7 @@
 
 </main>
 
-<footer class="footer scene scene--dark">
+<footer class="footer scene scene--tone">
   <div class="wrap talk">
     <span class="label talk__eyebrow">Ready to brief a creator?</span>
     <h2 class="display rw talk__title">Let's talk<span class="dot">.</span></h2>
@@ -139,8 +142,7 @@
 </footer>
 
 <dialog class="modal" id="wechat" aria-labelledby="wechat-title">
-  <div class="modal__panel scene scene--dark">
-    <div class="corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="modal__panel scene scene--tone">
     <button class="modal__close" type="button" data-close-dialog aria-label="Close">✕</button>
     <span class="label">CBX Germany</span>
     <h2 class="display" id="wechat-title">WeChat</h2>

@@ -6,6 +6,7 @@
   root.classList.add('js');
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var hasIO = 'IntersectionObserver' in window;
+  var tr = function (s) { return window.CBX_I18N ? window.CBX_I18N.t(s) : s; };
 
   /* ---------- mobile menu ---------- */
   var burger = document.querySelector('.burger');
@@ -13,7 +14,7 @@
   if (burger && menu) {
     var setMenu = function (open) {
       burger.setAttribute('aria-expanded', String(open));
-      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      burger.setAttribute('aria-label', tr(open ? 'Close menu' : 'Open menu'));
       menu.classList.toggle('is-open', open);
       document.body.classList.toggle('menu-open', open);
       if (open) menu.removeAttribute('inert'); else menu.setAttribute('inert', '');
@@ -33,21 +34,25 @@
     });
   }
 
-  /* ---------- headlines: outline first, then filled word by word ---------- */
+  /* ---------- headlines: words rise in one after another ---------- */
+  /* Latin is split into words; Chinese has no spaces, so each character becomes its own piece
+     (two characters share one animation step) and the line can still wrap anywhere */
+  var CJK = /[　-ヿ㐀-鿿＀-￯]/;
+  var TOKENS = /[　-ヿ㐀-鿿＀-￯]|[^\s　-ヿ㐀-鿿＀-￯]+|\s+/g;
   function splitWords(el) {
     el.setAttribute('aria-label', el.textContent.replace(/\s+/g, ' ').trim());
-    var i = 0;
+    var i = 0, cjk = 0;
     (function walk(node) {
       Array.prototype.slice.call(node.childNodes).forEach(function (child) {
         if (child.nodeType === 3) {
           var frag = document.createDocumentFragment();
-          child.textContent.split(/(\s+)/).forEach(function (part) {
-            if (!part) return;
+          (child.textContent.match(TOKENS) || []).forEach(function (part) {
             if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
             var w = document.createElement('span');
             w.className = 'w';
             w.setAttribute('aria-hidden', 'true');
-            w.style.setProperty('--i', i++);
+            if (CJK.test(part)) { w.style.setProperty('--i', i + Math.floor(cjk++ / 2)); }
+            else { if (cjk) { i += Math.ceil(cjk / 2); cjk = 0; } w.style.setProperty('--i', i++); }
             w.textContent = part;
             frag.appendChild(w);
           });
@@ -61,6 +66,13 @@
 
   var wordTargets = document.querySelectorAll('.rw');
   wordTargets.forEach(splitWords);
+
+  /* language switch replaces the text, so split again and keep headlines that were already shown filled */
+  document.addEventListener('cbx:lang', function () {
+    wordTargets.forEach(function (el) {
+      if (!el.querySelector('.w')) splitWords(el);
+    });
+  });
 
   var reveals = document.querySelectorAll('.reveal');
   if (reduceMotion || !hasIO) {
@@ -78,41 +90,15 @@
     reveals.forEach(function (el) { io.observe(el); });
   }
 
-  /* ---------- hero film: poster + play button, live timecode ruler ---------- */
+  /* ---------- film: poster + play button, native controls once started ---------- */
   var film = document.querySelector('[data-film]');
   if (film) {
     var video = film.querySelector('video');
     var playBtn = film.querySelector('.play');
-    var tcEl = film.querySelector('[data-tc]');
-    var chapterEl = film.querySelector('[data-chapter]');
-    var ruler = film.querySelector('.ruler');
-    var FPS = 30;
-    var chapters = [
-      [0, '00 / The problem'], [4.5, '01 / CBX Germany'], [6, '02 / Route CN → EU'],
-      [9.5, '03 / Store'], [13.5, '04 / Ads'], [17.5, '05 / Creators'],
-      [22, '06 / Live commerce'], [26.5, '07 / One team'], [29.9, '08 / Cleared']
-    ];
-    var pad = function (n) { return String(n).padStart(2, '0'); };
-    var render = function () {
-      var t = video.currentTime || 0;
-      var d = video.duration || 34.43;
-      ruler.style.setProperty('--p', Math.min(1, t / d).toFixed(4));
-      tcEl.textContent = 'TC 00:' + pad(Math.floor(t / 60)) + ':' + pad(Math.floor(t) % 60) + ':' + pad(Math.floor((t % 1) * FPS));
-      var label = chapters[0][1];
-      chapters.forEach(function (c) { if (t >= c[0]) label = c[1]; });
-      chapterEl.textContent = label;
-    };
-    var raf = 0;
-    var loop = function () { render(); raf = requestAnimationFrame(loop); };
-    video.addEventListener('play', function () { cancelAnimationFrame(raf); loop(); });
-    video.addEventListener('pause', function () { cancelAnimationFrame(raf); render(); });
-    video.addEventListener('seeked', render);
     video.addEventListener('ended', function () {
-      cancelAnimationFrame(raf);
       film.classList.remove('is-started');
       video.controls = false;
       video.load();
-      render();
     });
     var startFilm = function () {
       film.classList.add('is-started');
@@ -129,7 +115,6 @@
         startFilm();
       });
     });
-    render();
   }
 
   /* ---------- creator videos: all videos of one creator start together when in view,
@@ -194,7 +179,7 @@
     var sendBtn = form.querySelector('button[type="submit"]');
     var fail = 'Something went wrong. Please try again or email info@cbxgermany.de.';
     var say = function (text, state) {
-      note.textContent = text;
+      note.textContent = tr(text);
       note.classList.toggle('is-error', state === 'error');
       note.classList.toggle('is-ok', state === 'ok');
     };
