@@ -96,19 +96,18 @@ button{font:inherit; color:inherit}
 .route .label{font-family:var(--f-serif); font-style:italic; font-size:18px; font-weight:400; letter-spacing:0; text-transform:none; color:var(--fg)}
 .route__line{position:relative; flex:1; height:9px; min-width:60px; background:linear-gradient(var(--hair-strong),var(--hair-strong)) center/100% 1px no-repeat}
 .route__line::before,.route__line::after{content:""; position:absolute; top:50%; width:7px; height:7px; margin-top:-3.5px; border-radius:50%; border:1px solid var(--hair-strong); background:var(--bg,var(--rice))}
-.route__line::before{left:-3px}
-.route__line::after{right:-3px}
+.route__line::before{left:-3.5px}
+.route__line::after{right:-3.5px}
 .route__dot{position:absolute; inset:0; z-index:1; pointer-events:none; transform:translateX(-100%); animation:route-move var(--route-t) infinite}
 .route__dot::before{content:""; position:absolute; right:-3.5px; top:50%; width:7px; height:7px; margin-top:-3.5px; border-radius:50%; background:var(--orange); animation:route-dot var(--route-t) infinite}
+/* the dot is fully visible on the China circle from the first frame, rests there, then travels */
 @keyframes route-move{
-  0%,10%{transform:translateX(-100%); animation-timing-function:cubic-bezier(.45,0,.25,1)}
-  72%,100%{transform:translateX(0)}
+  0%,14%{transform:translateX(-100%); animation-timing-function:cubic-bezier(.45,0,.25,1)}
+  74%,100%{transform:translateX(0)}
 }
 @keyframes route-dot{
-  0%{opacity:0}
-  10%{opacity:1}
-  86%{opacity:1}
-  98%,100%{opacity:0}
+  0%,86%{opacity:1}
+  97%,100%{opacity:0}
 }
 
 /* ---------- buttons ---------- */
@@ -136,8 +135,7 @@ button{font:inherit; color:inherit}
 .textlink:active{opacity:.7}
 
 /* ---------- logo ---------- */
-.logo{display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink)}
-.logo__box{width:28px; height:28px; flex:none; color:#8C857B}
+.logo{display:inline-flex; align-items:baseline; gap:10px; text-decoration:none; color:var(--ink); white-space:nowrap}
 .logo__word{display:inline-flex; align-items:baseline; font-family:var(--f-sans); font-weight:600; font-size:21px; letter-spacing:-.01em; line-height:1}
 .logo__word::after{content:""; width:.22em; height:.22em; background:var(--orange); margin-left:.08em}
 .logo__sub{font-size:10.5px; font-weight:500; letter-spacing:.3em; text-transform:uppercase; color:var(--stone); margin-left:2px}
@@ -186,22 +184,21 @@ html[lang^="zh"] .lead,html[lang^="zh"] .bio,html[lang^="zh"] p{line-break:stric
 @media (max-width:860px){
   .nav__link{display:none}
   .burger{display:inline-flex}
-  .logo__sub{display:none}
 }
 .lang-toggle,.nav .btn--sm{white-space:nowrap}
 @media (max-width:520px){
   .nav__right{gap:8px}
   .logo{gap:8px}
   .logo__word{font-size:19px}
-  .logo__box{width:25px; height:25px}
+  .logo__sub{font-size:9.5px; letter-spacing:.24em}
   .lang-toggle{min-width:40px; padding:0 9px; font-size:12.5px}
   .nav .btn--sm{padding:0 12px; font-size:13px}
 }
+@media (max-width:440px){
+  .logo__sub{display:none}
+}
 @media (max-width:400px){
   .nav .btn--sm{padding:0 10px; font-size:12.5px}
-}
-@media (max-width:345px){
-  .logo__word{display:none}
 }
 
 /* ---------- photos laid out like prints ---------- */
