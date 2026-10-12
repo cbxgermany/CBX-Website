@@ -22,6 +22,8 @@
     'CN': '中国',
     'EU': '欧洲',
     'DE / EU': '德国 / 欧洲',
+    'Legal Notice': '法律声明',
+    'Privacy Policy': '隐私政策',
 
     // home: hero
     'CBX Germany / Film': 'CBX Germany / 品牌影片',
