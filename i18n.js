@@ -212,7 +212,9 @@
   var TITLES = {
     'CBX Germany · We bring Chinese brands to Europe': 'CBX Germany · 帮中国品牌走进欧洲',
     'Our UGC Creators · CBX Germany': '我们的UGC达人 · CBX Germany',
-    'Page not found · CBX Germany': '页面不存在 · CBX Germany'
+    'Page not found · CBX Germany': '页面不存在 · CBX Germany',
+    'Legal Notice · CBX Germany': '法律声明 · CBX Germany',
+    'Privacy Policy · CBX Germany': '隐私政策 · CBX Germany'
   };
 
   var norm = function (s) { return s.replace(/\s+/g, ' ').trim(); };
