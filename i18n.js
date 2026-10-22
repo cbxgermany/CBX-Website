@@ -79,7 +79,7 @@
 
     // home: creators teaser
     '<b>03</b> / UGC creators': '<b>03</b> / UGC达人',
-    '7 on the roster': '达人库共7位',
+    '8 on the roster': '达人库共8位',
     'Real Western <em class="accent">creators.</em>': '真实的西方<em class="accent">达人。</em>',
     'Content people actually believe. We check every creator ourselves, and all contact runs through us, never directly to the creator.': '真正让人信服的内容。每位达人都经过我们亲自审核，所有沟通都由我们负责，不会直接对接达人本人。',
     'Beauty · Lifestyle': '美妆 · 生活方式',
@@ -141,6 +141,8 @@
       '法律专业学生，注重细节，擅长有说服力的表达，打造精致又亲切的美妆、护肤与时尚内容，专为TikTok、Instagram以及亚马逊等电商平台而做。',
     'Authentic, aesthetic driven creator covering fashion, beauty, fitness, and travel, with hands on skills across unboxing, try on content, voiceover, and product photography. Everything built natively for Reels and TikTok, from first frame to final cut.':
       '风格真实、注重美感的达人，内容涵盖时尚、美妆、健身与旅行，擅长开箱、试穿、配音和产品摄影。所有内容都为Reels和TikTok原生打造，从第一帧到最终成片。',
+    'Lifestyle creator from Serbia, based in Belgrade and currently training to become a yoga teacher. Covers fitness, lifestyle, outdoor, and sports content, with hands on skills in aesthetic photo and video, yoga content, and visual storytelling. The style is minimal and natural, built around movement, natural light, and everyday moments.':
+      '来自塞尔维亚的生活方式达人，现居贝尔格莱德，正在接受瑜伽教练培训。内容涵盖健身、生活方式、户外与运动，擅长有美感的照片和视频、瑜伽内容以及视觉叙事。风格简约自然，围绕身体律动、自然光和日常瞬间展开。',
     'UGC creator from Georgia focused on beauty, skincare, makeup, fashion, and interior and home content, with a knack for stepping fully into the target audience\'s world. Every piece is built to earn trust first and drive sales as a result.':
       '来自格鲁吉亚的UGC达人，专注美妆、护肤、彩妆、时尚和家居内容，善于真正站在目标受众的角度创作。每条内容都先建立信任，再带来销量。',
 
