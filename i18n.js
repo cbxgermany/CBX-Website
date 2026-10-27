@@ -127,6 +127,16 @@
     'Outdoor': '户外',
     'Sports': '运动',
     'Travel': '旅行',
+    // origin and spoken languages
+    'Germany': '德国',
+    'Switzerland &amp; Ukraine': '瑞士与乌克兰',
+    'Georgia': '格鲁吉亚',
+    'Serbia': '塞尔维亚',
+    'Spain &amp; Dubai': '西班牙与迪拜',
+    'Speaks English': '会说英语',
+    'Speaks English, German': '会说英语、德语',
+    'Speaks English, Georgian': '会说英语、格鲁吉亚语',
+    'Speaks English, German, Italian': '会说英语、德语、意大利语',
 
     // bios
     'Swiss and Ukrainian, studying International Relations, with a background in music and modeling from Ukraine. Covers beauty &amp; skincare, makeup, fashion, and lifestyle content, with hands on skills across styling, filming, editing, singing, and dance for more concept driven shoots.':
@@ -231,7 +241,7 @@
   };
 
   /* collect text blocks: elements with their own text, skipping legal body copy */
-  var SKIP = 'script,style,svg,noscript,[data-lang-toggle],[data-no-i18n],.legal .wrap > :not(.back)';
+  var SKIP = 'script,style,svg,noscript,.logo,[data-lang-toggle],[data-no-i18n],.legal .wrap > :not(.back)';
   var units = [];
   (function walk(el) {
     for (var i = 0; i < el.children.length; i++) {
