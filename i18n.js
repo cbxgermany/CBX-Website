@@ -161,8 +161,8 @@
       '常驻柏林和汉堡的模特兼UGC达人，拥有九年以上的国际模特经验。深知拍摄需要什么，并把这份专业转化为真实自然、不刻意摆拍的内容，涵盖美妆、时尚、生活方式与健康生活。拍摄、造型和剪辑全部亲力亲为，可用德语、英语和意大利语创作。合作过的品牌包括Armedangels、Dior、Fendi、Levi\'s、Vogue和Zalando。',
     'UGC creator from Georgia focused on beauty, skincare, makeup, fashion, and interior and home content, with a knack for stepping fully into the target audience\'s world. Every piece is built to earn trust first and drive sales as a result.':
       '来自格鲁吉亚的UGC达人，专注美妆、护肤、彩妆、时尚和家居内容，善于真正站在目标受众的角度创作。每条内容都先建立信任，再带来销量。',
-    'UGC creator living in Switzerland on Lake Constance, right at the border near Konstanz, with a second home in the Allgäu. Focuses on beauty and skincare and films product showcases and hauls, try on and styling videos, mini vlogs, and voiceovers. Family content is possible too, with a young son whose face stays off camera. A background in international management and years in consulting and HR keep every video close to the brief. With the lake and the mountains right outside the door, outdoor content works in every season.':
-      '居住在瑞士博登湖畔、紧邻康斯坦茨边境的UGC达人，在阿尔高地区还有第二个住所。专注美妆护肤，拍摄产品展示与好物分享、试穿与穿搭视频、迷你Vlog和配音。也可以拍摄家庭内容，年幼的儿子可以出镜但不露脸。国际管理专业背景，加上多年咨询与人力资源工作经验，让每条视频都紧扣需求。湖泊和山脉就在家门口，一年四季都能拍户外内容。',
+    'UGC creator living in Switzerland, right at the border near Konstanz, with a second home in the Allgäu. Focuses on beauty and skincare and films product showcases and hauls, try on and styling videos, mini vlogs, and voiceovers. Family content is possible too, with a young son whose face stays off camera. A background in international management and years in consulting and HR keep every video close to the brief. With the lake and the mountains right outside the door, outdoor content works in every season.':
+      '居住在瑞士、紧邻康斯坦茨边境的UGC达人，在阿尔高地区还有第二个住所。专注美妆护肤，拍摄产品展示与好物分享、试穿与穿搭视频、迷你Vlog和配音。也可以拍摄家庭内容，年幼的儿子可以出镜但不露脸。国际管理专业背景，加上多年咨询与人力资源工作经验，让每条视频都紧扣需求。湖泊和山脉就在家门口，一年四季都能拍户外内容。',
 
     // profile pages
     '← All creators': '← 全部达人',
