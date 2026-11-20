@@ -29,7 +29,7 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && menu.classList.contains('is-open')) { setMenu(false); burger.focus(); }
     });
-    window.matchMedia('(min-width: 861px)').addEventListener('change', function (e) {
+    window.matchMedia('(min-width: 1081px)').addEventListener('change', function (e) {
       if (e.matches) setMenu(false);
     });
   }
@@ -108,6 +108,26 @@
       if (p && p.catch) p.catch(function () { /* blocked: native controls stay visible */ });
     };
     playBtn.addEventListener('click', startFilm);
+
+    /* option picker: each option has its own video, switching resets to the poster */
+    var picks = film.querySelectorAll('.pick__opt');
+    var names = film.querySelectorAll("[data-watch-name]");
+    picks.forEach(function (btn, idx) {
+      btn.addEventListener('click', function () {
+        if (btn.classList.contains('is-on')) return;
+        picks.forEach(function (b) {
+          b.classList.toggle('is-on', b === btn);
+          b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+        });
+        var wasPlaying = film.classList.contains('is-started');
+        video.pause();
+        video.poster = btn.getAttribute('data-poster');
+        video.src = btn.getAttribute('data-src');
+        names.forEach(function (n) { n.hidden = n.getAttribute("data-watch-name") !== String(idx); });
+        if (wasPlaying) startFilm();
+        else { video.controls = false; video.load(); }
+      });
+    });
     document.querySelectorAll('[data-play-film]').forEach(function (b) {
       b.addEventListener('click', function (e) {
         e.preventDefault();
