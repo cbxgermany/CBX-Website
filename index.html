@@ -46,9 +46,9 @@
       <span class="logo__sub">Germany</span>
     </a>
     <nav class="nav__right" aria-label="Main">
+      <a class="nav__link" href="#ads">Ads</a>
       <a class="nav__link" href="#options">Two options</a>
-      <a class="nav__link" href="#network">Network</a>
-      <a class="nav__link" href="#compliance">Compliance</a>
+      <a class="nav__link" href="#network">Full package</a>
       <a class="nav__link" href="#faq">FAQ</a>
       <a class="nav__link" href="creators.html">UGC creators</a>
       <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language to Chinese" lang="zh-CN">中文</button>
@@ -58,11 +58,9 @@
   </div>
 </header>
 <div class="menu" id="menu">
+  <a href="#ads">Ads</a>
   <a href="#options">Two options</a>
-  <a class="menu__sub" href="#build">Option 1: Build &amp; Grow</a>
-  <a class="menu__sub" href="#connect">Option 2: Connect &amp; Access</a>
-  <a href="#network">Network</a>
-  <a href="#compliance">Compliance</a>
+  <a href="#network">Full package</a>
   <a href="#faq">FAQ</a>
   <a href="creators.html">UGC creators</a>
   <a href="#contact">Contact</a>
@@ -80,7 +78,7 @@
       <div class="hero4__head">
         <h1 class="display rw" id="hero-title">Your market entry partner for Europe<span class="dot">.</span></h1>
         <div class="hero4__side">
-          <p class="lead">CBX Germany helps Chinese brands start selling in Europe. We connect them with Temu, TikTok Shop and the right partners in Germany.</p>
+          <p class="lead">CBX Germany brings Chinese brands to Europe. We run your ads with European creators and connect you with Temu, TikTok Shop and the right partners in Germany.</p>
           <div class="hero4__actions">
             <a class="btn btn--solid" href="#options">Compare both options</a>
             <a class="btn btn--play" href="#film" data-play-film>Watch the videos</a>
@@ -88,47 +86,105 @@
         </div>
       </div>
 
-      <div class="map">
-        <span class="map__city map__city--from">China</span>
-        <span class="map__fork" aria-hidden="true"></span>
-        <a class="map__line map__line--build" href="#build">
-          <span class="map__name"><span class="map__opt">Option 1</span>Build &amp; Grow</span>
-          <ul class="map__stops">
-            <li>3 week pilot</li>
-            <li>Ads</li>
-            <li>Creators</li>
-            <li>Online store</li>
+      <div class="voy">
+        <div class="voy__map">
+          <img class="voy__dots" src="assets/hero-map.svg" alt="" width="1208" height="500">
+          <svg class="voy__arcs" viewBox="0 0 1208 500" fill="none" aria-hidden="true">
+            <path class="voy__arc voy__arc--build" d="M1021,408 C905,60 470,-20 216,191"/>
+            <path class="voy__arc voy__arc--build voy__arc--core" d="M1021,408 C905,60 470,-20 216,191"/>
+            <path class="voy__arc voy__arc--connect" d="M1021,408 C830,470 430,440 216,191"/>
+            <circle class="voy__dot" r="6"><animateMotion dur="5.5s" begin="0s" repeatCount="indefinite" calcMode="spline" keyPoints="0;1;1" keyTimes="0;.8;1" keySplines=".45 0 .25 1;0 0 1 1" path="M1021,408 C905,60 470,-20 216,191"/></circle>
+            <circle class="voy__dot" r="6"><animateMotion dur="5.5s" begin="2.2s" repeatCount="indefinite" calcMode="spline" keyPoints="0;1;1" keyTimes="0;.8;1" keySplines=".45 0 .25 1;0 0 1 1" path="M1021,408 C830,470 430,440 216,191"/></circle>
+            <circle class="voy__hub" cx="1021" cy="408" r="9"/>
+            <circle class="voy__hub voy__hub--to" cx="216" cy="191" r="11"/>
+          </svg>
+          <span class="voy__city voy__city--from" style="left:84.52%; top:81.60%">China</span>
+          <span class="voy__city voy__city--to" style="left:17.88%; top:38.20%">Europe</span>
+        </div>
+        <a class="voy__route voy__route--build" href="#build">
+          <span class="voy__name" style="left:79.53%; top:57.18%"><span class="voy__opt">Option 1</span><span class="voy__title">Build &amp; Grow</span></span>
+          <ul class="voy__stops">
+            <li style="left:69.21%; top:32.46%; --i:0; --dx:-12%"><span>3 week pilot</span></li>
+            <li style="left:57.78%; top:19.46%; --i:1"><span>Ads</span></li>
+            <li style="left:45.28%; top:15.03%; --i:2"><span>Creators</span></li>
+            <li style="left:31.96%; top:19.83%; --i:3; --dx:-84%"><span>Online store</span></li>
           </ul>
-          <span class="map__run" aria-hidden="true"></span>
         </a>
-        <a class="map__line map__line--connect" href="#connect">
-          <span class="map__name"><span class="map__opt">Option 2</span>Connect &amp; Access</span>
-          <ul class="map__stops">
-            <li>Temu</li>
-            <li>TikTok Shop</li>
-            <li>Warehouse</li>
-            <li>Compliance</li>
+        <a class="voy__route voy__route--connect" href="#connect">
+          <span class="voy__name" style="left:77.55%; top:85.45%"><span class="voy__opt">Option 2</span><span class="voy__title">Connect &amp; Access</span></span>
+          <ul class="voy__stops">
+            <li style="left:62.24%; top:86.65%; --i:0"><span>Temu</span></li>
+            <li style="left:51.91%; top:83.23%; --i:1"><span>TikTok Shop</span></li>
+            <li style="left:40.74%; top:75.48%; --i:2; --dx:-86%"><span>Warehouse</span></li>
+            <li style="left:29.42%; top:62.02%; --i:3; --dx:-92%"><span>Compliance</span></li>
           </ul>
-          <span class="map__run" aria-hidden="true"></span>
         </a>
-        <span class="map__join" aria-hidden="true"></span>
-        <span class="map__city map__city--to">Europe</span>
       </div>
-      <p class="map__note">Behind both options: our contacts in the Temu and TikTok ecosystem and our service partners in Germany. <a class="textlink" href="#network">See the network</a></p>
+    </div>
+  </section>
+
+  <!-- ADS: the core work -->
+  <section class="ads section scene scene--tone" id="ads" aria-labelledby="ads-title">
+    <div class="wrap ads__grid">
+      <div class="ads__side">
+        <h2 class="display" id="ads-title">We run your ads in Europe<span class="dot">.</span></h2>
+        <p class="lead">Ads are our core work. Our team creates, launches and optimizes your campaigns on Meta and TikTok, with European creators in front of the camera.</p>
+        <ol class="adsteps">
+          <li><button class="adstep" type="button" aria-pressed="false" data-adstep="1"><span class="adstep__n">1</span><span class="adstep__t">Create</span><span class="adstep__p">We create the ads, brief the creators and have UGC produced.</span></button></li>
+          <li><button class="adstep" type="button" aria-pressed="false" data-adstep="2"><span class="adstep__n">2</span><span class="adstep__t">Launch</span><span class="adstep__p">Your campaigns go live on Meta and TikTok.</span></button></li>
+          <li><button class="adstep" type="button" aria-pressed="false" data-adstep="3"><span class="adstep__n">3</span><span class="adstep__t">Analyse</span><span class="adstep__p">We read clicks, cost per click and visits for every ad.</span></button></li>
+          <li><button class="adstep is-on" type="button" aria-pressed="true" data-adstep="4"><span class="adstep__n">4</span><span class="adstep__t">Optimize</span><span class="adstep__p">We adjust audiences, messages and creatives based on the data.</span></button></li>
+        </ol>
+        <p class="ads__note">You pay your ad budget directly through your own ad accounts.</p>
+      </div>
+      <div class="console" data-console data-step="4">
+        <div class="console__bar">
+          <span class="console__name">Your brand in Europe</span>
+          <span class="console__chips"><span>Meta</span><span>TikTok</span></span>
+        </div>
+        <div class="console__ads">
+          <div class="cad cad--a">
+            <span class="adcard" aria-hidden="true">
+              <span class="adcard__head"><span class="adcard__av"></span><span class="adcard__who"><b>Your brand</b><i>Sponsored</i></span></span>
+              <video src="assets/ad-video.mp4" poster="assets/ad-video.jpg" muted loop playsinline preload="none" data-autoplay tabindex="-1"></video>
+              <span class="adcard__cta">Shop now</span>
+            </span>
+            <p class="cad__row"><span class="cad__name">Video ad</span><span class="cad__state"><span class="st st--1">Draft</span><span class="st st--2">Live</span><span class="st st--4">Best ad</span></span></p>
+            <dl class="cad__bars"><div><dt>Clicks</dt><dd style="--v:0.92"></dd></div><div><dt>Visits</dt><dd style="--v:0.8"></dd></div></dl>
+          </div>
+          <div class="cad cad--b">
+            <span class="adcard" aria-hidden="true">
+              <span class="adcard__head"><span class="adcard__av"></span><span class="adcard__who"><b>Your brand</b><i>Sponsored</i></span></span>
+              <video src="assets/ad-isabel.mp4" poster="assets/ad-isabel.jpg" muted loop playsinline preload="none" data-autoplay tabindex="-1"></video>
+              <span class="adcard__cta">Shop now</span>
+            </span>
+            <p class="cad__row"><span class="cad__name">Video ad</span><span class="cad__state"><span class="st st--1">Draft</span><span class="st st--2">Live</span><span class="st st--4">Paused</span></span></p>
+            <dl class="cad__bars"><div><dt>Clicks</dt><dd style="--v:0.34"></dd></div><div><dt>Visits</dt><dd style="--v:0.26"></dd></div></dl>
+          </div>
+          <div class="cad cad--c">
+            <span class="adcard" aria-hidden="true">
+              <span class="adcard__head"><span class="adcard__av"></span><span class="adcard__who"><b>Your brand</b><i>Sponsored</i></span></span>
+              <video src="assets/ad-laura.mp4" poster="assets/ad-laura.jpg" muted loop playsinline preload="none" data-autoplay tabindex="-1"></video>
+              <span class="adcard__cta">Shop now</span>
+            </span>
+            <p class="cad__row"><span class="cad__name">Video ad</span><span class="cad__state"><span class="st st--1">Draft</span><span class="st st--2">Live</span><span class="st st--4">New version</span></span></p>
+            <dl class="cad__bars"><div><dt>Clicks</dt><dd style="--v:0.58"></dd></div><div><dt>Visits</dt><dd style="--v:0.44"></dd></div></dl>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- TWO OPTIONS -->
-  <section class="opts section scene scene--tone" id="options" aria-labelledby="options-title">
+  <section class="opts section scene scene--base" id="options" aria-labelledby="options-title">
     <div class="wrap">
-      <div class="chapter"><span class="label">Two options</span><span class="label">Prices on request</span></div>
       <div class="sechead">
         <h2 class="display" id="options-title">Where does your brand stand today<span class="dot">?</span></h2>
         <p class="lead">Smaller brands want to find out first if there is demand for their products in Europe. Larger brands are already strong in China and ready to enter Europe right away. In the first call we find out together which option fits.</p>
       </div>
 
       <div class="opts__grid">
-        <article class="opt opt--build" aria-labelledby="opt1-title">
+        <article class="opt opt--build" id="build" aria-labelledby="opt1-title">
           <div class="opt__top"><span class="opt__num">Option 1</span><span>For smaller brands</span></div>
           <h3 class="opt__title" id="opt1-title">Build &amp; Grow</h3>
           <p class="opt__claim">We test whether there is demand in Europe, then build your brand with ads, creators and a store.</p>
@@ -138,10 +194,10 @@
             <div><dt>Cost</dt><dd>The pilot is free of charge. The ad budget is paid by the brand.</dd></div>
             <div><dt>After</dt><dd>With good results we plan the next steps together, and Option 2 opens up later.</dd></div>
           </dl>
-          <a class="textlink opt__link" href="#build">How the pilot works</a>
+          <a class="textlink opt__link" href="#ads">See how we run your ads</a>
         </article>
 
-        <article class="opt opt--connect" aria-labelledby="opt2-title">
+        <article class="opt opt--connect" id="connect" aria-labelledby="opt2-title">
           <div class="opt__top"><span class="opt__num">Option 2</span><span>For larger brands</span></div>
           <h3 class="opt__title" id="opt2-title">Connect &amp; Access</h3>
           <p class="opt__claim">Exclusive access to Temu and TikTok Shop, with warehouse, fulfillment and compliance partners.</p>
@@ -151,24 +207,8 @@
             <div><dt>Benefit</dt><dd>An exclusive contract and support that a normal sign up does not get.</dd></div>
             <div><dt>Cost</dt><dd>A one time introduction fee, on request.</dd></div>
           </dl>
-          <a class="textlink opt__link" href="#connect">What you get</a>
+          <a class="textlink opt__link" href="#network">See the full package</a>
         </article>
-      </div>
-
-      <div class="cats">
-        <div>
-          <h3 class="cats__title">Categories we focus on</h3>
-          <p class="cats__note">We follow demand in Europe, so our focus can change. Current focus first.</p>
-        </div>
-        <ul class="cats__list">
-          <li class="is-focus">Beauty</li>
-          <li class="is-focus">Skincare</li>
-          <li class="is-focus">Fragrance</li>
-          <li>Home &amp; gadgets</li>
-          <li>Kitchen</li>
-          <li>Lifestyle</li>
-          <li>Sportswear</li>
-        </ul>
       </div>
     </div>
   </section>
@@ -176,10 +216,10 @@
   <!-- VIDEOS: pick an option, see its video -->
   <section class="watch section scene scene--tone" id="film" aria-labelledby="watch-title">
     <div class="wrap">
-      <div class="chapter"><span class="label">Select your option</span><span class="label">Two videos</span></div>
       <div class="watch__grid" data-film>
         <div class="watch__side">
           <h2 class="display" id="watch-title">See how we take your brand to Europe<span class="dot">.</span></h2>
+          <p class="pick__label">Select your option</p>
           <div class="pick" role="group" aria-label="Select your option">
             <button class="pick__opt is-on" type="button" aria-pressed="true" data-src="assets/option1-build-grow.mp4" data-poster="assets/option1-poster.jpg">
               <span class="pick__num">Option 1</span>
@@ -210,275 +250,57 @@
     </div>
   </section>
 
-  <!-- OPTION 1: BUILD & GROW -->
-  <section class="build section scene scene--base" id="build" aria-labelledby="build-title">
+  <!-- CREATORS -->
+  <section class="cast section scene scene--base" id="creators" aria-labelledby="cast-title">
     <div class="wrap">
-      <div class="chapter"><span class="label">Option 1: Build &amp; Grow</span><span class="label">For smaller brands</span></div>
       <div class="sechead">
-        <h2 class="display" id="build-title">The 3 week pilot test<span class="dot">.</span></h2>
-        <p class="lead">Before you invest in Europe, we test the demand for your product with real European buyers. CBX Germany charges no fee for the pilot. You see real numbers and decide afterwards if and how you want to continue.</p>
-      </div>
-
-      <div class="pilot">
-        <ol class="weeks">
-          <li class="week">
-            <span class="week__num">Week 1</span>
-            <h3>Build and launch</h3>
-            <p>Landing page in German, 2 to 3 ad creatives and pixel tracking. Meta campaigns go live.</p>
-          </li>
-          <li class="week">
-            <span class="week__num">Week 2</span>
-            <h3>Optimize</h3>
-            <p>We adjust audiences, messages and creatives based on the first data.</p>
-          </li>
-          <li class="week">
-            <span class="week__num">Week 3</span>
-            <h3>Report</h3>
-            <p>CTR, cost per click, visits and purchase intent through a waitlist, with a clear recommendation.</p>
-          </li>
-        </ol>
-      </div>
-
-      <div class="notes">
-        <p class="note"><strong>Ad budget.</strong> Paid by you directly through your own ad account. The amount is agreed with you personally.</p>
-        <p class="note"><strong>No products are sold during the pilot.</strong> Buyers only join a waitlist and no real orders are placed. That is why stock, shipping and EU product compliance do not apply during the pilot yet.</p>
-      </div>
-
-      <h3 class="subhead">After the pilot</h3>
-      <ol class="flow flow--3">
-        <li>
-          <span class="flow__n" aria-hidden="true">1</span>
-          <h4>Results call</h4>
-          <p>We go through the numbers together and answer one question: is there real demand for your products in Europe?</p>
-        </li>
-        <li>
-          <span class="flow__n" aria-hidden="true">2</span>
-          <h4>Next steps</h4>
-          <p>If the answer is yes, we propose the next steps that fit your brand, for example a store, creator content, ads, TikTok Shop or a warehouse in Germany. Scope and price are agreed individually.</p>
-        </li>
-        <li>
-          <span class="flow__n" aria-hidden="true">3</span>
-          <h4>Next level</h4>
-          <p>Once your brand has grown, Option 2 opens up: exclusive access to Temu and TikTok Shop.</p>
-        </li>
-      </ol>
-      <p class="aside">If the numbers are weak, you have lost nothing but a small ad budget, and you know more about Europe than before.</p>
-
-      <div class="sechead sechead--sub">
-        <h3 class="display h2s">From demand to sales in Europe<span class="dot">.</span></h3>
-        <p class="lead">What we can build for you after the pilot. Scope and price are agreed individually.</p>
-      </div>
-      <ul class="svc">
-        <li>
-          <h4>Ads <span class="pill">Our core work</span></h4>
-          <p>We create the ads, brief the creators, have UGC produced and run, analyse and optimize Meta and TikTok campaigns. You pay your ad budget directly through your own ad accounts.</p>
-        </li>
-        <li>
-          <h4>European UGC creators</h4>
-          <p>You choose creators from our European roster. We coordinate them and plan the agreed content. Creator fees are priced per creator and project.</p>
-          <a class="textlink" href="creators.html">Meet the creators</a>
-        </li>
-        <li>
-          <h4>Online store and landing page</h4>
-          <p>We build or adapt your online store or landing page for European buyers and set up pixel tracking, so all data from Meta is measured.</p>
-        </li>
-        <li>
-          <h4>TikTok Shop and live commerce</h4>
-          <p>TikTok Shop, Amazon and other channels where suitable, plus TikTok live sessions with a European host. Number and length of sessions are agreed in writing.</p>
-        </li>
-        <li>
-          <h4>Warehouse in Germany</h4>
-          <p>If your brand has no warehouse in Germany yet, we introduce German warehouse and fulfillment partners when the time is right.</p>
-        </li>
-        <li class="svc__you">
-          <h4>What stays with you</h4>
-          <p>Products, stock, shipping, customs, VAT and the legal responsibility for compliance stay with you. We introduce specialised partners.</p>
-          <a class="textlink" href="#compliance">EU compliance</a>
-        </li>
-      </ul>
-
-      <div class="faces">
-        <div class="faces__head">
-          <h3 class="faces__title">Our European creators<span class="dot">.</span></h3>
-          <p>Every creator has a profile with photos and videos. You choose, we coordinate.</p>
-          <a class="btn" href="creators.html">See all 11 creators</a>
-        </div>
-        <ul class="faces__row">
-          <li><a href="creators/yana-moroz.html"><span class="faces__img"><img class="pos-top" src="images/web/yana-primary.jpg" alt="Yana Moroz" width="585" height="1068" loading="lazy"></span><span class="faces__name">Yana Moroz</span></a></li>
-          <li><a href="creators/chiara-christmann.html"><span class="faces__img"><img src="images/web/chiara-primary.jpg" alt="Chiara Christmann" width="800" height="1066" loading="lazy"></span><span class="faces__name">Chiara Christmann</span></a></li>
-          <li><a href="creators/laura-jaeschke.html"><span class="faces__img"><img src="images/web/laura-primary.jpg" alt="Laura Jaeschke" width="508" height="688" loading="lazy"></span><span class="faces__name">Laura Jaeschke</span></a></li>
-          <li><a href="creators/isabel-smolen.html"><span class="faces__img"><img src="images/web/isabel-primary.jpg" alt="Isabel Smolen" width="1000" height="1420" loading="lazy"></span><span class="faces__name">Isabel Smolen</span></a></li>
-          <li><a href="creators/sophia-hippe.html"><span class="faces__img"><img src="images/web/sophia-primary.jpg" alt="Sophie Hippe" width="800" height="1066" loading="lazy"></span><span class="faces__name">Sophie Hippe</span></a></li>
-          <li><a href="creators/anna-tatarnikova.html"><span class="faces__img"><img class="pos-top" src="images/web/anna-primary.jpg" alt="Anna Tatarnikova" width="466" height="680" loading="lazy"></span><span class="faces__name">Anna Tatarnikova</span></a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- OPTION 2: CONNECT & ACCESS (the dark one) -->
-  <section class="connect section scene scene--ink" id="connect" aria-labelledby="connect-title">
-    <div class="wrap">
-      <div class="chapter"><span class="label">Option 2: Connect &amp; Access</span><span class="label">For larger brands</span></div>
-      <div class="sechead">
-        <h2 class="display" id="connect-title">Exclusive access to Temu and TikTok Shop<span class="dot">.</span></h2>
-        <p class="lead">Your brand is strong in China and ready for Europe. Most brands sign up to Temu and TikTok Shop on their own and start as one seller among thousands. With CBX Germany your brand skips that line: we connect you directly with our exclusive partners at Temu and TikTok and set up everything you need to sell in Europe from day one.</p>
-      </div>
-
-      <h3 class="subhead subhead--first">What you get</h3>
-      <ul class="gets">
-        <li><h4>Exclusive Temu and TikTok Shop partners</h4><p>A direct connection to the partners we work with, not the standard sign up.</p></li>
-        <li><h4>Your own dedicated agent</h4><p>One person who takes care of your brand on the platform, from onboarding to growth.</p></li>
-        <li><h4>A direct line to the Head of Europe</h4><p>Access to the people who decide, which a brand on its own rarely gets.</p></li>
-        <li><h4>An exclusive contract</h4><p>Better terms and closer support than a standard seller contract.</p></li>
-        <li><h4>Warehouse and fulfillment in Germany</h4><p>The German warehouse the platforms expect, through our fulfillment partners.</p></li>
-        <li><h4>Compliance partners</h4><p>EU rules on product, packaging and cosmetics.</p></li>
-      </ul>
-
-      <blockquote class="why">
-        <p><strong>Why this matters.</strong> Without the right connection, a new brand on Temu and TikTok Shop starts alone. With CBX Germany it starts with its own agent, an exclusive contract and a team in Germany behind it.</p>
-      </blockquote>
-
-      <h3 class="subhead">How it works</h3>
-      <ol class="flow flow--5">
-        <li>
-          <span class="flow__n" aria-hidden="true">1</span>
-          <h4>Check</h4>
-          <p>We look at your brand, products, prices and readiness for Europe, and whether you fit what Temu and TikTok are looking for right now.</p>
-        </li>
-        <li>
-          <span class="flow__n" aria-hidden="true">2</span>
-          <h4>Agreement</h4>
-          <p>We sign a cooperation agreement with you before any introduction.</p>
-        </li>
-        <li>
-          <span class="flow__n" aria-hidden="true">3</span>
-          <h4>Connection</h4>
-          <p>We connect you with our exclusive Temu and TikTok Shop partners, your agent and the partners for warehouse, fulfillment and compliance.</p>
-        </li>
-        <li>
-          <span class="flow__n" aria-hidden="true">4</span>
-          <h4>Launch</h4>
-          <p>We coordinate the partners and support the store opening on Temu and TikTok Shop.</p>
-        </li>
-        <li>
-          <span class="flow__n" aria-hidden="true">5</span>
-          <h4>Grow further</h4>
-          <p>On request we add creators, ads and live commerce for the new channels.</p>
-        </li>
-      </ol>
-
-      <div class="fee">
-        <div class="fee__main">
-          <p class="fee__k">Introduction fee</p>
-          <p class="fee__v">On request</p>
-          <p class="fee__text">One time, depending on the scope. Agreed in the cooperation agreement.</p>
-        </div>
+        <h2 class="display" id="cast-title">Our European creators<span class="dot">.</span></h2>
         <div>
-          <p class="fee__k">Included</p>
-          <ul class="fee__list">
-            <li>Exclusive connection to Temu and TikTok Shop</li>
-            <li>Dedicated agent and direct line to the Head of Europe</li>
-            <li>Exclusive contract conditions</li>
-            <li>Warehouse, fulfillment and compliance partners</li>
-            <li>Coordination of the launch</li>
-          </ul>
+          <p class="lead">Every creator has a profile with photos and videos. You choose, we coordinate.</p>
+          <a class="btn btn--solid cast__btn" href="creators.html">See all 11 creators</a>
         </div>
       </div>
-      <p class="fine">Platform listings and approvals are decided by the platforms. CBX Germany makes the connection and supports the process, but cannot guarantee an approval. Partners are contracted and paid directly by you.</p>
+      <ul class="faces__row">
+        <li><a href="creators/yana-moroz.html"><span class="faces__img"><img class="pos-top" src="images/web/yana-primary.jpg" alt="Yana Moroz" width="585" height="1068" loading="lazy"></span><span class="faces__name">Yana Moroz</span></a></li>
+        <li><a href="creators/chiara-christmann.html"><span class="faces__img"><img src="images/web/chiara-primary.jpg" alt="Chiara Christmann" width="800" height="1066" loading="lazy"></span><span class="faces__name">Chiara Christmann</span></a></li>
+        <li><a href="creators/laura-jaeschke.html"><span class="faces__img"><img src="images/web/laura-4.jpg" alt="Laura Jaeschke" width="1000" height="1176" loading="lazy"></span><span class="faces__name">Laura Jaeschke</span></a></li>
+        <li><a href="creators/isabel-smolen.html"><span class="faces__img"><img src="images/web/isabel-primary.jpg" alt="Isabel Smolen" width="1000" height="1420" loading="lazy"></span><span class="faces__name">Isabel Smolen</span></a></li>
+        <li><a href="creators/sophia-hippe.html"><span class="faces__img"><img src="images/web/sophia-primary.jpg" alt="Sophie Hippe" width="800" height="1066" loading="lazy"></span><span class="faces__name">Sophie Hippe</span></a></li>
+        <li><a href="creators/anna-tatarnikova.html"><span class="faces__img"><img class="pos-top" src="images/web/anna-primary.jpg" alt="Anna Tatarnikova" width="466" height="680" loading="lazy"></span><span class="faces__name">Anna Tatarnikova</span></a></li>
+      </ul>
     </div>
   </section>
 
-  <!-- OUR NETWORK -->
+  <!-- THE FULL PACKAGE -->
   <section class="network section scene scene--tone" id="network" aria-labelledby="network-title">
     <div class="wrap">
-      <div class="chapter"><span class="label">Our network</span><span class="label">Behind both options</span></div>
       <div class="sechead">
-        <h2 class="display" id="network-title">The network behind both options<span class="dot">.</span></h2>
-        <p class="lead">We are personally connected with people in the Temu and TikTok ecosystem in Europe and introduce brands that fit. Around them sit our service partners in Germany.</p>
+        <h2 class="display" id="network-title">One partner for your whole start in Europe<span class="dot">.</span></h2>
+        <p class="lead">Brands that want to enter Europe get the full package from CBX Germany. We do the work ourselves or bring in the right partner, and your brand talks to one team.</p>
       </div>
-      <div class="eco">
-        <div class="eco__node eco__node--brand">
-          <h3 class="eco__k">Your brand</h3>
-          <p>Seller and importer. Your store and ad accounts belong to you.</p>
+      <div class="pack">
+        <div class="pack__end"><h3 class="eco__k">Your brand</h3><p>Seller and importer. Your store and ad accounts belong to you.</p></div>
+        <div class="pack__box">
+          <div class="pack__top"><h3 class="eco__k eco__k--logo">CBX Germany</h3><p>One team in Germany, the full package</p></div>
+          <ul class="pack__grid">
+            <li class="pack__ads"><div><h4>Ads <span class="pill">Our core work</span></h4><p>We create, run, analyse and optimize your Meta and TikTok campaigns.</p></div><span class="pack__thumbs" aria-hidden="true"><img src="images/web/nino-2.jpg" alt="" loading="lazy"><img src="images/web/selina-3.jpg" alt="" loading="lazy"><img src="images/web/laurab-2.jpg" alt="" loading="lazy"></span></li>
+            <li><span class="pack__avs" aria-hidden="true"><img class="pos-top" src="images/web/yana-primary.jpg" alt="" loading="lazy"><img src="images/web/sophia-primary.jpg" alt="" loading="lazy"><img class="pos-top" src="images/web/anna-primary.jpg" alt="" loading="lazy"><img src="images/web/chiara-primary.jpg" alt="" loading="lazy"></span><h4>UGC creators</h4><p>European creators make content with your product.</p></li>
+            <li><svg class="pack__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" /> <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" /> <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" /> <path d="M2 7h20" /> <path d="M22 7v3a2 2 0 0 1-2 2a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7" /></svg><h4>Online store</h4><p>A store or landing page for European buyers, with pixel tracking.</p></li>
+            <li><svg class="pack__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" /> <path d="M3 6h18" /> <path d="M16 10a4 4 0 0 1-8 0" /></svg><h4>Temu and TikTok Shop</h4><p>A dedicated agent and a direct line to the Head of Europe.</p></li>
+            <li><svg class="pack__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <polygon points="10 8 16 12 10 16 10 8" /></svg><h4>Live commerce</h4><p>TikTok live sessions with a European host.</p></li>
+            <li class="pack__half"><svg class="pack__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z" /> <path d="M12 22V12" /> <path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7" /> <path d="m7.5 4.27 9 5.15" /></svg><div><h4>Warehouse and fulfillment</h4><p>German warehouse and fulfillment partners, the way the platforms expect it.</p></div></li>
+            <li class="pack__half"><svg class="pack__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="m9 12 2 2 4-4" /></svg><div><h4>Compliance</h4><p>Specialised European partners for packaging, product rules and cosmetics.</p></div></li>
+          </ul>
         </div>
-        <div class="eco__node eco__node--cbx">
-          <h3 class="eco__k eco__k--logo">CBX Germany</h3>
-          <p>Our team in Germany. We do the work, make the introductions and coordinate the partners.</p>
-        </div>
-        <ul class="eco__groups">
-          <li><h4>Platforms</h4><p>Temu and TikTok Shop, with a dedicated agent and a direct line to the Head of Europe.</p></li>
-          <li><h4>Warehouse and fulfillment</h4><p>German warehouse and fulfillment partners, the way the platforms expect it.</p></li>
-          <li><h4>Compliance</h4><p>Specialised European partners for packaging, product rules and cosmetics.</p></li>
-          <li><h4>Content and ads</h4><p>European UGC creators, live hosts, and Meta and TikTok campaigns.</p></li>
-        </ul>
+        <div class="pack__end pack__end--eu"><h3 class="eco__k">Europe</h3><p>Your products in front of European buyers.</p></div>
       </div>
       <p class="fine">You contract and pay the partners directly. CBX Germany introduces them and coordinates, without taking on operational responsibility.</p>
-    </div>
-  </section>
-
-  <!-- EU COMPLIANCE -->
-  <section class="comp section scene scene--base" id="compliance" aria-labelledby="comp-title">
-    <div class="wrap">
-      <div class="chapter"><span class="label">EU compliance</span><span class="label">Both options</span></div>
-      <div class="sechead">
-        <h2 class="display" id="comp-title">Compliant from day one in Europe<span class="dot">.</span></h2>
-        <p class="lead">A product that cannot be sold legally in the EU cannot be sold at all. We introduce your brand to specialised European partners and add no markup on their fees.</p>
-      </div>
-      <ul class="comp__grid">
-        <li>
-          <h3>Packaging and environment</h3>
-          <p>Packaging and EPR registration, including electronics and batteries.</p>
-        </li>
-        <li>
-          <h3>Technical product compliance</h3>
-          <p>Technical file, GPSR, CE, food contact and textile labelling.</p>
-        </li>
-        <li>
-          <h3>Cosmetics and personal care</h3>
-          <p>Safety report, CPNP notification, EU responsible person and label check.</p>
-        </li>
-      </ul>
-      <p class="resp"><strong>Clear responsibility.</strong> Your brand stays the seller and importer and keeps the legal responsibility. You contract and pay the partners directly. CBX Germany introduces suitable partners and does not take on operational responsibility.</p>
-    </div>
-  </section>
-
-  <!-- WHO PAYS FOR WHAT -->
-  <section class="costs section scene scene--tone" id="costs" aria-labelledby="costs-title">
-    <div class="wrap">
-      <div class="chapter"><span class="label">Costs</span><span class="label">Prices on request</span></div>
-      <div class="sechead">
-        <h2 class="display" id="costs-title">Who pays for what<span class="dot">.</span></h2>
-        <p class="lead">Your store and ad accounts always belong to you. CBX Germany gets the access it needs for the agreed work.</p>
-      </div>
-      <table class="ctable" role="table" aria-labelledby="costs-title">
-        <thead role="rowgroup">
-          <tr role="row"><th role="columnheader" scope="col">Cost</th><th role="columnheader" scope="col">Paid to</th><th role="columnheader" scope="col">Note</th></tr>
-        </thead>
-        <tbody role="rowgroup">
-          <tr class="ctable__group" role="row"><th role="rowheader" colspan="3" scope="rowgroup">Option 1: Build &amp; Grow</th></tr>
-          <tr role="row"><th role="rowheader" scope="row">Pilot test</th><td role="cell"><span class="ctable__lbl">Paid to</span> CBX Germany</td><td role="cell">Free of charge, 3 weeks</td></tr>
-          <tr role="row"><th role="rowheader" scope="row">Ad budget</th><td role="cell"><span class="ctable__lbl">Paid to</span> Meta / TikTok</td><td role="cell">Paid directly through your own ad account, amount agreed personally</td></tr>
-          <tr role="row"><th role="rowheader" scope="row">After the pilot</th><td role="cell"><span class="ctable__lbl">Paid to</span> CBX Germany</td><td role="cell">Individual offer, based on the results</td></tr>
-          <tr role="row"><th role="rowheader" scope="row">Creator fees</th><td role="cell"><span class="ctable__lbl">Paid to</span> Separate offer</td><td role="cell">Quoted per creator and project</td></tr>
-        </tbody>
-        <tbody role="rowgroup">
-          <tr class="ctable__group" role="row"><th role="rowheader" colspan="3" scope="rowgroup">Option 2: Connect &amp; Access</th></tr>
-          <tr role="row"><th role="rowheader" scope="row">Introduction fee</th><td role="cell"><span class="ctable__lbl">Paid to</span> CBX Germany</td><td role="cell">One time, depending on the scope, discussed personally</td></tr>
-          <tr role="row"><th role="rowheader" scope="row">Platform fees</th><td role="cell"><span class="ctable__lbl">Paid to</span> Temu / TikTok</td><td role="cell">The platforms' own fees and commissions</td></tr>
-        </tbody>
-        <tbody role="rowgroup">
-          <tr class="ctable__group" role="row"><th role="rowheader" colspan="3" scope="rowgroup">Both options</th></tr>
-          <tr role="row"><th role="rowheader" scope="row">Logistics</th><td role="cell"><span class="ctable__lbl">Paid to</span> Your logistics partners</td><td role="cell">Stock, shipping, customs, warehouse and fulfillment, paid directly to the partners</td></tr>
-          <tr role="row"><th role="rowheader" scope="row">Compliance</th><td role="cell"><span class="ctable__lbl">Paid to</span> Your compliance partners</td><td role="cell">Paid directly to the compliance partners, no markup from CBX Germany</td></tr>
-        </tbody>
-      </table>
     </div>
   </section>
 
   <!-- ABOUT US -->
   <section class="about section scene scene--base" id="about" aria-labelledby="about-title">
     <div class="wrap">
-      <div class="chapter"><span class="label">About us</span></div>
       <div class="about__grid">
         <div>
           <h2 class="display" id="about-title">A team on the ground in Europe<span class="dot">.</span></h2>
@@ -509,7 +331,6 @@
   <!-- FAQ -->
   <section class="faq section scene scene--tone" id="faq" aria-labelledby="faq-title">
     <div class="wrap">
-      <div class="chapter"><span class="label">FAQ</span></div>
       <div class="faq__grid">
         <h2 class="display" id="faq-title">What brands ask first<span class="dot">.</span></h2>
         <div class="faq__list">
@@ -553,7 +374,6 @@
   <!-- CONTACT -->
   <section class="contact4 section scene scene--base" id="contact" aria-labelledby="contact-title">
     <div class="wrap">
-      <div class="chapter"><span class="label">Contact</span><span class="label">Email or WeChat</span></div>
       <div class="contact4__grid">
         <div>
           <h2 class="display" id="contact-title">Find out which option fits your brand<span class="dot">.</span></h2>
@@ -569,6 +389,13 @@
                 <img src="images/web/wechat-qr.png" alt="WeChat QR code for CBX Germany" width="214" height="214" loading="lazy">
               </button>
               <span class="reach__id">wxid_4u3l44p9xumo22</span>
+            </div>
+            <div class="reach__item">
+              <span class="label">WhatsApp</span>
+              <button class="reach__qr" type="button" data-open-dialog="whatsapp" aria-label="Enlarge the WhatsApp QR code">
+                <img src="images/web/whatsapp-qr.png" alt="WhatsApp QR code for CBX Germany" width="214" height="214" loading="lazy">
+              </button>
+              <a class="reach__id reach__link" href="https://wa.me/4917631697103" target="_blank" rel="noopener">+49 176 31697103</a>
             </div>
           </div>
         </div>
@@ -633,6 +460,17 @@
     <div class="modal__qr"><img src="images/web/wechat-qr.png" alt="WeChat QR code for CBX Germany" width="240" height="240" loading="lazy"></div>
     <p class="modal__id">wxid_4u3l44p9xumo22</p>
     <p class="label modal__hint">Scan with WeChat to add us</p>
+  </div>
+</dialog>
+
+<dialog class="modal" id="whatsapp" aria-labelledby="whatsapp-title">
+  <div class="modal__panel scene scene--tone">
+    <button class="modal__close" type="button" data-close-dialog aria-label="Close">✕</button>
+    <span class="label">CBX Germany</span>
+    <h2 class="display" id="whatsapp-title">WhatsApp</h2>
+    <div class="modal__qr"><img src="images/web/whatsapp-qr.png" alt="WhatsApp QR code for CBX Germany" width="240" height="240" loading="lazy"></div>
+    <p class="modal__id"><a class="reach__link" href="https://wa.me/4917631697103" target="_blank" rel="noopener">+49 176 31697103</a></p>
+    <p class="label modal__hint">Scan with your phone camera to chat with us</p>
   </div>
 </dialog>
 

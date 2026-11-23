@@ -137,6 +137,47 @@
     });
   }
 
+  /* ---------- silent ad clips: play only while they are on screen ---------- */
+  var clips = document.querySelectorAll('video[data-autoplay]');
+  if (clips.length && hasIO && !reduceMotion) {
+    var clipIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { var p = e.target.play(); if (p && p.catch) p.catch(function () {}); }
+        else e.target.pause();
+      });
+    }, { threshold: 0.2 });
+    clips.forEach(function (v) { clipIO.observe(v); });
+  }
+
+  /* ---------- ads: the campaign runs once through its four steps, then the visitor takes over ---------- */
+  var adConsole = document.querySelector('[data-console]');
+  if (adConsole) {
+    var adSteps = document.querySelectorAll('[data-adstep]');
+    var adTimer = null;
+    var setStep = function (n) {
+      adConsole.setAttribute('data-step', n);
+      adSteps.forEach(function (b) {
+        var on = b.getAttribute('data-adstep') === String(n);
+        b.classList.toggle('is-on', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+    };
+    adSteps.forEach(function (b) {
+      b.addEventListener('click', function () { clearTimeout(adTimer); adTimer = -1; setStep(b.getAttribute('data-adstep')); });
+    });
+    if (hasIO && !reduceMotion) {
+      setStep(1);
+      var adIO = new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting) return;
+        adIO.disconnect();
+        if (adTimer === -1) return;
+        var n = 1;
+        (function next() { adTimer = setTimeout(function () { setStep(++n); if (n < 4) next(); }, 1900); })();
+      }, { threshold: 0.35 });
+      adIO.observe(adConsole);
+    }
+  }
+
   /* ---------- creator videos: all videos of one creator start together when in view,
      each one falls back to its photo when it ends, hover replays the set ---------- */
   document.querySelectorAll('[data-video-group]').forEach(function (group) {
